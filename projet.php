@@ -14,9 +14,10 @@
 </head>
 
 <body>
+  <?php require_once "navbar.php" ?>
   <div class="section white">
     <div class="row container">
-      <h2 class="center"><i class="small material-icons">folder</i> Introduction à la programmation avec le C</h2>
+      <h2 class="center"><i class="small material-icons">folder</i><?php require_once "title.php" ?></h2>
       <div class="icon-block">
         <h2 class="center"><img class="circle" src="img/puissance_quatre/icons/Nicolas.png"
             alt="photo Nicolas Portfolio"></h2>

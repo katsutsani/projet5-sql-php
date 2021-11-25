@@ -18,7 +18,7 @@
             <h1><a href="index.php?projet=0" class="center brand-logo">Portfolio</a></h1>
             <a href="index.php?projet=0" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-              <li><a href="projet1.php?projet=1">Projet 1</a></li>
+              <li><a href="projet.php?projet=1">Projet 1</a></li>
               <li><a href="projet2.php?projet=2">Projet 2</a></li>
               <li><a href="projet3.php?projet=3">Projet 3</a></li>
               <li><a id="contact" href="#Contact" class="waves-effect waves-light btn modal-trigger pulse">Contact</a></li>
@@ -27,7 +27,7 @@
         </nav>
       </div>
       <ul class="sidenav" id="mobile-demo">
-        <li><a href="projet1.php?projet=1">Projet 1</a></li>
+        <li><a href="projet.php?projet=1">Projet 1</a></li>
         <li><a href="projet2.php?projet=2">Projet 2</a></li>
         <li><a href="projet3.php?projet=3">Projet 3</a></li>
         <li><a id="contact" href="#Contact" class="waves-effect waves-light btn colorBtn modal-trigger pulse">Contact</a>
