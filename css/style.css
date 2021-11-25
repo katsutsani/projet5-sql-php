@@ -1,0 +1,114 @@
+h1 {
+  margin: 0;
+}
+
+.btn{
+  background-color: grey;
+}
+
+.hide {
+   display: none;
+}
+
+@media (max-width: 3000px) {
+  .easterEgg a {
+    position:absolute;
+    margin:-26% -13.99%;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    }
+  }
+
+@media (max-width: 1250px) {
+   .easterEgg a {
+     position:absolute;
+     margin-top: -513px;
+     margin-left: -267px;
+     cursor: pointer;
+     background: transparent;
+     border: none;
+   }
+  }
+
+@media (max-width: 600px) {
+    .easterEgg a {
+      position:absolute;
+      margin-top: -509px;
+      margin-left: -267px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+  }
+
+  /** Mozilla Firefox */
+  @-moz-document url-prefix() {
+    .easterEgg a {
+      position:absolute;
+      margin-top: -499px;
+      margin-left: -267px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+  }
+
+  @media not all and (min-resolution: 0.001dpcm) {
+    .easterEgg a {
+      position:absolute;
+      margin-top: -510px;
+      margin-left: -270.5px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+}
+
+.panel {
+  background: black;
+  color: white;
+  border-radius: 16px;
+  padding: 2em;
+  margin-bottom: 20px;
+}
+
+.nom {
+  font-size: 2.5em;
+  margin-top: -5px;
+}
+
+.age {
+  font-size: 30px;
+}
+
+p span img {
+  margin-bottom: -10px;
+  margin-right: 6px;
+}
+
+button{
+  margin-left: -6.3px;
+  background-color: black;
+  border:none;
+  cursor: pointer;
+}
+
+p img {
+  margin-bottom: -6px;
+  margin-right: 3px;
+}
+
+.text {
+  margin-bottom: -8px;
+  margin-left: -1px;
+  margin-right: 5px;
+}
+
+input {
+  height: 50px;
+}
+
+textarea {
+  min-height: 90px;
+}
