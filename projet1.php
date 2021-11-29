@@ -113,26 +113,7 @@
       </div>
     </div>
   </div>
-
-  <!-- Modal Structure -->
-  <div id="Contact" class="modal bottom-sheet">
-    <div class="modal-content">
-      <h4>Contactez-nous</h4>
-      <div class="col s12 m4">
-        <form novalidate="" method="post">
-          <label for="name">Nom</label>
-          <input type="text" name="name" placeholder="What's your full name?" value="">
-          <label for="email">Adresse mail</label>
-          <input type="email" name="email" placeholder="you@example.com" value="">
-          <label for="message">Message</label>
-          <textarea name="message" placeholder="Write your message for the team here" type="text"></textarea>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn pulse">Agree</a>
-      </div>
-    </div>
-  </div>
+  <?php require_once "modals.php" ?>
 
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="js/jquery.js"></script>

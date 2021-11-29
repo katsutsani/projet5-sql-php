@@ -39,3 +39,10 @@ $(document).ready(function(){
 $('#contact').click(function(){
   $('#btns').addClass('hide');
 })
+
+function autoOpenModal(){
+  $(document).ready(function(){
+  $('#connexion').modal();
+  $('#connexion').modal('open');
+  });
+}

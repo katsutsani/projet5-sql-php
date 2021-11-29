@@ -8,5 +8,5 @@ $dataBinded=array(
 );
 $pre = $pdo->prepare($sql);
 $pre->execute($dataBinded);
-header('Location:index.php');//on le redirige sur la page d'accueil du site !
+header('Location:index.php?projet=0');//on le redirige sur la page d'accueil du site !
 ?>
