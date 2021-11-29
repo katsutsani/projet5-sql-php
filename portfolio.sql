@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 25 nov. 2021 à 13:25
+-- Généré le : lun. 29 nov. 2021 à 13:14
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -20,6 +20,54 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `portfolio`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `images`
+--
+
+DROP TABLE IF EXISTS `images`;
+CREATE TABLE IF NOT EXISTS `images` (
+  `img_id` int(11) NOT NULL AUTO_INCREMENT,
+  `page_id` int(11) NOT NULL,
+  `img_name` varchar(255) NOT NULL,
+  `img_link` varchar(255) NOT NULL,
+  `img_desc` varchar(255) NOT NULL,
+  PRIMARY KEY (`img_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `objectifs`
+--
+
+DROP TABLE IF EXISTS `objectifs`;
+CREATE TABLE IF NOT EXISTS `objectifs` (
+  `objectifs_id` int(11) NOT NULL AUTO_INCREMENT,
+  `page_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `logo` varchar(255) NOT NULL,
+  PRIMARY KEY (`objectifs_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `pages`
+--
+
+DROP TABLE IF EXISTS `pages`;
+CREATE TABLE IF NOT EXISTS `pages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `img_title` int(11) NOT NULL,
+  `description` int(11) NOT NULL,
+  `subtitle` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
