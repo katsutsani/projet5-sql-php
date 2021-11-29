@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="parallax-container">
-    <div class="parallax"><img src="img/exaltya/parallax/parallax1.jpg" alt="parallax projet 3 Portfolio"></div>
+    <div class="parallax"><img src="img/exaltya/parallax/top.jpg" alt="parallax projet 3 Portfolio"></div>
   </div>
   <div class="section white">
     <div class="row container">
@@ -35,12 +35,7 @@
         <div class="icon-block">
           <h2 class="center brown-text"><img src="img/exaltya/icons/djs.png" alt="icon projet 3 Portfolio"></h2>
           <h5 class="center">Créer un bot discord</h5>
-          <p class="light">Correcteur d'orthographe et de grammaire
-            français
-
-            Dans un premier temps l'objectif de ce projet était de se familiariser avec le Javascript passant beaucoup
-            de temps sur discord, quoi de mieux que de se faire un bot discord personnalisé. J'ai relevé le défi et je
-            me suis lancé.</p>
+          <p class="light">Dans un premier temps l'objectif de ce projet était de se familiariser avec le Javascript passant beaucoup de temps sur discord, quoi de mieux que de se faire un bot discord personnalisé. J'ai relevé le défi et je me suis lancé.</p>
         </div>
       </div>
       <div class="col s12 m4">
@@ -67,7 +62,7 @@
     </div>
   </div>
   <div class="parallax-container">
-    <div class="parallax"><img src="img/exaltya/parallax/parallax2.jpeg" alt="parallax projet 3 Portfolio"></div>
+    <div class="parallax"><img src="img/exaltya/parallax/mid.jpeg" alt="parallax projet 3 Portfolio"></div>
   </div>
   <div class="section white">
     <div class="row container">
@@ -85,7 +80,7 @@
     </div>
   </div>
   <div class="parallax-container">
-    <div class="parallax"><img src="img/exaltya/parallax/parallax3.PNG" alt="parallax projet 3 Portfolio"></div>
+    <div class="parallax"><img src="img/exaltya/parallax/bot.PNG" alt="parallax projet 3 Portfolio"></div>
   </div>
   <div class="section white">
     <div class="row container">
@@ -93,7 +88,7 @@
       <div class="col s12 m12 l5">
         <div class="icon-block">
           <h2 class="center brown-text"><i class="small material-icons">plus_one</i></h2>
-          <h5 class="center">développer ses connaissances</h5>
+          <h5 class="center">Développer ses connaissances</h5>
           <p class="light">Selon moi, il est toujours bon de toujours chercher à développer ses connaissances et ses
             projets mon été très utile pour cela car avant de le commencer je n'avais jamais fait de Javascript et je
             n'avais jamais utilisé github ou encore héroku.</p>
