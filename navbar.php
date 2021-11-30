@@ -1,15 +1,9 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+<link rel="stylesheet" href="css/style.css">
+
 <?php require_once "config.php" ?>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
     <?php
     if(isset($_SESSION['user'])):
       $link = $_GET['projet'];
@@ -24,8 +18,8 @@
                   <li><a href="projet.php?projet=1">Projet 1</a></li>
                   <li><a href="projet2.php?projet=2">Projet 2</a></li>
                   <li><a href="projet3.php?projet=3">Projet 3</a></li>
-                  <li><a> <?php echo $_SESSION['user']['login']; ?></a></li>
-                  <li><a> test</a></li>
+                  <li><a href="logout.php"><?php echo $_SESSION['user']['login']; ?></a></li>
+                  <li><a href="panel.php?projet=0"> panel</a></li>
                   <li><a id="contact" href="#Contact" class="btn modal-trigger pulse">Contact</a></li>
                 </ul>
               </div>
@@ -35,8 +29,8 @@
             <li><a href="projet.php?projet=1">Projet 1</a></li>
             <li><a href="projet2.php?projet=2">Projet 2</a></li>
             <li><a href="projet3.php?projet=3">Projet 3</a></li>
-            <li><a> <?php echo $_SESSION['user']['login']; ?></a></li>
-            <li><a> test</a></li>
+            <li><a href="logout.php"><?php echo $_SESSION['user']['login']; ?><i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a href="panel.php?projet=0"> panel</a></li>
             <li><a id="contact" href="#Contact" class="waves-effect waves-light btn colorBtn modal-trigger pulse">Contact</a>
             </li>
           </ul>
@@ -50,8 +44,8 @@
                   <li><a href="#Objectifs">Objectifs</a></li>
                   <li><a href="#Result">Résultat</a></li>
                   <li><a href="#Opinion">Avis</a></li>
-                  <li><a> <?php echo $_SESSION['user']['login']; ?></a></li>
-                  <li><a> test</a></li>
+                  <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
+                  <li><a href="panel.php?projet=0"> panel</a></li>
                   <li><a href="#Contact" class="waves-effect waves-light btn modal-trigger pulse">Contact</a></li>
                 </ul>
               </div>
@@ -61,8 +55,8 @@
             <li><a href="#Objectifs">Objectifs</a></li>
             <li><a href="#Result">Résultat</a></li>
             <li><a href="#Opinion">Avis</a></li>
-            <li><a> <?php echo $_SESSION['user']['login']; ?></a></li>
-            <li><a> test</a></li>
+            <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
+            <li><a href="panel.php?projet=0"> panel</a></li>
             <li><a href="#Contact" class="waves-effect waves-light btn modal-trigger pulse">Contact</a></li>
           </ul>
         <?php endif ?>
@@ -77,7 +71,7 @@
                   <li><a href="projet.php?projet=1">Projet 1</a></li>
                   <li><a href="projet2.php?projet=2">Projet 2</a></li>
                   <li><a href="projet3.php?projet=3">Projet 3</a></li>
-                  <li><a> <?php echo $_SESSION['user']['login']; ?></a></li>
+                  <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
                   <li><a id="contact" href="#Contact" class="btn modal-trigger pulse">Contact</a></li>
                 </ul>
               </div>
@@ -87,9 +81,8 @@
             <li><a href="projet.php?projet=1">Projet 1</a></li>
             <li><a href="projet2.php?projet=2">Projet 2</a></li>
             <li><a href="projet3.php?projet=3">Projet 3</a></li>
-            <li><a> <?php echo $_SESSION['user']['login']; ?></a></li>
-            <li><a id="contact" href="#Contact" class="waves-effect waves-light btn colorBtn modal-trigger pulse">Contact</a>
-            </li>
+            <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
+            <li><a id="contact" href="#Contact" class="waves-effect waves-light btn colorBtn modal-trigger pulse">Contact</a></li>
           </ul>
         <?php else: ?>
           <div class="navbar-fixed">
@@ -101,7 +94,7 @@
                   <li><a href="#Objectifs">Objectifs</a></li>
                   <li><a href="#Result">Résultat</a></li>
                   <li><a href="#Opinion">Avis</a></li>
-                  <li><a> <?php echo $_SESSION['user']['login']; ?></a></li>
+                  <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
                   <li><a href="#Contact" class="waves-effect waves-light btn modal-trigger pulse">Contact</a></li>
                 </ul>
               </div>
@@ -111,7 +104,7 @@
             <li><a href="#Objectifs">Objectifs</a></li>
             <li><a href="#Result">Résultat</a></li>
             <li><a href="#Opinion">Avis</a></li>
-            <li><a> <?php echo $_SESSION['user']['login']; ?></a></li>
+            <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
             <li><a href="#Contact" class="waves-effect waves-light btn modal-trigger pulse">Contact</a></li>
           </ul>
         <?php endif ?>
@@ -167,8 +160,7 @@
           </ul>
         <?php endif ?>
     <?php endif ?>
+
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-  </body>
-</html>

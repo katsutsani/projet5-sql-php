@@ -1,6 +1,6 @@
 <?php
-require_once "config.php"
-unset($_SESSION["id"]);
-unset($_SESSION["name"]);
-header("Location:index.php?projet=0");
+require_once 'config.php';
+session_destroy();
+unset($_SESSION['user']);
+header('location:login.php');
 ?>
