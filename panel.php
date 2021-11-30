@@ -3,30 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <?php require_once 'navbar.php' ?>
-    <div class="parallax-container">
-      <div class="parallax"> <img src="img/portfolio.jpg" alt="Parallax du Portfolio"></div>
-    </div>
-    <div class="easterEgg center hide" id="btns">
-      <a href="snake/index.html"><img src="img/easteregg.png" alt="easterEgg du Portfolio"></a>
-    </div>
-    <div class="section white">
-      <div class="row container">
-        <div class="col s12 m12 l5">
+      <div class="row container panel_admin">
+        <div class="col s12 m12 l12">
           <div class="panel">
             <h2 class="brown-text nom center">Users</h2>
+            <p>id login email admin</p>
+            <?php require_once "user.php" ?>
           </div>
         </div>
-        <div class="col s12 m12 l5 offset-l1">
+        <div class="col s12 m12 l12">
           <div class="panel">
             <h2 class="brown-text nom center">Pages</h2>
+            <?php require_once "pages.php" ?>
           </div>
         </div>
       </div>
-    </div>
     <!-- Modal Structure -->
       <?php require_once "modals.php" ?>
+      <script type="text/javascript" src="js/jquery.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>
