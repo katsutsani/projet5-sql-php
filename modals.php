@@ -27,9 +27,14 @@
                     <input id="mdp" type="password" class="validate" name="password">
                     <label for="mdp">Mot de passe</label>
                   </div>
-                  <div class="input-field col s6">
-                    <input id="admin" type="password" class="validate" name="admin">
-                    <label for="admin">Admin</label>
+                  <div class="input-field col s3">
+                    <p>Admin</p>
+                    <div class="">
+                      <label><input type="checkbox" id="admin" name="admin" value="1"/><span>Oui</span></label>
+                    </div>
+                    <div class="">
+                      <label><input type="checkbox" id="admin" name="admin" value="0"//><span>Non</span></label>
+                    </div>
                   </div>
               </div>
             </div>
@@ -58,8 +63,22 @@
                     <label for="password">mot de passe</label>
                   </div>
                   <div class="input-field col s3">
-                    <input id="admin" type="text" class="validate" name="admin" value="<?php echo $resultatUsersInfo[0]['admin'] ?>">
-                    <label for="admin">admin</label>
+                    <p>Admin</p>
+                    <?php if($resultatUsersInfo[0]['admin']== 1):?>
+                      <div class="">
+                        <label><input type="checkbox" checked="checked" id="admin" name="admin" value="1"/><span>Oui</span></label>
+                      </div>
+                      <div class="">
+                        <label><input type="checkbox" id="admin" name="admin" value="0"//><span>Non</span></label>
+                      </div>
+                    <?php else: ?>
+                      <div class="">
+                        <label><input type="checkbox" id="admin" name="admin" value="1"/><span>Oui</span></label>
+                      </div>
+                      <div class="">
+                        <label><input type="checkbox" checked="checked" id="admin" name="admin" value="0"//><span>Non</span></label>
+                      </div>
+                    <?php endif ?>
                   </div>
                   <div class="input-field col s12">
                     <input disabled value="<?php echo $resultatUsersInfo[0]['id'] ?>" id="id-user" type="text" class="validate" name="id" >
@@ -93,8 +112,22 @@
                     <label for="password">mot de passe</label>
                   </div>
                   <div class="input-field col s3">
-                    <input disabled id="admin" type="text" class="validate" name="admin" value="<?php echo $resultatUsersInfo[0]['admin'] ?>">
-                    <label for="admin">admin</label>
+                    <p>Admin</p>
+                    <?php if($resultatUsersInfo[0]['admin']== 1):?>
+                      <div class="">
+                        <label><input type="checkbox" checked="checked" id="admin" disabled="disabled"  name="admin" value="1"/><span>Oui</span></label>
+                      </div>
+                      <div class="">
+                        <label><input type="checkbox" id="admin" name="admin" disabled="disabled" value="0"//><span>Non</span></label>
+                      </div>
+                    <?php else: ?>
+                      <div class="">
+                        <label><input type="checkbox" id="admin" name="admin" disabled="disabled"  value="1"/><span>Oui</span></label>
+                      </div>
+                      <div class="">
+                        <label><input type="checkbox" checked="checked" id="admin" name="admin" disabled="disabled"  value="0"//><span>Non</span></label>
+                      </div>
+                    <?php endif ?>
                   </div>
                   <div class="input-field col s12">
                     <input disabled value="<?php echo $resultatUsersInfo[0]['id'] ?>" id="id-user" type="text" class="validate" name="id" >
@@ -176,9 +209,20 @@
               </div>
               <?php foreach ($resultatPagesInfoObj as $resultatPagesInfo): ?>
                 <div class="input-field col s4 <?php echo count($resultatPagesInfoObj)>2?'l4':'l6' ?> ">
-                  <input id="typelogo<?php echo$resultatPagesInfo['order'] ?>" type="text" class="validate" name="typelogo<?php echo$resultatPagesInfo['order'] ?>" value="<?php echo $resultatPagesInfo['typeLogo_objectifs'] ?>">
+                  <?php if($resultatPagesInfo['typeLogo_objectifs']== "image") :?>
+                    <select>
+                      <option value="image">image</option>
+                      <option value="icon">icon</option>
+                    </select>
+                    <label for="typelogo<?php echo$resultatPagesInfo['order'] ?>">Type de logo numéro <?php echo$resultatPagesInfo['order'] ?></label>
+                <?php else: ?>
+                  <select>
+                    <option value="icon">icon</option>
+                    <option value="image">image</option>
+                  </select>
                   <label for="typelogo<?php echo$resultatPagesInfo['order'] ?>">Type de logo numéro <?php echo$resultatPagesInfo['order'] ?></label>
-                </div>
+                <?php endif ?>
+              </div>
               <?php endforeach; ?>
               <?php foreach ($resultatPagesInfoObj as $resultatPagesInfo): ?>
                 <div class="input-field col s4 <?php echo count($resultatPagesInfoObj)>2?'l4':'l6' ?> ">
@@ -214,6 +258,23 @@
                 <label for="parallax3">Lien menant a l'image du parallax numéro 3</label>
               </div>
               <h3>modification de la partie inférieur de la page</h3>
+              <?php foreach ($resultatPagesInfoAvis as $resultatAvisModal): ?>
+                <div class="input-field col s4 <?php echo count($resultatPagesInfoAvis)>2?'l4':'l6' ?> ">
+                  <?php if($resultatAvisModal['typeLogo_avis']== "image") :?>
+                    <select>
+                      <option value="image">image</option>
+                      <option value="icon">icon</option>
+                    </select>
+                    <label for="typelogo<?php echo$resultatAvisModal['order'] ?>">Type de logo numéro <?php echo$resultatAvisModal['order'] ?></label>
+                <?php else: ?>
+                  <select>
+                    <option value="icon">icon</option>
+                    <option value="image">image</option>
+                  </select>
+                  <label for="typelogo<?php echo$resultatAvisModal['order'] ?>">Type de logo numéro <?php echo$resultatAvisModal['order'] ?></label>
+                <?php endif ?>
+              </div>
+              <?php endforeach; ?>
               <?php foreach ($resultatPagesInfoAvis as $resultatAvisModal): ?>
                 <div class="input-field col s4 <?php echo count($resultatPagesInfoAvis)>2?'l4':'l6' ?> ">
                   <input id="lienObj<?php echo$resultatAvisModal['order'] ?>" type="text" class="validate" name="lienObj<?php echo$resultatAvisModal['order'] ?>" value="<?php echo $resultatAvisModal['logo_avis'] ?>">
