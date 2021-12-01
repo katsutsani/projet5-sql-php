@@ -13,6 +13,7 @@
     <?php require_once 'navbar.php' ?>
     <?php require "user.php" ?>
     <?php require "pages.php" ?>
+    <?php require "user_info.php" ?>
       <div class="row container">
         <div class="col s12 m12 l12">
           <div class="panel row center"style="margin-top:40px;">
@@ -43,7 +44,7 @@
                 <p>Mot de passe</p>
                 <?php
                 foreach($resultatUsers as $key => $resultatUser){
-                  echo "<p>".$resultatUser['admin']."</p>";
+                  echo "<p>".$resultatUser['password']."</p>";
                 }?>
               </div>
               <div class="col s12 m6 l2">
@@ -55,11 +56,15 @@
               </div>
               <div class="col s12 m6 l2">
                 <p>commandes</p>
-                <?php foreach($resultatUsers as $key => $resultatUser){
+                <?php $id_user = array(); $user=0;
+                foreach($resultatUsers as $key => $resultatUser){
+                  array_push($id_user,$resultatUser['id']);
                   echo '<p>
-                  <a class="modal-trigger" id="add-users" href="#add-user"><i class=" material-icons">create_new_folder</i></a>
-                  <a class="modal-trigger" id="change-users" href="#change-user"><i class=" material-icons">edit</i></a>
-                  <a class="modal-trigger" id="delete-users" href="#delete-user"><i class=" material-icons">close</i></a></p>';
+                  <button data-target="add-user" class="btn modal-trigger"><a class="modal-trigger" id="add-users" href="panel.php?projet=0&page=users&user_id='.$id_user[$user].'"><i class="material-icons">create_new_folder</i></a></button>
+                  <button data-target="change-user" class="btn modal-trigger"><a class="modal-trigger" id="change-users" href="panel.php?projet=0&page=users&user_id='.$id_user[$user].'"><i class="material-icons">edit</i></a></button>
+                  <button data-target="delete-user" class="btn modal-trigger"><a class="modal-trigger" id="remove-users" href="panel.php?projet=0&page=users&user_id='.$id_user[$user].'"><i class="material-icons">close</i></a></button>
+                  </p>';
+                  $user++;
                 }?>
               </div>
             <?php elseif ($_GET["page"] == "pages") :?>
@@ -94,11 +99,15 @@
               </div>
               <div class="col s12 m6 l2">
                 <p>commandes</p>
-                <?php foreach($resultatPages as $key => $resultatPage){
+                <?php $page_id = array(); $page=0;
+                foreach($resultatPages as $key => $resultatPage){
+                  array_push($page_id,$resultatPage['id']);
                   echo '<p>
-                  <a class="modal-trigger" id="add-users" href="#add-user"><i class=" material-icons">create_new_folder</i></a>
-                  <a class="modal-trigger" id="change-users" href="#change-user"><i class=" material-icons">edit</i></a>
-                  <a class="modal-trigger" id="delete-users" href="#delete-user"><i class=" material-icons">close</i></a></p>';
+                  <button data-target="add-user" class="btn modal-trigger"><a class="modal-trigger" id="add-users" href="panel.php?projet=0&page=pages&page_id='.$page_id[$page].'"><i class="material-icons">create_new_folder</i></a></button>
+                  <button data-target="change-user" class="btn modal-trigger"><a class="modal-trigger" id="change-users" href="panel.php?projet=0&page=pages&page_id='.$page_id[$page].'"><i class="material-icons">edit</i></a></button>
+                  <button data-target="delete-user" class="btn modal-trigger"><a class="modal-trigger" id="remove-users" href="panel.php?projet=0&page=pages&page_id='.$page_id[$page].'"><i class="material-icons">close</i></a></button>
+                  </p>';
+                  $page++;
                 }?>
               </div>
             <?php endif ?>
