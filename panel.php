@@ -103,9 +103,9 @@
                 foreach($resultatPages as $key => $resultatPage){
                   array_push($page_id,$resultatPage['id']);
                   echo '<p>
-                  <button data-target="add-user" class="btn modal-trigger"><a class="modal-trigger" id="add-users" href="panel.php?projet=0&page=pages&page_id='.$page_id[$page].'"><i class="material-icons">create_new_folder</i></a></button>
-                  <button data-target="change-user" class="btn modal-trigger"><a class="modal-trigger" id="change-users" href="panel.php?projet=0&page=pages&page_id='.$page_id[$page].'"><i class="material-icons">edit</i></a></button>
-                  <button data-target="delete-user" class="btn modal-trigger"><a class="modal-trigger" id="remove-users" href="panel.php?projet=0&page=pages&page_id='.$page_id[$page].'"><i class="material-icons">close</i></a></button>
+                  <button data-target="add-page" class="btn modal-trigger"><a class="modal-trigger" id="add-users" href="panel.php?projet=0&page=pages&page_id='.$page_id[$page].'"><i class="material-icons">create_new_folder</i></a></button>
+                  <button data-target="change-page" class="btn modal-trigger"><a class="modal-trigger" id="change-users" href="panel.php?projet=0&page=pages&page_id='.$page_id[$page].'"><i class="material-icons">edit</i></a></button>
+                  <button data-target="delete-page" class="btn modal-trigger"><a class="modal-trigger" id="remove-users" href="panel.php?projet=0&page=pages&page_id='.$page_id[$page].'"><i class="material-icons">close</i></a></button>
                   </p>';
                   $page++;
                 }?>

@@ -110,9 +110,9 @@
 <?php elseif($_GET['page']='pages') :?>
 
       <div id="add-page" class="modal">
-    <div class="modal-content">
-      <h4>Créer une nouvelle page</h4>
-        <div class="row">
+        <div class="modal-content">
+          <h4>Créer une nouvelle page</h4>
+          <div class="row">
           <form method="post" action="add_page.php">
             <div class="row">
               <div class="input-field col s6">
