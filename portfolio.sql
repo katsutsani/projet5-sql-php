@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 01 déc. 2021 à 18:44
+-- Généré le : mer. 01 déc. 2021 à 21:27
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -32,9 +32,9 @@ CREATE TABLE IF NOT EXISTS `avis` (
   `avis_id` int(11) NOT NULL AUTO_INCREMENT,
   `page_id` int(11) NOT NULL,
   `order` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `logo` varchar(255) NOT NULL,
+  `title_avis` varchar(255) NOT NULL,
+  `description_avis` text NOT NULL,
+  `logo_avis` varchar(255) NOT NULL,
   PRIMARY KEY (`avis_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `avis` (
 -- Déchargement des données de la table `avis`
 --
 
-INSERT INTO `avis` (`avis_id`, `page_id`, `order`, `title`, `description`, `logo`) VALUES
+INSERT INTO `avis` (`avis_id`, `page_id`, `order`, `title_avis`, `description_avis`, `logo_avis`) VALUES
 (1, 1, 1, 'Découverte d\'outils de travail', 'C\'est toujours un plaisir d\'apprendre de nouveau langage de programmation même si nous faisons facilement des erreurs, on apprend à ne plus les refaires. Mais c\'est encore plus plaisant lorsque qu\'on apprend en même temps de nouveaux outils de travail comme ça était le cas pour ce projet avec la découverte du C, de l\'éditeur emacs mais aussi de trello pour partager les taches et de github pour mettre le travail en commun.', '<i class=\"small material-icons\">thumbs_up_down</i>'),
 (2, 1, 2, 'Organisation du travail', 'Pour pouvoir bien avancer, il faut bien organiser le travail et ce projet nous à bien aider pour apprendre comment s\'organiser grace à trello pour partager les taches à faire mais aussi grace à github qui nous permettait de mettre à jour nos fichiers facilement quand une modification était apportée.', '<i class=\"small material-icons\">flash_on</i>'),
 (3, 2, 1, 'Organiser son travail', 'Des milliers d\'outils sont disponibles gratuitement. Nous avons choisi Unity comme moteur de jeux, Git et GitHub pour travailler en même temps sur le même projet et Trello pour se répartir le travail.', '<i class=\"small material-icons\">lightbulb_outline</i>'),
@@ -87,6 +87,49 @@ INSERT INTO `carousel` (`carousel_id`, `page_id`, `order`, `carousel_link`) VALU
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `images`
+--
+
+DROP TABLE IF EXISTS `images`;
+CREATE TABLE IF NOT EXISTS `images` (
+  `img_id` int(11) NOT NULL AUTO_INCREMENT,
+  `page_id` int(11) NOT NULL,
+  `img_name` varchar(255) NOT NULL,
+  `img_link` varchar(255) NOT NULL,
+  `img_desc` varchar(255) NOT NULL,
+  PRIMARY KEY (`img_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `images`
+--
+
+INSERT INTO `images` (`img_id`, `page_id`, `img_name`, `img_link`, `img_desc`) VALUES
+(1, 1, 'parallax_top', '<img src=\"img/puissance_quatre/parallax/top.jpg\" alt=\"parallax projet 1 Portfolio\">', 'parallax projet 1 Portfolio'),
+(2, 1, 'parallax_mid', '<img src=\"img/puissance_quatre/parallax/mid.jpg\" alt=\"parallax projet 1 Portfolio\">', 'parallax projet 1 Portfolio'),
+(3, 1, 'carousel_1', '<img src=\"img/puissance_quatre/carousel/1.png\" alt=\"carousel projet 1 Portfolio\">', 'carousel projet 1 Portfolio'),
+(4, 1, 'carousel_2', '<img src=\"img/puissance_quatre/carousel/2.png\" alt=\"carousel projet 1 Portfolio\">', 'carousel projet 1 Portfolio'),
+(5, 1, 'carousel_3', '<img src=\"img/puissance_quatre/carousel/3.png\" alt=\"carousel projet 1 Portfolio\">', 'carousel projet 1 Portfolio'),
+(6, 1, 'carousel_4', '<img src=\"img/puissance_quatre/carousel/4.png\" alt=\"carousel projet 1 Portfolio\">', 'carousel projet 1 Portfolio'),
+(7, 1, 'parallax_bot', '<img src=\"img/puissance_quatre/parallax/bot.png\" alt=\"parallax projet 1 Portfolio\">', 'parallax projet 1 Portfolio'),
+(8, 2, 'parallax_top', '<img src=\"img/pokefus/parallax/top.jpg\" alt=\"parallax projet 2 Portfolio\">', 'parallax projet 2 Portfolio'),
+(9, 2, 'parallax_mid', '<img src=\"img/pokefus/parallax/mid.jpg\" alt=\"parallax projet 2 Portfolio\">', 'parallax projet 2 Portfolio'),
+(10, 2, 'carousel_1', '<img src=\"img/pokefus/carousel/pokeball.png\" alt=\"carousel projet 2 Portfolio\">', 'carousel projet 2 Portfolio'),
+(11, 2, 'carousel_2', '<img src=\"img/pokefus/carousel/personnages.png\" alt=\"carousel projet 2 Portfolio\">', 'carousel projet 2 Portfolio'),
+(12, 2, 'carousel_3', '<img src=\"img/pokefus/carousel/dofus.png\" alt=\"carousel projet 2 Portfolio\">', 'carousel projet 2 Portfolio'),
+(13, 2, 'carousel_4', '<img src=\"img/pokefus/carousel/epee.png\" alt=\"carousel projet 2 Portfolio\">', 'carousel projet 2 Portfolio'),
+(14, 2, 'parallax_bot', '<img src=\"img/pokefus/parallax/bot.jpg\" alt=\"parallax projet 2 Portfolio\">', 'parallax projet 2 Portfolio'),
+(15, 3, 'parallax_top', '<img src=\"img/exaltya/parallax/top.jpg\" alt=\"parallax projet 3 Portfolio\">', 'parallax projet 3 Portfolio'),
+(16, 3, 'parallax_mid', '<img src=\"img/exaltya/parallax/mid.jpg\" alt=\"parallax projet 3 Portfolio\">', 'parallax projet 3 Portfolio'),
+(17, 3, 'carousel_1', '<img src=\"img/exaltya/carousel/carousel1.PNG\" alt=\"carousel projet 3 Portfolio\">', 'carousel projet 3 Portfolio'),
+(18, 3, 'carousel_2', '<img src=\"img/exaltya/carousel/carousel2.PNG\" alt=\"carousel projet 3 Portfolio\">', 'carousel projet 3 Portfolio'),
+(19, 3, 'carousel_3', '<img src=\"img/exaltya/carousel/carousel3.PNG\" alt=\"carousel projet 3 Portfolio\">', 'carousel projet 3 Portfolio'),
+(20, 3, 'carousel_4', '<img src=\"img/exaltya/carousel/carousel4.PNG\" alt=\"carousel projet 3 Portfolio\">', 'carousel projet 3 Portfolio'),
+(21, 3, 'parallax_bot', '<img src=\"img/exaltya/parallax/bot.jpg\" alt=\"parallax projet 3 Portfolio\">', 'parallax projet 3 Portfolio');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `objectifs`
 --
 
@@ -95,9 +138,9 @@ CREATE TABLE IF NOT EXISTS `objectifs` (
   `objectifs_id` int(11) NOT NULL AUTO_INCREMENT,
   `page_id` int(11) NOT NULL,
   `order` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `logo` varchar(255) NOT NULL,
+  `title_objectifs` varchar(255) NOT NULL,
+  `description_objectifs` text NOT NULL,
+  `logo_objectifs` varchar(255) NOT NULL,
   PRIMARY KEY (`objectifs_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
@@ -105,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `objectifs` (
 -- Déchargement des données de la table `objectifs`
 --
 
-INSERT INTO `objectifs` (`objectifs_id`, `page_id`, `order`, `title`, `description`, `logo`) VALUES
+INSERT INTO `objectifs` (`objectifs_id`, `page_id`, `order`, `title_objectifs`, `description_objectifs`, `logo_objectifs`) VALUES
 (1, 1, 1, 'Environnement linux', 'Lors de ce projet, l\'un des objectifs était de développer sur un environnement Linux. Pour se faire nous avons utilisé Debian. Au début le plus difficile était de se déplacer dans les fichiers car Debian n\'a pas d\'interface graphique et toute action se fait à partir de ligne de commande.', '<img src=\"img/puissance_quatre/icons/linux.png\" alt=\"icon projet 1 Portfolio\">'),
 (2, 1, 2, 'Github', 'Afin de travailler en groupe, ont nous à demander d\'utiliser git et github et de nous créer un environnement professionnel afin de stocker notre travail et de pouvoir se mettre à jour lorsque l\'un de nous faisait une modification.', '<img src=\"img/puissance_quatre/icons/github.png\" alt=\"icon projet 1 Portfolio\">'),
 (3, 1, 3, 'Puissance 4', 'Pour la partie programmation, le projet consistait à faire une puissance 4 pour ce faire, il nous à falloir un éditeur de texte type Emacs puis il nous a fallu utiliser Gcc afin de compiler notre code pour pouvoir le lancer.', '<img src=\"img/puissance_quatre/icons/manette.png\" alt=\"icon projet 1 Portfolio\">'),

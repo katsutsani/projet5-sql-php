@@ -43,9 +43,9 @@
       <?php foreach ($resultatObjectifss as $resultatObjectifs): ?>
         <div class="col s12 m4 <?php echo count($resultatObjectifss)>2?'l4':'l6' ?> ">
           <div class="icon-block">
-            <h2 class="center brown-text"><?php echo $resultatObjectifs['logo']; ?></h2>
-            <h5 class="center"><?php echo $resultatObjectifs['title']; ?></h5>
-            <p class="light"><?php echo $resultatObjectifs['description']; ?></p>
+            <h2 class="center brown-text"><?php echo $resultatObjectifs['logo_objectifs']; ?></h2>
+            <h5 class="center"><?php echo $resultatObjectifs['title_objectifs']; ?></h5>
+            <p class="light"><?php echo $resultatObjectifs['description_objectifs']; ?></p>
           </div>
         </div>
       <?php endforeach; ?>
@@ -77,9 +77,9 @@
       <?php foreach ($resultatAviss as $resultatAvis): ?>
         <div class="col s12 m12 <?php echo count($resultatAviss)>2?'l4':'l6' ?> ">
           <div class="icon-block">
-            <h2 class="center brown-text"><?php echo $resultatAvis['logo']; ?></h2>
-            <h5 class="center"><?php echo $resultatAvis['title']; ?></h5>
-            <p class="light"><?php echo $resultatAvis['description']; ?></p>
+            <h2 class="center brown-text"><?php echo $resultatAvis['logo_avis']; ?></h2>
+            <h5 class="center"><?php echo $resultatAvis['title_avis']; ?></h5>
+            <p class="light"><?php echo $resultatAvis['description_avis']; ?></p>
           </div>
         </div>
       <?php endforeach; ?>
