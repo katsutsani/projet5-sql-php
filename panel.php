@@ -16,28 +16,28 @@
     <?php require "user_info.php" ?>
       <div class="row container">
         <div class="col s12 m12 l12">
-          <div class="panel row center"style="margin-top:40px;">
+          <div class="panel row"style="margin-top:40px;">
             <?php if($_GET['page'] == "users"): ?>
-              <h2 class="brown-text nom">Users</h2>
-              <div class="col s12 m6 l2">
-                <p>id</p>
+              <h2 class="brown-text center nom">Users</h2>
+              <div class="col center s12 m6 l2">
+                <p>ID</p>
                 <?php
                 foreach($resultatUsers as $key => $resultatUser){
                   echo "<p>".$resultatUser['id']."</p>";
                 }?>
               </div>
               <div class="col s12 m6 l2">
-                <p>login</p>
+                <p>Login</p>
                 <?php
                 foreach($resultatUsers as $key => $resultatUser){
-                  echo "<p>".$resultatUser['login']."</p>";
+                  echo substr("<p>".$resultatUser['login'], 0, 40).'...';
                 }?>
               </div>
               <div class="col s12 m6 l2">
-                <p>email</p>
+                <p>Email</p>
                 <?php
                 foreach($resultatUsers as $key => $resultatUser){
-                  echo "<p>".$resultatUser['email']."</p>";
+                  echo substr("<p>".$resultatUser['email'],0, 20).'...';
                 }?>
               </div>
               <div class="col s12 m6 l2">
@@ -45,17 +45,18 @@
                 <?php
                 foreach($resultatUsers as $key => $resultatUser){
                   echo "<p>".$resultatUser['password']."</p>";
-                }?>
+                }
+                ?>
               </div>
-              <div class="col s12 m6 l2">
-                <p>admin</p>
+              <div class="col center s12 m6 l2">
+                <p>Admin</p>
                 <?php
                 foreach($resultatUsers as $key => $resultatUser){
                   echo "<p>".$resultatUser['admin']."</p>";
                 }?>
               </div>
               <div class="col s12 m6 l2">
-                <p>commandes</p>
+                <p>Commandes</p>
                 <?php $id_user = array(); $user=0;
                 foreach($resultatUsers as $key => $resultatUser){
                   array_push($id_user,$resultatUser['id']);
