@@ -74,14 +74,10 @@
     <div class="row container">
       <h2 class="center" id="Result"><i class="small material-icons">flag</i> Résultat</h2>
       <div class="carousel carousel-slider col s12 m12 l8 offset-l2">
-        <a class="carousel-item" href="#one!"><img src="img/puissance_quatre/carousel/1.png"
-            alt="carousel projet 1 Portfolio"></a>
-        <a class="carousel-item" href="#two!"><img src="img/puissance_quatre/carousel/2.png"
-            alt="carousel projet 1 Portfolio"></a>
-        <a class="carousel-item" href="#three!"><img src="img/puissance_quatre/carousel/3.png"
-            alt="carousel projet 1 Portfolio"></a>
-        <a class="carousel-item" href="#four!"><img src="img/puissance_quatre/carousel/4.png"
-            alt="carousel projet 1 Portfolio"></a>
+        <a class="carousel-item" href="#one!"><img src="img/puissance_quatre/carousel/1.png" alt="carousel projet 1 Portfolio"></a>
+        <a class="carousel-item" href="#two!"><img src="img/puissance_quatre/carousel/2.png"   alt="carousel projet 1 Portfolio"></a>
+        <a class="carousel-item" href="#three!"><img src="img/puissance_quatre/carousel/3.png"  alt="carousel projet 1 Portfolio"></a>
+        <a class="carousel-item" href="#four!"><img src="img/puissance_quatre/carousel/4.png"  alt="carousel projet 1 Portfolio"></a>
       </div>
     </div>
   </div>

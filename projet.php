@@ -17,6 +17,9 @@
   <?php require_once "navbar.php" ?>
   <?php require "avis_data.php"?>
   <?php require "pages_data.php"?>
+  <?php require "objectifs_data.php"?>
+  <?php require "parallax_data.php"?>
+  <?php require "carousel_data.php"?>
   <div class="section white">
     <div class="row container">
       <div class="icon-block">
@@ -29,64 +32,44 @@
       </div>
     </div>
   </div>
-  <div class="parallax-container">
-    <div class="parallax"><img src="img/puissance_quatre/parallax/top.jpg" alt="parallax projet 1 Portfolio"></div>
-  </div>
+    <div class="parallax-container">
+      <div class="parallax">
+          <img src=<?php echo $resultatParallaxTop ['parallax_link']; ?>>
+      </div>
+    </div>
   <div class="section white">
     <div class="row container">
       <h2 class="center" id="Objectifs"><i class="small material-icons">build</i> Objectifs</h2>
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center brown-text"><img src="img/puissance_quatre/icons/linux.png" alt="icon projet 1 Portfolio">
-          </h2>
-          <h5 class="center">Environnement linux</h5>
-          <p class="light">Lors de ce projet, l'un des objectifs était de développer sur un environnement Linux. Pour se
-            faire nous avons utilisé Debian. Au début le plus difficile était de se déplacer dans les fichiers car
-            Debian n'a pas d'interface graphique et toute action se fait à partir de ligne de commande.</p>
+      <?php foreach ($resultatObjectifss as $resultatObjectifs): ?>
+        <div class="col s12 m4 <?php echo count($resultatObjectifss)>2?'l4':'l6' ?> ">
+          <div class="icon-block">
+            <h2 class="center brown-text"><?php echo $resultatObjectifs['logo']; ?></h2>
+            <h5 class="center"><?php echo $resultatObjectifs['title']; ?></h5>
+            <p class="light"><?php echo $resultatObjectifs['description']; ?></p>
+          </div>
         </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center brown-text"><img src="img/puissance_quatre/icons/github.png" alt="icon projet 1 Portfolio">
-          </h2>
-          <h5 class="center">Github</h5>
-          <p class="light">Afin de travailler en groupe, ont nous à demander d'utiliser git et github et de nous créer
-            un environnement professionnel afin de stocker notre travail et de pouvoir se mettre à jour lorsque l'un de
-            nous faisait une modification.</p>
-        </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center brown-text"><img src="img/puissance_quatre/icons/manette.png" alt="icon projet 1 Portfolio">
-          </h2>
-          <h5 class="center">Puissance 4</h5>
-          <p class="light">Pour la partie programmation, le projet consistait à faire une puissance 4 pour ce faire, il
-            nous à falloir un éditeur de texte type Emacs puis il nous a fallu utiliser Gcc afin de compiler notre code
-            pour pouvoir le lancer.</p>
-        </div>
-      </div>
+      <?php endforeach; ?>
     </div>
   </div>
-  <div class="parallax-container">
-    <div class="parallax"><img src="img/puissance_quatre/parallax/mid.jpg" alt="parallax projet 1 Portfolio"></div>
-  </div>
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src=<?php echo $resultatParallaxMid ['parallax_link']; ?>>
+      </div>
+    </div>
   <div class="section white">
     <div class="row container">
       <h2 class="center" id="Result"><i class="small material-icons">flag</i> Résultat</h2>
       <div class="carousel carousel-slider col s12 m12 l8 offset-l2">
-        <a class="carousel-item" href="#one!"><img src="img/puissance_quatre/carousel/1.png"
-            alt="carousel projet 1 Portfolio"></a>
-        <a class="carousel-item" href="#two!"><img src="img/puissance_quatre/carousel/2.png"
-            alt="carousel projet 1 Portfolio"></a>
-        <a class="carousel-item" href="#three!"><img src="img/puissance_quatre/carousel/3.png"
-            alt="carousel projet 1 Portfolio"></a>
-        <a class="carousel-item" href="#four!"><img src="img/puissance_quatre/carousel/4.png"
-            alt="carousel projet 1 Portfolio"></a>
+        <?php foreach ($resultatCarouselOrder as $resultatCarousel): ?>
+          <a class="carousel-item" href="#one!"><img src=<?php echo $resultatCarousel ['carousel_link']; ?>></a>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
   <div class="parallax-container">
-    <div class="parallax"><img src="img/puissance_quatre/parallax/bot.png" alt="parallax projet 1 Portfolio"></div>
+    <div class="parallax">
+      <img src=<?php echo $resultatParallaxBot ['parallax_link']; ?>>
+    </div>
   </div>
   <div class="section white">
     <div class="row container">
