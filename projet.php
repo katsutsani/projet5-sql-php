@@ -43,7 +43,11 @@
       <?php foreach ($resultatObjectifss as $resultatObjectifs): ?>
         <div class="col s12 m4 <?php echo count($resultatObjectifss)>2?'l4':'l6' ?> ">
           <div class="icon-block">
-            <h2 class="center brown-text"><?php echo $resultatObjectifs['logo_objectifs']; ?></h2>
+            <h2 class="center brown-text"><?php if($resultatObjectifs['typeLogo_objectifs']=="image"):
+              echo '<img src="'.$resultatObjectifs['logo_objectifs'].'">';
+              elseif ($resultatObjectifs['typeLogo_objectifs']=="icon") :
+                echo '<i class="small material-icons">'.$resultatObjectifs['logo_objectifs'].'</i>';
+                endif?></h2>
             <h5 class="center"><?php echo $resultatObjectifs['title_objectifs']; ?></h5>
             <p class="light"><?php echo $resultatObjectifs['description_objectifs']; ?></p>
           </div>
@@ -77,7 +81,12 @@
       <?php foreach ($resultatAviss as $resultatAvis): ?>
         <div class="col s12 m12 <?php echo count($resultatAviss)>2?'l4':'l6' ?> ">
           <div class="icon-block">
-            <h2 class="center brown-text"><?php echo $resultatAvis['logo_avis']; ?></h2>
+            <h2 class="center brown-text"><?php if ($resultatAvis['typeLogo_avis']=="image") :
+              echo '<img src="'.$resultatAvis['logo_avis'].'">';
+              elseif ($resultatAvis['typeLogo_avis']=="icon") :
+                echo '<i class="small material-icons">'.$resultatAvis['logo_avis'].'</i>';
+                endif
+                ?></h2>
             <h5 class="center"><?php echo $resultatAvis['title_avis']; ?></h5>
             <p class="light"><?php echo $resultatAvis['description_avis']; ?></p>
           </div>

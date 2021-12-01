@@ -5,9 +5,14 @@ if(isset($_GET["page_id"])):
   WHERE p.id ='.$_GET["page_id"].' ORDER BY `order`';
   $resultat = $pdo->prepare($requete1);
   $resultat->execute();
-  $nbreResult = $resultat->rowCount(); // Nbre de ligne de résultat
-  $colcount = $resultat->columnCount(); // Nombre de colonne
-  $resultatPagesInfoOrder = $resultat->fetchAll(PDO::FETCH_ASSOC);
+  $resultatPagesInfoAvis = $resultat->fetchAll(PDO::FETCH_ASSOC);
+
+  $requete1 = 'SELECT p.*,o.* FROM pages p
+  LEFT JOIN objectifs o ON p.id=o.page_id
+  WHERE p.id ='.$_GET["page_id"].' ORDER BY `order`';
+  $resultat = $pdo->prepare($requete1);
+  $resultat->execute();
+  $resultatPagesInfoObj = $resultat->fetchAll(PDO::FETCH_ASSOC);
 
   $requete1 = 'SELECT p.*,c.* FROM pages p
   LEFT JOIN carousel c ON p.id=c.page_id
@@ -16,11 +21,19 @@ if(isset($_GET["page_id"])):
   $resultat->execute();
   $resultatPagesInfoCarousel = $resultat->fetchAll(PDO::FETCH_ASSOC);
 
-  $requete1 = 'SELECT p.*,o.* FROM pages p
-  LEFT JOIN objectifs o ON p.id=o.page_id
-  WHERE p.id ='.$_GET["page_id"].' ORDER BY `order`';
+  $requete1 = 'SELECT * FROM parallax where page_id ='. $_GET['page_id'].' AND `order` = 1';
   $resultat = $pdo->prepare($requete1);
   $resultat->execute();
-  $resultatPagesInfoObj = $resultat->fetchAll(PDO::FETCH_ASSOC);
+  $resultatParallaxTop = current($resultat->fetchAll(PDO::FETCH_ASSOC));
+
+  $requete1 = 'SELECT * FROM parallax where page_id ='. $_GET['page_id'].' AND `order` = 2';
+  $resultat = $pdo->prepare($requete1);
+  $resultat->execute();
+  $resultatParallaxMid = current($resultat->fetchAll(PDO::FETCH_ASSOC));
+
+  $requete1 = 'SELECT * FROM parallax where page_id ='. $_GET['page_id'].' AND `order` = 3';
+  $resultat = $pdo->prepare($requete1);
+  $resultat->execute();
+  $resultatParallaxBot = current($resultat->fetchAll(PDO::FETCH_ASSOC));
 endif
 ?>

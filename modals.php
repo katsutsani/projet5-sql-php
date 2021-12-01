@@ -154,34 +154,32 @@
             <h3>modification partie supperieur de la page</h3>
             <div class="row">
               <div class="input-field col s6">
-                <input id="title" type="text" name="title" class="validate" value="<?php echo $resultatPagesInfoOrder[0]['title'] ?>">
+                <input id="title" type="text" name="title" class="validate" value="<?php echo $resultatPagesInfoAvis[0]['title'] ?>">
                 <label for="title">titre de la page</label>
               </div>
               <div class="input-field col s6">
-                <input id="img_link" type="text" class="validate" name="img_link" value="<?php echo $resultatPagesInfoOrder[0]['img_link'] ?>">
+                <input id="img_link" type="text" class="validate" name="img_link" value="<?php echo $resultatPagesInfoAvis[0]['img_link'] ?>">
                 <label for="img_link">lien menant à l'image</label>
               </div>
               <div class="input-field col s6">
-                <input id="description" type="text" name="description" class="validate" value="<?php echo $resultatPagesInfoOrder[0]['description'] ?>">
+                <input id="description" type="text" name="description" class="validate" value="<?php echo $resultatPagesInfoAvis[0]['description'] ?>">
                 <label for="description">Présentation de la personne sur l'image</label>
               </div>
               <div class="input-field col s6">
-                <input id="subtitle" type="text" class="validate" name="subtitle" value="<?php echo $resultatPagesInfoOrder[0]['subtitle'] ?>">
+                <input id="subtitle" type="text" class="validate" name="subtitle" value="<?php echo $resultatPagesInfoAvis[0]['subtitle'] ?>">
                 <label for="subtitle">courte description du projet nom et prénom de la personne sur l'image</label>
               </div>
               <h3>modification partie central de la page</h3>
               <div class="input-field col s12 ">
-                <input id="parallax1" type="text" name="title" class="parallax1" value="<?php echo $resultatPagesInfoOrder[0]['subtitle'] ?>">
+                <input id="parallax1" type="text" name="title" class="parallax1" value="<?php echo $resultatParallaxTop['parallax_link'] ?>">
                 <label for="parallax1">Lien menant a l'image du parallax numéro 1</label>
               </div>
-              <div class="input-field col s4 <?php echo count($resultatPagesInfoOrder)>2?'l4':'l6' ?> ">
-                <input id="typelogo1" type="text" class="validate" name="typelogo1" value="<?php echo $resultatPagesInfoOrder[0]['subtitle'] ?>">
-                <label for="typelogo1">Type de logo numéro 1</label>
-              </div>
-              <div class="input-field col s4 <?php echo count($resultatPagesInfoOrder)>2?'l4':'l6' ?> ">
-                <input id="typelogo2" type="text" class="validate" name="typelogo2" value="<?php echo $resultatPagesInfoOrder[0]['subtitle'] ?>">
-                <label for="typelogo2">Type de logo numéro 2</label>
-              </div>
+              <?php foreach ($resultatPagesInfoObj as $resultatPagesInfo): ?>
+                <div class="input-field col s4 <?php echo count($resultatPagesInfoObj)>2?'l4':'l6' ?> ">
+                  <input id="typelogo<?php echo$resultatPagesInfo['order'] ?>" type="text" class="validate" name="typelogo<?php echo$resultatPagesInfo['order'] ?>" value="<?php echo $resultatPagesInfo['typeLogo_objectifs'] ?>">
+                  <label for="typelogo<?php echo$resultatPagesInfo['order'] ?>">Type de logo numéro <?php echo$resultatPagesInfo['order'] ?></label>
+                </div>
+              <?php endforeach; ?>
               <?php foreach ($resultatPagesInfoObj as $resultatPagesInfo): ?>
                 <div class="input-field col s4 <?php echo count($resultatPagesInfoObj)>2?'l4':'l6' ?> ">
                   <input id="lienObj<?php echo$resultatPagesInfo['order'] ?>" type="text" class="validate" name="lienObj<?php echo$resultatPagesInfo['order'] ?>" value="<?php echo $resultatPagesInfo['logo_objectifs'] ?>">
@@ -201,7 +199,7 @@
                 </div>
               <?php endforeach; ?>
               <div class="input-field col s12">
-                <input id="parallax2" type="text" name="parallax2" class="validate" value="<?php echo $resultatPagesInfoOrder[0]['subtitle'] ?>">
+                <input id="parallax2" type="text" name="parallax2" class="validate" value="<?php echo $resultatParallaxMid['parallax_link'] ?>">
                 <label for="parallax2">Lien menant a l'image du parallax numéro 2</label>
               </div>
               <h3>modification du carousel de la page</h3>
@@ -212,24 +210,24 @@
                 </div>
               <?php endforeach; ?>
               <div class="input-field col s12">
-                <input id="parallax3" type="text" name="parallax3" class="validate" value="<?php echo $resultatPagesInfoOrder[0]['subtitle'] ?>">
+                <input id="parallax3" type="text" name="parallax3" class="validate" value="<?php echo $resultatParallaxBot['parallax_link'] ?>">
                 <label for="parallax3">Lien menant a l'image du parallax numéro 3</label>
               </div>
               <h3>modification de la partie inférieur de la page</h3>
-              <?php foreach ($resultatAvissModal as $resultatAvisModal): ?>
-                <div class="input-field col s4 <?php echo count($resultatAvissModal)>2?'l4':'l6' ?> ">
+              <?php foreach ($resultatPagesInfoAvis as $resultatAvisModal): ?>
+                <div class="input-field col s4 <?php echo count($resultatPagesInfoAvis)>2?'l4':'l6' ?> ">
                   <input id="lienObj<?php echo$resultatAvisModal['order'] ?>" type="text" class="validate" name="lienObj<?php echo$resultatAvisModal['order'] ?>" value="<?php echo $resultatAvisModal['logo_avis'] ?>">
                   <label for="lienObj<?php echo$resultatAvisModal['order'] ?>">lien du logo de l'objectif numéro <?php echo$resultatAvisModal['order'] ?></label>
                 </div>
               <?php endforeach; ?>
-              <?php foreach ($resultatAvissModal as $resultatAvisModal): ?>
-                <div class="input-field col s6 <?php echo count($resultatAvissModal)>2?'l4':'l6' ?>">
+              <?php foreach ($resultatPagesInfoAvis as $resultatAvisModal): ?>
+                <div class="input-field col s6 <?php echo count($resultatPagesInfoAvis)>2?'l4':'l6' ?>">
                   <input id="titleAvis<?php echo $resultatAvisModal['order'] ?>" type="text" class="validate" name="titleAvis<?php echo $resultatAvisModal['order'] ?>" value="<?php echo $resultatAvisModal['title_avis'] ?>">
                   <label for="titleAvis<?php echo $resultatAvisModal['order'] ?>">Titre de l'avis numéro <?php echo $resultatAvisModal['order'] ?></label>
                 </div>
               <?php endforeach ?>
-              <?php foreach ($resultatAvissModal as $resultatAvisModal): ?>
-                <div class="input-field col s6 <?php echo count($resultatAvissModal)>2?'l4':'l6' ?>">
+              <?php foreach ($resultatPagesInfoAvis as $resultatAvisModal): ?>
+                <div class="input-field col s6 <?php echo count($resultatPagesInfoAvis)>2?'l4':'l6' ?>">
                   <input id="descAvis<?php echo $resultatAvisModal['order']?>" type="text" class="validate" name="descAvis<?php echo $resultatAvisModal['order'] ?>" value="<?php echo $resultatAvisModal['description_avis'] ?>">
                   <label for="descAvis<?php echo $resultatAvisModal['order'] ?>">description de l'avis numéro <?php echo $resultatAvisModal['order'] ?></label>
                 </div>
