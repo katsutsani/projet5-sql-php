@@ -15,6 +15,11 @@
         <div class="col s12 m12 l12">
           <div class="panel row center"style="margin-top:40px;">
             <?php if($_GET['page'] == "users"): ?>
+              <div class="right">
+                <a class="modal-trigger" id="add-users" href="#add-user"><i class="small material-icons">create_new_folder</i></a>
+                <a class="modal-trigger" id="change-users" href="#change-user"><i class="small material-icons">edit</i></a>
+                <a class="modal-trigger" id="delete-users" href="#delete-user"><i class="small material-icons">close</i></a>
+              </div>
               <?php require "user.php" ?>
               <h2 class="brown-text nom">Users</h2>
               <div class="col s12 m6 l3">
@@ -45,6 +50,11 @@
               	   } ?>
               </div>
             <?php elseif ($_GET["page"] == "pages") :?>
+              <div class="right">
+                <a class="modal-trigger" id="add-pages" href="#add-page"><i class="small material-icons">create_new_folder</i></a>
+                <a class="modal-trigger" id="change-pages" href="#change-page"><i class="small material-icons">edit</i></a>
+                <a class="modal-trigger" id="delete-pages" href="#delete-page"><i class="small material-icons">close</i></a>
+              </div>
               <?php require "pages.php" ?>
               <h2 class="brown-text nom">Pages</h2>
               <div class="col s12 m6 l3">
@@ -65,7 +75,7 @@
                 <p>img_title</p>
                 <?php require "pages.php" ?>
                 <?php while($ligne = $resultat->fetch()) {
-              		 echo "<p>"." ".$ligne['img_title']."</p>";
+              		 echo "<p>"." ".$ligne['img_link']."</p>";
               	 } ?>
               </div>
               <div class="col s12 m6 l3">

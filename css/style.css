@@ -112,3 +112,8 @@ input {
 textarea {
   min-height: 90px;
 }
+
+.add-button{
+  background-color: grey;
+  color:white;
+}
