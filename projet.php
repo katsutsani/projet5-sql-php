@@ -17,14 +17,18 @@
   <?php require_once "navbar.php" ?>
   <div class="section white">
     <div class="row container">
-      <h2 class="center"><i class="small material-icons">folder</i><?php require_once "title.php" ?></h2>
       <div class="icon-block">
-        <h2 class="center"><img class="circle" src="img/puissance_quatre/icons/Nicolas.png"
-            alt="photo Nicolas Portfolio"></h2>
-        <h5 class="center">Intervenant : Nicolas BERCHER</h5>
-        <p class="light">Python & scientific developer, bash scripting, Linux systems administrator. Software &
+        <?php if ($_GET['projet'] == 1): ?>
+          <h2 class="center"><i class="small material-icons">folder</i><?php require_once "title.php"?><p src=<?php while($ligne = $resultat->fetch()) { echo $ligne['title']; }?></h2>
+          <h2 class="center"><?php require_once "img_link.php"?><img class="circle" src=<?php while($ligne = $resultat->fetch()) { echo $ligne['img_link']; }?>></h2>
+          <h5 class="center">Intervenant : Nicolas BERCHER</h5>
+          <p class="light">Python & scientific developer, bash scripting, Linux systems administrator. Software &
           algorithms design, data processing, visualization, automation, tests, statistics, problems solving, debugging,
           code optimisation. Research engineer in remote sensing: satellite altimetry & imagery, geomatics.</p>
+        <?php else : ?>
+          <h2 class="center"><i class="small material-icons">folder</i> PokeFus</h2>
+          <h5 class="grey-text text-darken-3 lighten-3">PokeFus est un RPG solo, un savoureux mélange entre l'univers du Krosmoz et celui de Pokémon.<br>Projet personnel de Lilian Prieu.</h5>
+        <?php endif ?>
       </div>
     </div>
   </div>
