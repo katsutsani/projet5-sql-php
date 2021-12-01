@@ -15,19 +15,16 @@
 
 <body>
   <?php require_once "navbar.php" ?>
+  <?php require "avis_data.php"?>
+  <?php require "pages_data.php"?>
   <div class="section white">
     <div class="row container">
       <div class="icon-block">
+        <h2 class="center"><i class="small material-icons">folder</i><?php echo $resultatPages ['title']; ?></h2>
+        <h2 class="center"><img class="circle" src=<?php echo $resultatPages ['img_link']; ?>></h2>
+        <h5 class="center"><?php echo $resultatPages ['subtitle']; ?></h5>
         <?php if ($_GET['projet'] == 1): ?>
-          <h2 class="center"><i class="small material-icons">folder</i><?php require_once "title.php"?><p src=<?php while($ligne = $resultat->fetch()) { echo $ligne['title']; }?></h2>
-          <h2 class="center"><?php require_once "img_link.php"?><img class="circle" src=<?php while($ligne = $resultat->fetch()) { echo $ligne['img_link']; }?>></h2>
-          <h5 class="center">Intervenant : Nicolas BERCHER</h5>
-          <p class="light">Python & scientific developer, bash scripting, Linux systems administrator. Software &
-          algorithms design, data processing, visualization, automation, tests, statistics, problems solving, debugging,
-          code optimisation. Research engineer in remote sensing: satellite altimetry & imagery, geomatics.</p>
-        <?php else : ?>
-          <h2 class="center"><i class="small material-icons">folder</i> PokeFus</h2>
-          <h5 class="grey-text text-darken-3 lighten-3">PokeFus est un RPG solo, un savoureux mélange entre l'univers du Krosmoz et celui de Pokémon.<br>Projet personnel de Lilian Prieu.</h5>
+          <p class="light"><?php echo $resultatPages ['description']; ?></p>
         <?php endif ?>
       </div>
     </div>
@@ -94,26 +91,15 @@
   <div class="section white">
     <div class="row container">
       <h2 class="center" id="Opinion"><i class="small material-icons">thumbs_up_down</i> Avis</h2>
-      <div class="col s12 m12 l5 ">
-        <div class="icon-block">
-          <h2 class="center brown-text"><i class="small material-icons">flash_on</i></h2>
-          <h5 class="center">Découverte d'outils de travail</h5>
-          <p class="light">C'est toujours un plaisir d'apprendre de nouveau langage de programmation même si nous
-            faisons facilement des erreurs, on apprend à ne plus les refaires. Mais c'est encore plus plaisant lorsque
-            qu'on apprend en même temps de nouveaux outils de travail comme ça était le cas pour ce projet avec la
-            découverte du C, de l'éditeur emacs mais aussi de trello pour partager les taches et de github pour mettre
-            le travail en commun.</p>
+      <?php foreach ($resultatAviss as $resultatAvis): ?>
+        <div class="col s12 m12 <?php echo count($resultatAviss)>2?'l4':'l6' ?> ">
+          <div class="icon-block">
+            <h2 class="center brown-text"><?php echo $resultatAvis['logo']; ?></h2>
+            <h5 class="center"><?php echo $resultatAvis['title']; ?></h5>
+            <p class="light"><?php echo $resultatAvis['description']; ?></p>
+          </div>
         </div>
-      </div>
-      <div class="col s12 m12 l5 offset-l1">
-        <div class="icon-block">
-          <h2 class="center brown-text"><i class="small material-icons">flash_on</i></h2>
-          <h5 class="center">Organisation du travail</h5>
-          <p class="light">Pour pouvoir bien avancer, il faut bien organiser le travail et ce projet nous à bien aider
-            pour apprendre comment s'organiser grace à trello pour partager les taches à faire mais aussi grace à github
-            qui nous permettait de mettre à jour nos fichiers facilement quand une modification était apportée.</p>
-        </div>
-      </div>
+      <?php endforeach; ?>
     </div>
   </div>
   <?php require_once "modals.php" ?>
