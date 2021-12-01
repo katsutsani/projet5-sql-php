@@ -43,7 +43,3 @@ $('#contact').click(function(){
 $(document).ready(function(){
   $('.dropdown-trigger').dropdown();
 });
-
-function change(value){
-    document.getElementById("id-user").value=value;
-}
