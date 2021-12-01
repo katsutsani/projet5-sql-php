@@ -5,6 +5,7 @@
     <title></title>
   </head>
   <body>
+
     <div id="connexion" class="modal">
       <div class="modal-content">
         <h4>Connexion</h4>
@@ -28,6 +29,7 @@
         </div>
       </form>
     </div>
+
     <div id="register" class="modal">
       <div class="modal-content">
         <h4>Créer un compte</h4>
@@ -57,6 +59,160 @@
           </div>
         </form>
     </div>
+
+    <div id="add-user" class="modal">
+      <div class="modal-content">
+        <h4>Enregister un nouveau compte</h4>
+          <div class="row">
+            <form method="post" action="add_user.php">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="email" type="email" name="email" class="validate">
+                  <label for="email">Adresse email</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="login" type="text" class="validate" name="login">
+                  <label for="login">Login</label>
+                </div>
+              </div>
+                <div class="input-field col s6">
+                  <input id="mdp" type="password" class="validate" name="password">
+                  <label for="mdp">Mot de passe</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="mdp" type="password" class="validate" name="admin">
+                  <label for="mdp">Admin</label>
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type='submit' class="btn connect" value="Créer le nouveau compte"/>
+          </div>
+        </form>
+    </div>
+
+    <div id="change-user" class="modal">
+      <div class="modal-content">
+        <h4>Modifier un compte</h4>
+          <div class="row">
+            <form method="post" action="change_user.php">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="email" type="text" name="champ" class="validate">
+                  <label for="email">champ que vous voulez Modifier</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="login" type="text" class="validate" name="valeur">
+                  <label for="login">valeur à lui assigner</label>
+                </div>
+              </div>
+                <div class="input-field col s12">
+                  <input id="mdp" type="password" class="validate" name="id">
+                  <label for="mdp">id du compte a Modifier</label>
+                </div>
+              </div>
+            </div>
+          <div class="modal-footer">
+            <input type='submit' class="btn connect" value="Valider le changement"/>
+          </div>
+        </form>
+    </div>
+
+    <div id="delete-user" class="modal">
+      <div class="modal-content">
+        <h4>Supprimer un compte</h4>
+          <div class="row">
+            <form method="post" action="remove_user.php">
+                <div class="input-field col s6">
+                  <input id="id" type="text" name="id" class="validate">
+                  <label for="id">l'id du compte vous voulez modifier</label>
+                </div>
+              </div>
+            </div>
+          <div class="modal-footer">
+            <input type='submit' class="btn connect" value="Valider la suppresion"/>
+          </div>
+        </form>
+    </div>
+
+    <div id="add-page" class="modal">
+  <div class="modal-content">
+    <h4>Créer une nouvelle page</h4>
+      <div class="row">
+        <form method="post" action="add_page.php">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="text" type="text" name="titre" class="validate">
+              <label for="email">titre de la page</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="login" type="text" class="validate" name="img_link">
+              <label for="login">lien vers une image</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="login" type="text" name="img_link">
+              <label for="login">petite présentation de la personne sur l'image (pas marqué si vide)</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="text" type="text" name="subtitle" class="validate">
+              <label for="email">petit description du projet</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="login" type="text" class="validate" name="img_link">
+              <label for="login">lien vers une image</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <input type='submit' class="btn connect" value="Créer le nouveau compte"/>
+      </div>
+    </form>
+</div>
+
+<div id="change-page" class="modal">
+  <div class="modal-content">
+    <h4>Modifier une page</h4>
+      <div class="row">
+        <form method="post" action="change_page.php">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="email" type="text" name="champ" class="validate">
+              <label for="email">champ que vous voulez Modifier</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="login" type="text" class="validate" name="valeur">
+              <label for="login">valeur à lui assigner</label>
+            </div>
+          </div>
+            <div class="input-field col s12">
+              <input id="mdp" type="password" class="validate" name="id">
+              <label for="mdp">id de la page à Modifier</label>
+            </div>
+          </div>
+        </div>
+      <div class="modal-footer">
+        <input type='submit' class="btn connect" value="Valider le changement"/>
+      </div>
+    </form>
+</div>
+
+<div id="delete-page" class="modal">
+  <div class="modal-content">
+    <h4>Supprimer une page</h4>
+      <div class="row">
+        <form method="post" action="remove_page.php">
+            <div class="input-field col s6">
+              <input id="text" type="text" name="id" class="validate">
+              <label for="email">l'id de la page que vous voulez modifier</label>
+            </div>
+        </div>
+      <div class="modal-footer">
+        <input type='submit' class="btn connect" value="Valider la suppresion"/>
+      </div>
+    </form>
+</div>
+
     <div id="Contact" class="modal bottom-sheet">
       <div class="modal-content">
         <h4>Contactez-nous</h4>
