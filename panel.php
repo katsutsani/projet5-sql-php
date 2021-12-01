@@ -11,18 +11,71 @@
   </head>
   <body>
     <?php require_once 'navbar.php' ?>
-      <div class="row container panel_admin">
+      <div class="row container">
         <div class="col s12 m12 l12">
-          <div class="panel">
-            <h2 class="brown-text nom center">Users</h2>
-            <p>id login email admin</p>
-            <?php require_once "user.php" ?>
-          </div>
-        </div>
-        <div class="col s12 m12 l12">
-          <div class="panel">
-            <h2 class="brown-text nom center">Pages</h2>
-            <?php require_once "pages.php" ?>
+          <div class="panel row center"style="margin-top:40px;">
+            <?php if($_GET['page'] == "users"): ?>
+              <?php require "user.php" ?>
+              <h2 class="brown-text nom">Users</h2>
+              <div class="col s12 m6 l3">
+                <p>id</p>
+                <?php while($ligne = $resultat->fetch()) {
+              		  echo "<p>"." ".$ligne['id']."</p>";
+              	   } ?>
+              </div>
+              <div class="col s12 m6 l3">
+                <p>login</p>
+                <?php require "user.php" ?>
+                <?php while($ligne = $resultat->fetch()) {
+              		  echo "<p>"." ".$ligne['login']."</p>";
+              	   } ?>
+              </div>
+              <div class="col s12 m6 l3">
+                <p>email</p>
+                <?php require "user.php" ?>
+                <?php while($ligne = $resultat->fetch()) {
+              		 echo "<p>"." ".$ligne['email']."</p>";
+              	 } ?>
+              </div>
+              <div class="col s12 m6 l3">
+                <p>admin</p>
+                  <?php require "user.php" ?>
+                  <?php while($ligne = $resultat->fetch()) {
+              		     echo "<p>"." ".$ligne['admin']."</p>";
+              	   } ?>
+              </div>
+            <?php elseif ($_GET["page"] == "pages") :?>
+              <?php require "pages.php" ?>
+              <h2 class="brown-text nom">Pages</h2>
+              <div class="col s12 m6 l3">
+                <p>id</p>
+                <?php require "pages.php" ?>
+                <?php while($ligne = $resultat->fetch()) {
+              		  echo "<p>"." ".$ligne['id']."</p>";
+              	   } ?>
+              </div>
+              <div class="col s12 m6 l3">
+                <p>title</p>
+                <?php require "pages.php" ?>
+                <?php while($ligne = $resultat->fetch()) {
+              		  echo "<p>"." ".$ligne['title']."</p>";
+              	   } ?>
+              </div>
+              <div class="col s12 m6 l3">
+                <p>img_title</p>
+                <?php require "pages.php" ?>
+                <?php while($ligne = $resultat->fetch()) {
+              		 echo "<p>"." ".$ligne['img_title']."</p>";
+              	 } ?>
+              </div>
+              <div class="col s12 m6 l3">
+                <p>description</p>
+                  <?php require "pages.php" ?>
+                  <?php while($ligne = $resultat->fetch()) {
+              		     echo "<p>"." ".$ligne['description']."</p>";
+              	   } ?>
+              </div>
+            <?php endif ?>
           </div>
         </div>
       </div>
