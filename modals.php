@@ -124,8 +124,8 @@
           <div class="row">
             <form method="post" action="remove_user.php">
                 <div class="input-field col s6">
-                  <input id="text" type="text" name="id" class="validate">
-                  <label for="email">l'id du compte vous voulez modifier</label>
+                  <input id="id" type="text" name="id" class="validate">
+                  <label for="id">l'id du compte vous voulez modifier</label>
                 </div>
               </div>
             </div>

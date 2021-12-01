@@ -11,79 +11,95 @@
   </head>
   <body>
     <?php require_once 'navbar.php' ?>
+    <?php require "user.php" ?>
+    <?php require "pages.php" ?>
       <div class="row container">
         <div class="col s12 m12 l12">
           <div class="panel row center"style="margin-top:40px;">
             <?php if($_GET['page'] == "users"): ?>
-              <div class="right">
-                <a class="modal-trigger" id="add-users" href="#add-user"><i class="small material-icons">create_new_folder</i></a>
-                <a class="modal-trigger" id="change-users" href="#change-user"><i class="small material-icons">edit</i></a>
-                <a class="modal-trigger" id="delete-users" href="#delete-user"><i class="small material-icons">close</i></a>
-              </div>
-              <?php require "user.php" ?>
               <h2 class="brown-text nom">Users</h2>
-              <div class="col s12 m6 l3">
+              <div class="col s12 m6 l2">
                 <p>id</p>
-                <?php while($ligne = $resultat->fetch()) {
-              		  echo "<p>"." ".$ligne['id']."</p>";
-              	   } ?>
+                <?php
+                foreach($resultatUsers as $key => $resultatUser){
+                  echo "<p>".$resultatUser['id']."</p>";
+                }?>
               </div>
-              <div class="col s12 m6 l3">
+              <div class="col s12 m6 l2">
                 <p>login</p>
-                <?php require "user.php" ?>
-                <?php while($ligne = $resultat->fetch()) {
-              		  echo "<p>"." ".$ligne['login']."</p>";
-              	   } ?>
+                <?php
+                foreach($resultatUsers as $key => $resultatUser){
+                  echo "<p>".$resultatUser['login']."</p>";
+                }?>
               </div>
-              <div class="col s12 m6 l3">
+              <div class="col s12 m6 l2">
                 <p>email</p>
-                <?php require "user.php" ?>
-                <?php while($ligne = $resultat->fetch()) {
-              		 echo "<p>"." ".$ligne['email']."</p>";
-              	 } ?>
+                <?php
+                foreach($resultatUsers as $key => $resultatUser){
+                  echo "<p>".$resultatUser['email']."</p>";
+                }?>
               </div>
-              <div class="col s12 m6 l3">
+              <div class="col s12 m6 l2">
+                <p>Mot de passe</p>
+                <?php
+                foreach($resultatUsers as $key => $resultatUser){
+                  echo "<p>".$resultatUser['admin']."</p>";
+                }?>
+              </div>
+              <div class="col s12 m6 l2">
                 <p>admin</p>
-                  <?php require "user.php" ?>
-                  <?php while($ligne = $resultat->fetch()) {
-              		     echo "<p>"." ".$ligne['admin']."</p>";
-              	   } ?>
+                <?php
+                foreach($resultatUsers as $key => $resultatUser){
+                  echo "<p>".$resultatUser['admin']."</p>";
+                }?>
+              </div>
+              <div class="col s12 m6 l2">
+                <p>commandes</p>
+                <?php foreach($resultatUsers as $key => $resultatUser){
+                  echo '<p>
+                  <a class="modal-trigger" id="add-users" href="#add-user"><i class=" material-icons">create_new_folder</i></a>
+                  <a class="modal-trigger" id="change-users" href="#change-user"><i class=" material-icons">edit</i></a>
+                  <a class="modal-trigger" id="delete-users" href="#delete-user"><i class=" material-icons">close</i></a></p>';
+                }?>
               </div>
             <?php elseif ($_GET["page"] == "pages") :?>
-              <div class="right">
-                <a class="modal-trigger" id="add-pages" href="#add-page"><i class="small material-icons">create_new_folder</i></a>
-                <a class="modal-trigger" id="change-pages" href="#change-page"><i class="small material-icons">edit</i></a>
-                <a class="modal-trigger" id="delete-pages" href="#delete-page"><i class="small material-icons">close</i></a>
-              </div>
-              <?php require "pages.php" ?>
               <h2 class="brown-text nom">Pages</h2>
-              <div class="col s12 m6 l3">
+              <div class="col s12 m6 l2">
                 <p>id</p>
-                <?php require "pages.php" ?>
-                <?php while($ligne = $resultat->fetch()) {
-              		  echo "<p>"." ".$ligne['id']."</p>";
-              	   } ?>
+                <?php
+                foreach($resultatPages as $key => $resultatPage){
+                  echo "<p>".$resultatPage['id']."</p>";
+                }?>
               </div>
-              <div class="col s12 m6 l3">
+              <div class="col s12 m6 l2">
                 <p>title</p>
-                <?php require "pages.php" ?>
-                <?php while($ligne = $resultat->fetch()) {
-              		  echo "<p>"." ".$ligne['title']."</p>";
-              	   } ?>
+                <?php
+                foreach($resultatPages as $key => $resultatPage){
+                  echo "<p>".$resultatPage['title']."</p>";
+                }?>
               </div>
-              <div class="col s12 m6 l3">
+              <div class="col s12 m6 l2">
                 <p>img_title</p>
-                <?php require "pages.php" ?>
-                <?php while($ligne = $resultat->fetch()) {
-              		 echo "<p>"." ".$ligne['img_link']."</p>";
-              	 } ?>
+                <?php
+                foreach($resultatPages as $key => $resultatPage){
+                  echo "<p>".$resultatPage['img_link']."</p>";
+                }?>
               </div>
-              <div class="col s12 m6 l3">
+              <div class="col s12 m6 l2">
                 <p>description</p>
-                  <?php require "pages.php" ?>
-                  <?php while($ligne = $resultat->fetch()) {
-              		     echo "<p>"." ".$ligne['description']."</p>";
-              	   } ?>
+                <?php
+                foreach($resultatPages as $key => $resultatPage){
+                  echo "<p>".$resultatPage['description']."</p>";
+                }?>
+              </div>
+              <div class="col s12 m6 l2">
+                <p>commandes</p>
+                <?php foreach($resultatPages as $key => $resultatPage){
+                  echo '<p>
+                  <a class="modal-trigger" id="add-users" href="#add-user"><i class=" material-icons">create_new_folder</i></a>
+                  <a class="modal-trigger" id="change-users" href="#change-user"><i class=" material-icons">edit</i></a>
+                  <a class="modal-trigger" id="delete-users" href="#delete-user"><i class=" material-icons">close</i></a></p>';
+                }?>
               </div>
             <?php endif ?>
           </div>
