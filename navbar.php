@@ -19,7 +19,15 @@
                   <li><a href="projet.php?projet=2">Projet 2</a></li>
                   <li><a href="projet.php?projet=3">Projet 3</a></li>
                   <li><a href="logout.php"><?php echo $_SESSION['user']['login']; ?></a></li>
-                  <li><a href="panel.php?projet=0&page=users"> panel</a></li>
+                  <?php if(isset($_GET['page'])) :
+                    if($_GET['page']=='users'):?>
+                    <li><a href="panel.php?projet=0&page=pages"> Pages Panel</a></li>
+                  <?php else: ?>
+                    <li><a href="panel.php?projet=0&page=users"> Users Panel</a></li>
+                  <?php endif?>
+                <?php else: ?>
+                  <li><a href="panel.php?projet=0&page=users"> Panel</a></li>
+                <?php endif ?>
                   <li><a id="contact" href="#Contact" class="btn modal-trigger pulse">Contact</a></li>
                 </ul>
               </div>
@@ -30,7 +38,15 @@
             <li><a href="projet2.php?projet=2">Projet 2</a></li>
             <li><a href="projet3.php?projet=3">Projet 3</a></li>
             <li><a href="logout.php"><?php echo $_SESSION['user']['login']; ?><i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a href="panel.php?projet=0&page=users"> panel</a></li>
+            <?php if(isset($_GET['page'])) :
+              if($_GET['page']=='users'):?>
+              <li><a href="panel.php?projet=0&page=pages"> Pages Panel</a></li>
+            <?php else: ?>
+              <li><a href="panel.php?projet=0&page=users"> Users Panel</a></li>
+            <?php endif?>
+          <?php else: ?>
+            <li><a href="panel.php?projet=0&page=users"> Panel</a></li>
+          <?php endif ?>
             <li><a id="contact" href="#Contact" class="waves-effect waves-light btn colorBtn modal-trigger pulse">Contact</a>
             </li>
           </ul>
@@ -45,7 +61,15 @@
                   <li><a href="#Result">Résultat</a></li>
                   <li><a href="#Opinion">Avis</a></li>
                   <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
-                  <li><a href="panel.php?projet=0&page=users"> panel</a></li>
+                  <?php if(isset($_GET['page'])) :
+                    if($_GET['page']=='users'):?>
+                    <li><a href="panel.php?projet=0&page=pages"> Pages Panel</a></li>
+                  <?php else: ?>
+                    <li><a href="panel.php?projet=0&page=users"> Users Panel</a></li>
+                  <?php endif?>
+                <?php else: ?>
+                  <li><a href="panel.php?projet=0&page=users"> Panel</a></li>
+                <?php endif ?>
                   <li><a href="#Contact" class="waves-effect waves-light btn modal-trigger pulse">Contact</a></li>
                 </ul>
               </div>
@@ -56,7 +80,15 @@
             <li><a href="#Result">Résultat</a></li>
             <li><a href="#Opinion">Avis</a></li>
             <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
-            <li><a href="panel.php?projet=0&page=users"> panel</a></li>
+            <?php if(isset($_GET['page'])) :
+              if($_GET['page']=='users'):?>
+              <li><a href="panel.php?projet=0&page=pages"> Pages Panel</a></li>
+            <?php else: ?>
+              <li><a href="panel.php?projet=0&page=users"> Users Panel</a></li>
+            <?php endif?>
+          <?php else: ?>
+            <li><a href="panel.php?projet=0&page=users"> Panel</a></li>
+          <?php endif ?>
             <li><a href="#Contact" class="waves-effect waves-light btn modal-trigger pulse">Contact</a></li>
           </ul>
         <?php endif ?>

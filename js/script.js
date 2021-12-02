@@ -41,9 +41,10 @@ $('#contact').click(function(){
 })
 
 $(document).ready(function(){
-  $('.dropdown-trigger').dropdown();
+  $('select').formSelect();
 });
 
-$(document).ready(function(){
-  $('select').formSelect();
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.dropdown-trigger');
+  var instances = M.Dropdown.init(elems, options);
 });
