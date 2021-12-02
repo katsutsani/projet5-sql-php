@@ -78,19 +78,19 @@ foreach ($resultatPagesInfoObj as $resultatPagesInfo) {
   $pre->execute($dataBinded);
 }
 
-foreach ($resultatPagesInfoObj as $resultatPagesInfo) {
+foreach ($resultatPagesInfoAvis as $resultatAvisModal) {
   $sql = "UPDATE objectifs
-  SET logo_avis=:lienAvis".$resultatPagesInfo['order'].",
-  typeLogo_avis=:typeLogoAvis".$resultatPagesInfo['order'].",
-  title_avis=:titleAvis".$resultatPagesInfo['order'].",
-  description_avis=:descAvis".$resultatPagesInfo['order'].",
-   WHERE page_id=:page_changed AND `order`=".$resultatPagesInfo['order']."";
+  SET logo_avis=:lienAvis".$resultatAvisModal['order'].",
+  typeLogo_avis=:typeLogoAvis".$resultatAvisModal['order'].",
+  title_avis=:titleAvis".$resultatAvisModal['order'].",
+  description_avis=:descAvis".$resultatAvisModal['order'].",
+   WHERE page_id=:page_changed AND `order`=".$resultatAvisModal['order']."";
   $dataBinded=array(
     ':page_changed'=> $_POST['id-page'],
-    ':lienAvis'.$resultatPagesInfo['order']=> $_POST['lienAvis'.$resultatPagesInfo['order']],
-    ':typeLogoAvis'.$resultatPagesInfo['order']=> $_POST['typeLogoAvis'.$resultatPagesInfo['order']],
-    ':titleAvis'.$resultatPagesInfo['order']=> $_POST['titleAvis'.$resultatPagesInfo['order']],
-    ':descAvis'.$resultatPagesInfo['order']=> $_POST['descAvis'.$resultatPagesInfo['order']]
+    ':lienAvis'.$resultatAvisModal['order']=> $_POST['lienAvis'.$resultatAvisModal['order']],
+    ':titleAvis'.$resultatAvisModal['order']=> $_POST['titleAvis'.$resultatAvisModal['order']],
+    ':typeLogoAvis'.$resultatAvisModal['order']=> $_POST['typeLogoAvis'.$resultatAvisModal['order']],
+    ':descAvis'.$resultatAvisModal['order']=> $_POST['descAvis'.$resultatAvisModal['order']]
   );
   $pre = $pdo->prepare($sql);
   $pre->execute($dataBinded);
