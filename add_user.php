@@ -9,5 +9,5 @@ $dataBinded=array(
 );
 $pre = $pdo->prepare($sql);
 $pre->execute($dataBinded);
-header('Location:panel.php?projet=0&page=users');//on le redirige sur la page d'accueil du site !
+header('Location:panel.php?projet=0&page=users');
 ?>

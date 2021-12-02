@@ -1,4 +1,5 @@
 <?php require_once "config.php";
+
 if(isset($_GET["page_id"])):
   $requete1 = 'SELECT p.*,a.* FROM pages p
   LEFT JOIN avis a ON p.id=a.page_id

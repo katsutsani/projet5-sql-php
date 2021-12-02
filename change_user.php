@@ -1,12 +1,15 @@
 <?php
 require_once "config.php";
-$sql = "UPDATE users SET :user_champ=:user_value WHERE id=:user_changed";
+$sql = "UPDATE users SET email=:email,login=:login,password=SHA1(:password),admin=:admin WHERE id=:id";
 $dataBinded=array(
-    ':user_changed'=> $_POST['id'],
-    ':user_champ'=> $_POST['champ'],
-    ':user_value'=> $_POST['valeur']
+    ':email'=> $_POST['email'],
+    ':login'=> $_POST['login'],
+    ':password'=> $_POST['password'],
+    ':admin'=> $_POST['admin'],
+    ':id' => $_POST['id']
 );
 $pre = $pdo->prepare($sql);
 $pre->execute($dataBinded);
 //on le redirige sur la page d'accueil du site !
+header('Location:panel.php?projet=0&page=users');
 ?>
