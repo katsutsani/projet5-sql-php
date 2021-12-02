@@ -35,8 +35,8 @@
           </div>
           <ul class="sidenav" id="mobile-demo">
             <li><a href="projet.php?projet=1">Projet 1</a></li>
-            <li><a href="projet2.php?projet=2">Projet 2</a></li>
-            <li><a href="projet3.php?projet=3">Projet 3</a></li>
+            <li><a href="projet.php?projet=2">Projet 2</a></li>
+            <li><a href="projet.php?projet=3">Projet 3</a></li>
             <li><a href="logout.php"><?php echo $_SESSION['user']['login']; ?><i class="material-icons right">arrow_drop_down</i></a></li>
             <?php if(isset($_GET['page'])) :
               if($_GET['page']=='users'):?>
@@ -151,8 +151,8 @@
                 <a href="index.php?projet=0" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                   <li><a href="projet.php?projet=1">Projet 1</a></li>
-                  <li><a href="projet2.php?projet=2">Projet 2</a></li>
-                  <li><a href="projet3.php?projet=3">Projet 3</a></li>
+                  <li><a href="projet.php?projet=2">Projet 2</a></li>
+                  <li><a href="projet.php?projet=3">Projet 3</a></li>
                   <li><a class="modal-trigger" id="connect" href="#connexion">Connexion</a></li>
                   <li><a id="contact" href="#Contact" class="btn modal-trigger pulse">Contact</a></li>
                 </ul>
@@ -161,8 +161,8 @@
           </div>
           <ul class="sidenav" id="mobile-demo">
             <li><a href="projet.php?projet=1">Projet 1</a></li>
-            <li><a href="projet2.php?projet=2">Projet 2</a></li>
-            <li><a href="projet3.php?projet=3">Projet 3</a></li>
+            <li><a href="projet.php?projet=2">Projet 2</a></li>
+            <li><a href="projet.php?projet=3">Projet 3</a></li>
             <li><a class="modal-trigger" id="connect" href="#connexion">Connexion</a></li>
             <li><a id="contact" href="#Contact" class="waves-effect waves-light btn colorBtn modal-trigger pulse">Contact</a>
             </li>

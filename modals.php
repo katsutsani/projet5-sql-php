@@ -209,13 +209,13 @@
               <?php foreach ($resultatPagesInfoObj as $resultatPagesInfo): ?>
                 <div class="input-field col s4 <?php echo count($resultatPagesInfoObj)>2?'l4':'l6' ?> ">
                   <?php if($resultatPagesInfo['typeLogo_objectifs']== "image") :?>
-                    <select id="typeLogoObj<?php echo$resultatPagesInfo['order'] ?>" name="typeLogoObj<?php.$resultatPagesInfo['order'] .?>">
+                    <select id="typeLogoObj<?php echo$resultatPagesInfo['order'] ?>" <?php echo 'name="typeLogoObj'.$resultatPagesInfo['order'].'"' ?>>
                       <option id="typeLogoObj<?php echo$resultatPagesInfo['order'] ?>" selected value="image">image</option>
                       <option id="typeLogoObj<?php echo$resultatPagesInfo['order'] ?>" value="icon">icon</option>
                     </select>
                     <label for="typeLogoObj<?php echo$resultatPagesInfo['order'] ?>">Type de logo numéro <?php echo$resultatPagesInfo['order'] ?></label>
                 <?php else: ?>
-                  <select id="typeLogoObj<?php echo$resultatPagesInfo['order'] ?>" name="typeLogoObj<?php.$resultatPagesInfo['order'] .?>">
+                  <select id="typeLogoObj<?php echo$resultatPagesInfo['order'] ?>" <?php echo 'name="typeLogoObj'.$resultatPagesInfo['order'].'"' ?>>
                     <option id="typeLogoObj<?php echo$resultatPagesInfo['order'] ?>" value="image">image</option>
                     <option id="typeLogoObj<?php echo$resultatPagesInfo['order'] ?>" selected value="icon">icon</option>
                   </select>
@@ -225,19 +225,19 @@
               <?php endforeach; ?>
               <?php foreach ($resultatPagesInfoObj as $resultatPagesInfo): ?>
                 <div class="input-field col s4 <?php echo count($resultatPagesInfoObj)>2?'l4':'l6' ?> ">
-                  <input id="lienObj<?php echo$resultatPagesInfo['order'] ?>" type="text" class="validate" <?php echo 'name="lienObj"'.$resultatPagesInfo['order']'"' ?> value="<?php echo $resultatPagesInfo['logo_objectifs'] ?>">
+                  <input id="lienObj<?php echo$resultatPagesInfo['order'] ?>" type="text" class="validate" <?php echo 'name="lienObj'.$resultatPagesInfo['order'].'"' ?> value="<?php echo $resultatPagesInfo['logo_objectifs'] ?>">
                   <label for="lienObj<?php echo$resultatPagesInfo['order'] ?>">lien du logo de l'objectif numéro <?php echo$resultatPagesInfo['order'] ?></label>
                 </div>
               <?php endforeach; ?>
               <?php foreach ($resultatPagesInfoObj as $resultatPagesInfo): ?>
                 <div class="input-field col s4 <?php echo count($resultatPagesInfoObj)>2?'l4':'l6' ?> ">
-                  <input id="titleObj<?php echo$resultatPagesInfo['order'] ?>" type="text" class="validate" <?php echo 'name="titleObj"'.$resultatPagesInfo['order']'"' ?> value="<?php echo $resultatPagesInfo['title_objectifs'] ?>">
+                  <input id="titleObj<?php echo$resultatPagesInfo['order'] ?>" type="text" class="validate" <?php echo 'name="titleObj'.$resultatPagesInfo['order'].'"' ?> value="<?php echo $resultatPagesInfo['title_objectifs'] ?>">
                   <label for="titleObj<?php echo$resultatPagesInfo['order'] ?>">Titre de l'objectif numéro <?php echo$resultatPagesInfo['order'] ?></label>
                 </div>
               <?php endforeach; ?>
               <?php foreach ($resultatPagesInfoObj as $resultatPagesInfo): ?>
                 <div class="input-field col s4 <?php echo count($resultatPagesInfoObj)>2?'l4':'l6' ?> ">
-                  <input id="contentObj<?php echo$resultatPagesInfo['order'] ?>" type="text" class="validate" <?php echo 'name="contentObj"'.$resultatPagesInfo['order']'"' ?> value="<?php echo $resultatPagesInfo['description_objectifs'] ?>">
+                  <input id="contentObj<?php echo$resultatPagesInfo['order'] ?>" type="text" class="validate" <?php echo 'name="contentObj'.$resultatPagesInfo['order'].'"' ?> value="<?php echo $resultatPagesInfo['description_objectifs'] ?>">
                   <label for="contentObj<?php echo$resultatPagesInfo['order'] ?>">Contenu de l'objectif numéro <?php echo$resultatPagesInfo['order'] ?></label>
                 </div>
               <?php endforeach; ?>
@@ -248,7 +248,7 @@
               <h3>modification du carousel de la page</h3>
               <?php foreach ($resultatPagesInfoCarousel as $resultatPagesInfo): ?>
                 <div class="input-field col s6">
-                  <input id="carousel<?php echo$resultatPagesInfo['order'] ?>" type="text" class="validate" <?php echo 'name="carousel"'.$resultatPagesInfo['order']'"' ?> value="<?php echo $resultatPagesInfo['carousel_link'] ?>">
+                  <input id="carousel<?php echo$resultatPagesInfo['order'] ?>" type="text" class="validate" <?php echo 'name="carousel'.$resultatPagesInfo['order'].'"' ?> value="<?php echo $resultatPagesInfo['carousel_link'] ?>">
                   <label for="carousel<?php echo$resultatPagesInfo['order'] ?>">Contenu de l'objectif numéro <?php echo$resultatPagesInfo['order'] ?></label>
                 </div>
               <?php endforeach; ?>
@@ -260,13 +260,13 @@
               <?php foreach ($resultatPagesInfoAvis as $resultatAvisModal): ?>
                 <div class="input-field col s4 <?php echo count($resultatPagesInfoAvis)>2?'l4':'l6' ?> ">
                   <?php if($resultatAvisModal['typeLogo_avis']== "image") :?>
-                    <select id="typeLogoAvis<?php echo$resultatAvisModal['order'] ?> <?php echo 'name="typeLogoAvis"'.$resultatPagesInfo['order']'"'?>">
+                    <select id="typeLogoAvis<?php echo$resultatAvisModal['order'] ?>" <?php echo 'name="lienAvis'.$resultatPagesInfo['order'].'"' ?>>
                       <option id="typeLogoAvis<?php echo$resultatAvisModal['order'] ?>" selected value="image">image</option>
                       <option id="typeLogoAvis<?php echo$resultatAvisModal['order'] ?>" value="icon">icon</option>
                     </select>
                     <label for="typeLogoAvis<?php echo$resultatAvisModal['order'] ?>">Type de logo numéro <?php echo$resultatAvisModal['order'] ?></label>
                 <?php else: ?>
-                  <select id="typeLogoAvis<?php echo$resultatAvisModal['order'] ?> <?php echo 'name="carousel"'.$resultatPagesInfo['order']'"'?>">
+                  <select id="typeLogoAvis<?php echo$resultatAvisModal['order'] ?>" <?php echo 'name="lienAvis'.$resultatPagesInfo['order'].'"' ?>>
                     <option id="typeLogoAvis<?php echo$resultatAvisModal['order'] ?>" value="image">image</option>
                     <option id="typeLogoAvis<?php echo$resultatAvisModal['order'] ?>" selected value="icon">icon</option>
                   </select>
@@ -276,19 +276,19 @@
               <?php endforeach; ?>
               <?php foreach ($resultatPagesInfoAvis as $resultatAvisModal): ?>
                 <div class="input-field col s4 <?php echo count($resultatPagesInfoAvis)>2?'l4':'l6' ?> ">
-                  <input id="lienAvis<?php echo$resultatAvisModal['order'] ?>" type="text" class="validate" <?php echo 'name="lienAvis"'.$resultatPagesInfo['order']'"'?> value="<?php echo $resultatAvisModal['logo_avis'] ?>">
+                  <input id="lienAvis<?php echo$resultatAvisModal['order'] ?>" type="text" class="validate" <?php echo 'name="lienAvis'.$resultatPagesInfo['order'].'"' ?> value="<?php echo $resultatAvisModal['logo_avis'] ?>">
                   <label for="lienAvis<?php echo$resultatAvisModal['order'] ?>">lien du logo de l'objectif numéro <?php echo$resultatAvisModal['order'] ?></label>
                 </div>
               <?php endforeach; ?>
               <?php foreach ($resultatPagesInfoAvis as $resultatAvisModal): ?>
                 <div class="input-field col s6 <?php echo count($resultatPagesInfoAvis)>2?'l4':'l6' ?>">
-                  <input id="titleAvis<?php echo $resultatAvisModal['order'] ?>" type="text" class="validate" <?php echo 'name="titleAvis"'.$resultatPagesInfo['order']'"'?> value="<?php echo $resultatAvisModal['title_avis'] ?>">
+                  <input id="titleAvis<?php echo $resultatAvisModal['order'] ?>" type="text" class="validate" <?php echo 'name="titleAvis'.$resultatPagesInfo['order'].'"' ?> value="<?php echo $resultatAvisModal['title_avis'] ?>">
                   <label for="titleAvis<?php echo $resultatAvisModal['order'] ?>">Titre de l'avis numéro <?php echo $resultatAvisModal['order'] ?></label>
                 </div>
               <?php endforeach ?>
               <?php foreach ($resultatPagesInfoAvis as $resultatAvisModal): ?>
                 <div class="input-field col s6 <?php echo count($resultatPagesInfoAvis)>2?'l4':'l6' ?>">
-                  <input id="descAvis<?php echo $resultatAvisModal['order']?>" type="text" class="validate" <?php echo 'name="descAvis"'.$resultatPagesInfo['order']'"'?> value="<?php echo $resultatAvisModal['description_avis'] ?>">
+                  <input id="descAvis<?php echo $resultatAvisModal['order']?>" type="text" class="validate" <?php echo 'name="descAvis'.$resultatPagesInfo['order'].'"' ?> value="<?php echo $resultatAvisModal['description_avis'] ?>">
                   <label for="descAvis<?php echo $resultatAvisModal['order'] ?>">description de l'avis numéro <?php echo $resultatAvisModal['order'] ?></label>
                 </div>
               <?php endforeach ?>
