@@ -87,7 +87,7 @@
                 }?>
               </div>
             <?php elseif ($_GET["page"] == "pages") :?>
-              <h2 class="brown-text nom">Pages</h2>
+              <h2 class="brown-text center nom">Pages</h2>
               <?php
               $fin = ' ...'; //chaîne de fin
               $lg_max = 20; //nombre de caractère autorisé
