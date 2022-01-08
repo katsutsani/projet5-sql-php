@@ -31,8 +31,8 @@
           <h2 class="brown-text nom">Prieu Lilian<img class="top right circle" src="img/home_page/lprieu.jpg"
               alt="photo Lilian Portfolio"></h2>
           <h2 class="brown-text nom age">19 ans</h2>
-          <p class="light">Etudiant à Gaming Campus, adepte des MMO et programmeur passioné. J'ai l'Univers du Krosmoz
-            dans mon coeur et j'aime manger les petites part de gâteau.<br><a
+          <p class="light">Etudiant à Gaming Campus, adepte des MMO et programmeur passionné. J'ai l'Univers du Krosmoz
+            dans mon coeur et j'aime manger les petites parts de gâteaux.<br><a
               href="https://www.linkedin.com/in/lilian-prieu-554058221" target="blank" rel="nofollow"><br><span><img
                   src="img/linkedin.png" alt="logo linkedin pour Portfolio"></span></a> pour aller sur la page
             Linkedin<br><br><button onclick="copyToClipboard('Firzus#6969')"><img src="img/discord.png"
