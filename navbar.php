@@ -3,7 +3,8 @@
 <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
 <link rel="stylesheet" href="css/style.css">
 
-<?php require_once "config.php" ?>
+<?php require_once "config.php"?>
+<?php require_once 'nbPage.php' ?>
     <?php
     if(isset($_SESSION['user'])):
       $link = $_GET['projet'];
@@ -15,9 +16,9 @@
                 <h1><a href="index.php?projet=0" class="center brand-logo">Portfolio</a></h1>
                 <a href="index.php?projet=0" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                  <li><a href="projet.php?projet=1">Projet 1</a></li>
-                  <li><a href="projet.php?projet=2">Projet 2</a></li>
-                  <li><a href="projet.php?projet=3">Projet 3</a></li>
+                  <?php foreach ($resultatPagesId as $key => $resultatPageId) {
+                    echo '<li><a href="projet.php?projet='.$resultatPageId['id'].'">Projet '.$resultatPageId['id'].'</a></li>';
+                  } ?>
                   <li><a href="logout.php"><?php echo $_SESSION['user']['login']; ?></a></li>
                   <?php if(isset($_GET['page'])) :
                     if($_GET['page']=='users'):?>
@@ -34,9 +35,9 @@
             </nav>
           </div>
           <ul class="sidenav" id="mobile-demo">
-            <li><a href="projet.php?projet=1">Projet 1</a></li>
-            <li><a href="projet.php?projet=2">Projet 2</a></li>
-            <li><a href="projet.php?projet=3">Projet 3</a></li>
+            <?php foreach ($resultatPagesId as $key => $resultatPageId) {
+              echo '<li><a href="projet.php?projet='.$resultatPageId['id'].'">Projet '.$resultatPageId['id'].'</a></li>';
+            } ?>
             <li><a href="logout.php"><?php echo $_SESSION['user']['login']; ?><i class="material-icons right">arrow_drop_down</i></a></li>
             <?php if(isset($_GET['page'])) :
               if($_GET['page']=='users'):?>
@@ -100,9 +101,9 @@
                 <h1><a href="index.php?projet=0" class="center brand-logo">Portfolio</a></h1>
                 <a href="index.php?projet=0" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                  <li><a href="projet.php?projet=1">Projet 1</a></li>
-                  <li><a href="projet2.php?projet=2">Projet 2</a></li>
-                  <li><a href="projet3.php?projet=3">Projet 3</a></li>
+                  <?php foreach ($resultatPagesId as $key => $resultatPageId) {
+                    echo '<li><a href="projet.php?projet='.$resultatPageId['id'].'">Projet '.$resultatPageId['id'].'</a></li>';
+                  } ?>
                   <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
                   <li><a id="contact" href="#Contact" class="btn modal-trigger pulse">Contact</a></li>
                 </ul>
@@ -110,9 +111,9 @@
             </nav>
           </div>
           <ul class="sidenav" id="mobile-demo">
-            <li><a href="projet.php?projet=1">Projet 1</a></li>
-            <li><a href="projet2.php?projet=2">Projet 2</a></li>
-            <li><a href="projet3.php?projet=3">Projet 3</a></li>
+            <?php foreach ($resultatPagesId as $key => $resultatPageId) {
+              echo '<li><a href="projet.php?projet='.$resultatPageId['id'].'">Projet '.$resultatPageId['id'].'</a></li>';
+            } ?>
             <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
             <li><a id="contact" href="#Contact" class="waves-effect waves-light btn colorBtn modal-trigger pulse">Contact</a></li>
           </ul>
@@ -150,9 +151,9 @@
                 <h1><a href="index.php?projet=0" class="center brand-logo">Portfolio</a></h1>
                 <a href="index.php?projet=0" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                  <li><a href="projet.php?projet=1">Projet 1</a></li>
-                  <li><a href="projet.php?projet=2">Projet 2</a></li>
-                  <li><a href="projet.php?projet=3">Projet 3</a></li>
+                  <?php foreach ($resultatPagesId as $key => $resultatPageId) {
+                    echo '<li><a href="projet.php?projet='.$resultatPageId['id'].'">Projet '.$resultatPageId['id'].'</a></li>';
+                  } ?>
                   <li><a class="modal-trigger" id="connect" href="#connexion">Connexion</a></li>
                   <li><a id="contact" href="#Contact" class="btn modal-trigger pulse">Contact</a></li>
                 </ul>
@@ -160,9 +161,9 @@
             </nav>
           </div>
           <ul class="sidenav" id="mobile-demo">
-            <li><a href="projet.php?projet=1">Projet 1</a></li>
-            <li><a href="projet.php?projet=2">Projet 2</a></li>
-            <li><a href="projet.php?projet=3">Projet 3</a></li>
+            <?php foreach ($resultatPagesId as $key => $resultatPageId) {
+              echo '<li><a href="projet.php?projet='.$resultatPageId['id'].'">Projet '.$resultatPageId['id'].'</a></li>';
+            } ?>
             <li><a class="modal-trigger" id="connect" href="#connexion">Connexion</a></li>
             <li><a id="contact" href="#Contact" class="waves-effect waves-light btn colorBtn modal-trigger pulse">Contact</a>
             </li>
