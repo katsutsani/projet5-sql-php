@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 09 jan. 2022 à 00:32
--- Version du serveur : 5.7.36
--- Version de PHP : 7.4.26
+-- Généré le : jeu. 13 jan. 2022 à 16:53
+-- Version du serveur :  5.7.31
+-- Version de PHP : 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,13 +44,13 @@ CREATE TABLE IF NOT EXISTS `avis` (
 --
 
 INSERT INTO `avis` (`avis_id`, `page_id`, `order`, `title_avis`, `description_avis`, `logo_avis`, `typeLogo_avis`) VALUES
-(1, 1, 1, 'Découverte d\'outils de travail', 'C\'est toujours un plaisir d\'apprendre de nouveaux langages de programmation. Même si nous faisons facilement des erreurs, nous apprenons à ne plus les refaire. Mais c\'est encore plus plaisant lorsque l\'apprentissage s\'accompagne de nouveaux outils de travail. C\'était le cas pour ce projet avec la découverte du C, de l\'éditeur Emacs, de Trello pour partager les tâches et de GitHub pour mettre le travail en commun.', 'thumbs_up_down', 'icon'),
-(2, 1, 2, 'Organisation du travail', 'Pour pouvoir bien avancer, une bonne organisation est nécessaire. Ce projet nous a appris comment nous organiser grâce à Trello pour partager les tâches à exécuter mais aussi avec GitHub, qui nous permettait de mettre à jour nos fichiers facilement quand une modification était apportée.', 'flash_on', 'icon'),
+(1, 1, 1, 'Découverte d\'outils de travail', 'C\'est toujours un plaisir d\'apprendre de nouveau langage de programmation même si nous faisons facilement des erreurs, on apprend à ne plus les refaires. Mais c\'est encore plus plaisant lorsque qu\'on apprend en même temps de nouveaux outils de travail comme ça était le cas pour ce projet avec la découverte du C, de l\'éditeur emacs mais aussi de trello pour partager les taches et de github pour mettre le travail en commun.', 'thumbs_up_down', 'icon'),
+(2, 1, 2, 'Organisation du travail', 'Pour pouvoir bien avancer, il faut bien organiser le travail et ce projet nous à bien aider pour apprendre comment s\'organiser grace à trello pour partager les taches à faire mais aussi grace à github qui nous permettait de mettre à jour nos fichiers facilement quand une modification était apportée.', 'flash_on', 'icon'),
 (3, 2, 1, 'Organiser son travail', 'Des milliers d\'outils sont disponibles gratuitement. Nous avons choisi Unity comme moteur de jeux, Git et GitHub pour travailler en même temps sur le même projet et Trello pour se répartir le travail.', 'lightbulb_outline', 'icon'),
-(4, 2, 2, 'Appréhender les erreurs', 'Dès que nous avons commencé le projet, nous avons rencontré une multitude de problèmes. Pour les résoudre, nous avons demandé de l\'aide, cherché par nous-mêmes et discuté entre nous des décisions à prendre.', 'highlight_off', 'icon'),
-(5, 2, 3, 'Atteindre son objectif', 'Il y a-t-il meilleure récompense que la satisfaction personnelle ? Se dépasser, aller plus loin, se tromper, recommencer.  Il n\'y a pas meilleure réussite que l\'échec.', 'directions_run', 'icon'),
-(6, 3, 1, 'Développer ses connaissances', 'Selon moi, il est toujours bon de toujours chercher à développer ses connaissances. Ces projets m\'ont été très utiles : avant eux je n\'avais jamais fait de JavaScript, GitHub ou encore Héroku.', 'plus_one', 'icon'),
-(7, 3, 2, 'Développer pour aider', 'En plus de vouloir développer mes connaissances, ce projet pourra simplifier la façon de s\'amuser de plusieurs personnes. Après tout, qui ne voudrait pas d\'un petit RPG qui demande seulement une connexion internet ? Il n\'y a pas besoin d\'avoir un puissant appareil, il suffit juste de pouvoir installer Discord.', 'accessibility', 'icon');
+(4, 2, 2, 'Appréhender les erreurs', 'Dès que nous avons commencé le projet nous avons fait face à une multitude de problèmes. Pour les résoudre nous avons demandé de l\'aide, cherché par nous-mêmes, discuté entre nous des décisions à prendre.', 'highlight_off', 'icon'),
+(5, 2, 3, 'Atteindre son objectif', 'Il y a-t-il meilleure récompense que la satisfaction personnelle ? Se dépasser, aller plus loin, se tromper, recommencer; comme dirait Elon Musk, il n\'y a pas meilleure réussite que l\'échec.', 'directions_run', 'icon'),
+(6, 3, 1, 'Développer ses connaissances', 'Selon moi, il est toujours bon de toujours chercher à développer ses connaissances et ses projets mon été très utile pour cela car avant de le commencer je n\'avais jamais fait de Javascript et je n\'avais jamais utilisé github ou encore héroku.', 'plus_one', 'icon'),
+(7, 3, 2, 'Développer pour aider', 'En plus de vouloir développer mes connaissances se projet aussi pourra simplifier la façon de s\'amuser de plusieurs personnes. Après tout qui ne voudrait pas d\'un petit Rpg qui demande seulement une connexion internet, même pas besoin d\'avoir un puissant appareil, il suffit juste de pouvoir installer discord.', 'accessibility', 'icon');
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `carousel` (
   `order` int(11) NOT NULL,
   `carousel_link` varchar(255) NOT NULL,
   PRIMARY KEY (`carousel_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `carousel`
@@ -83,7 +83,27 @@ INSERT INTO `carousel` (`carousel_id`, `page_id`, `order`, `carousel_link`) VALU
 (9, 3, 1, 'img/exaltya/carousel/carousel1.png'),
 (10, 3, 2, 'img/exaltya/carousel/carousel2.png'),
 (11, 3, 3, 'img/exaltya/carousel/carousel3.png'),
-(12, 3, 4, 'img/exaltya/carousel/carousel4.png');
+(12, 3, 4, 'img/exaltya/carousel/carousel4.png'),
+(13, 4, 1, ''),
+(14, 4, 2, ''),
+(15, 4, 3, ''),
+(16, 4, 4, ''),
+(17, 5, 1, ''),
+(18, 5, 2, ''),
+(19, 5, 3, ''),
+(20, 5, 4, ''),
+(21, 6, 1, ''),
+(22, 6, 2, ''),
+(23, 6, 3, ''),
+(24, 6, 4, ''),
+(25, 7, 1, ''),
+(26, 7, 2, ''),
+(27, 7, 3, ''),
+(28, 7, 4, ''),
+(29, 8, 1, ''),
+(30, 8, 2, ''),
+(31, 8, 3, ''),
+(32, 8, 4, '');
 
 -- --------------------------------------------------------
 
@@ -99,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   `img_link` varchar(255) NOT NULL,
   `img_desc` varchar(255) NOT NULL,
   PRIMARY KEY (`img_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `images`
@@ -126,7 +146,42 @@ INSERT INTO `images` (`img_id`, `page_id`, `img_name`, `img_link`, `img_desc`) V
 (18, 3, 'carousel_2', '<img src=\"img/exaltya/carousel/carousel2.PNG\" alt=\"carousel projet 3 Portfolio\">', 'carousel projet 3 Portfolio'),
 (19, 3, 'carousel_3', '<img src=\"img/exaltya/carousel/carousel3.PNG\" alt=\"carousel projet 3 Portfolio\">', 'carousel projet 3 Portfolio'),
 (20, 3, 'carousel_4', '<img src=\"img/exaltya/carousel/carousel4.PNG\" alt=\"carousel projet 3 Portfolio\">', 'carousel projet 3 Portfolio'),
-(21, 3, 'parallax_bot', '<img src=\"img/exaltya/parallax/bot.jpg\" alt=\"parallax projet 3 Portfolio\">', 'parallax projet 3 Portfolio');
+(21, 3, 'parallax_bot', '<img src=\"img/exaltya/parallax/bot.jpg\" alt=\"parallax projet 3 Portfolio\">', 'parallax projet 3 Portfolio'),
+(22, 4, '', '', ''),
+(23, 4, '', '', ''),
+(24, 4, '', '', ''),
+(25, 4, '', '', ''),
+(26, 4, '', '', ''),
+(27, 4, '', '', ''),
+(28, 4, '', '', ''),
+(29, 5, '', '', ''),
+(30, 5, '', '', ''),
+(31, 5, '', '', ''),
+(32, 5, '', '', ''),
+(33, 5, '', '', ''),
+(34, 5, '', '', ''),
+(35, 5, '', '', ''),
+(36, 6, '', '', ''),
+(37, 6, '', '', ''),
+(38, 6, '', '', ''),
+(39, 6, '', '', ''),
+(40, 6, '', '', ''),
+(41, 6, '', '', ''),
+(42, 6, '', '', ''),
+(43, 7, '', '', ''),
+(44, 7, '', '', ''),
+(45, 7, '', '', ''),
+(46, 7, '', '', ''),
+(47, 7, '', '', ''),
+(48, 7, '', '', ''),
+(49, 7, '', '', ''),
+(50, 8, '', '', ''),
+(51, 8, '', '', ''),
+(52, 8, '', '', ''),
+(53, 8, '', '', ''),
+(54, 8, '', '', ''),
+(55, 8, '', '', ''),
+(56, 8, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -144,22 +199,37 @@ CREATE TABLE IF NOT EXISTS `objectifs` (
   `logo_objectifs` varchar(255) NOT NULL,
   `typeLogo_objectifs` varchar(50) NOT NULL,
   PRIMARY KEY (`objectifs_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `objectifs`
 --
 
 INSERT INTO `objectifs` (`objectifs_id`, `page_id`, `order`, `title_objectifs`, `description_objectifs`, `logo_objectifs`, `typeLogo_objectifs`) VALUES
-(1, 1, 1, 'Environnement Linux', 'Lors de ce projet, l\'un des objectifs était de développer sur un environnement Linux. Ainsi nous avons utilisé Debian. Au début, le plus difficile était de se déplacer dans les fichiers car Debian n\'a pas d\'interface graphique et toute action se fait à partir de ligne de commande.', 'img/puissance_quatre/icons/linux.png', 'image'),
-(2, 1, 2, 'GitHub', 'Lors de notre travail de groupe, on a utilisé Git et GitHub et créé un environnement professionnel, afin de sauvegarder notre progression et de pouvoir se mettre à jour lorsque l\'un de nous faisait une modification.', 'img/puissance_quatre/icons/github.png', 'image'),
-(3, 1, 3, 'Puissance 4', 'Pour la partie programmation, le projet consistait à faire un puissance 4. Nous avons donc utilisé un éditeur de texte type Emacs ainsi que Gcc pour compiler notre code puis le lancer.', 'img/puissance_quatre/icons/manette.png', 'image'),
-(4, 2, 1, 'Savoir se ré-inventer', 'En tant que fanatique de l\'Univers du Krosmoz, j\'ai créé un projet hybride, mêlant gameplay / style graphique à la Pokémon et plongeant dans l\'histoire des Dofus. Le gameplay s\'articule autour de défis, combats au tour par tour, et quêtes épiques.', 'import_contacts', 'icon'),
-(5, 2, 2, 'Cibler un public large', 'Ce jeu a pour objectif d\'être adapté à tous les types de joueurs, du casual au hardcore gamer en passant par l\'intermédiaire. Le jeu est divisé en 3 phases non explicites à la vue des joueurs, chacune correspondant à un niveau de difficulté croissante.', 'groupe', 'icon'),
-(6, 2, 3, 'Un modèle économique solide', 'Le marché du jeu vidéo est en constante évolution. Le modèle économique d\'un jeu est très important, il peut aussi définir sa durée de vie mais surtout sa rentabilité. L\'ère des jeux matériels, par abonnement etc. est révolue, c\'est pourquoi nous avons fait le choix du Gacha.', 'show_chart', 'icon'),
-(7, 3, 1, 'Créer un bot Discord', 'Dans un premier temps, l\'objectif de ce projet était de se familiariser avec le JavaScript. Passant beaucoup de temps sur Discord, quoi de mieux que de se faire un bot Discord personnalisé. J\'ai relevé le défi et je me suis lancé.', 'img/exaltya/icons/djs.png', 'image'),
-(8, 3, 2, 'Disponibility 24h/24 et 7j/7', 'Pour avoir un vrai bot, il est mieux qu\'il soit connecté 24h/24 et 7j/7. Alors j\'ai fait beaucoup de recherches pour trouver des hébergeurs gratuits et j\'ai fini par trouver Heroku. J\'ai donc commencé à utiliser Git pour pouvoir mettre mon bot sur l\'hébergeur.', 'img/exaltya/icons/heroku.png', 'image'),
-(9, 3, 3, 'Créer un RPG sur Discord', 'Ayant des amis fanatiques du roleplay, le bot qui était essentiellement prévu pour me familiariser avec le JavaScript s\'est transformé en un projet de RPG sur discord. Pour enregistrer les informations de chaque joueur, il m\'a fallu obligatoirement une base de données. J\'ai donc utilisé MongoBD. Mais le projet n\'est pas encore fini. Il  reste à appliquer une nouvelle mise à jour de discord, JS a appliqué beaucoup de changements. Je suis donc en train de revoir tout mon code avant de le continuer. Il contient une fonction musicale pour ceux qui aimeraient écouter de la musique pendant qu\'ils jouent.', 'img/exaltya/icons/jss.png', 'image');
+(1, 1, 1, 'Environnement linux', 'Lors de ce projet, l\'un des objectifs était de développer sur un environnement Linux. Pour se faire nous avons utilisé Debian. Au début le plus difficile était de se déplacer dans les fichiers car Debian n\'a pas d\'interface graphique et toute action se fait à partir de ligne de commande.', 'img/puissance_quatre/icons/linux.png', 'image'),
+(2, 1, 2, 'Github', 'Afin de travailler en groupe, ont nous à demander d\'utiliser git et github et de nous créer un environnement professionnel afin de stocker notre travail et de pouvoir se mettre à jour lorsque l\'un de nous faisait une modification.', 'img/puissance_quatre/icons/github.png', 'image'),
+(3, 1, 3, 'Puissance 4', 'Pour la partie programmation, le projet consistait à faire une puissance 4 pour ce faire, il nous à falloir un éditeur de texte type Emacs puis il nous a fallu utiliser Gcc afin de compiler notre code pour pouvoir le lancer.', 'img/puissance_quatre/icons/manette.png', 'image'),
+(4, 2, 1, 'Savoir se ré-inventer', 'En tant que fanatique de l\'Univers du Krosmoz, j\'ai créé un projet hybride, mêlant gameplay / style graphique à la Pokémon et plongent dans l\'histoire des Dofus. Le gameplay s\'articule autour de défis, combats au tour par tour, et quêtes épiques.', 'import_contacts', 'icon'),
+(5, 2, 2, 'Cibler un public large', 'Ce jeu a pour objectif d\'être adapté à tous les types de joueurs, du casual au hardore gamer en passant par l\'intermédiaire. Le jeu est divisé en 3 phases non explicites à la vue des joueurs, correspondant à un niveau de difficulté croissant.', 'groupe', 'icon'),
+(6, 2, 3, 'Un modèle économique solide', 'Le marché du jeu vidéo est en constante évolution, le modèle économique d\'un jeu est très important, il peut aussi définir sa durée de vie mais surtout ça rentabilité. L\'aire des jeux matériels, par abonnement etc. est révolue, c\'est pourquoi nous avons fait le choix du gacha.', 'show_chart', 'icon'),
+(7, 3, 1, 'Créer un bot discord', 'Dans un premier temps l\'objectif de ce projet était de se familiariser avec le Javascript passant beaucoup de temps sur discord, quoi de mieux que de se faire un bot discord personnalisé. J\'ai relevé le défi et je me suis lancé.', 'img/exaltya/icons/djs.png', 'image'),
+(8, 3, 2, 'Disponibility 24h/24 et 7j/7', 'Pour avoir un vrai bot, il est mieux qu\'il soit connecté 24h/24 et 7j/7 alors j\'ai fait beaucoup de recherches pour trouver des hébergeurs gratuits et j\'ai fini par trouver Heroku. J\'ai alors commencé à utiliser git pour pouvoir mettre mon bot sur l\'hébergeur.', 'img/exaltya/icons/heroku.png', 'image'),
+(9, 3, 3, 'Créer un rpg sur discord', 'Ayant des amis fanatiques du roleplay, le bot qui était essentiellement prévu pour me familiariser avec le Javascript c\'est transfort en un projet de Rpg sur discord. Pour enregister les informations de chaque joueur, forcement il m\'a fallu une base de donné. J\'ai donc utilisé MongoBD pour cela. Mais le projet n\'est pas encore fini et il y a pu une nouvelle mise à jour de discord js a appliqué beaucoup de changements, je suis donc entrain de revoir tout mon code avant de la continuer, il détient une fonction musicale pour ceux qui aimeraient écouter de la musique pendant qu\'ils jouent.', 'img/exaltya/icons/jss.png', 'image'),
+(10, 4, 1, '', '', '', ''),
+(11, 4, 2, '', '', '', ''),
+(12, 4, 3, '', '', '', ''),
+(13, 5, 1, '', '', '', ''),
+(14, 5, 2, '', '', '', ''),
+(15, 5, 3, '', '', '', ''),
+(16, 6, 1, '', '', '', ''),
+(17, 6, 2, '', '', '', ''),
+(18, 6, 3, '', '', '', ''),
+(19, 7, 1, '', '', '', ''),
+(20, 7, 2, '', '', '', ''),
+(21, 7, 3, '', '', '', ''),
+(22, 8, 1, '', '', '', ''),
+(23, 8, 2, '', '', '', ''),
+(24, 8, 3, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -174,17 +244,24 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `img_link` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `subtitle` text NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `id_type` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `pages`
 --
 
-INSERT INTO `pages` (`id`, `title`, `img_link`, `description`, `subtitle`) VALUES
-(1, ' Introduction à la programation en C', 'img/puissance_quatre/icons/Nicolas.png', 'Python & scientific developer, bash scripting, Linux systems administrator. Software & algorithms design, data processing, visualization, automation, tests, statistics, problems solving, debugging, code optimisation. Research engineer in remote sensing: satellite altimetry & imagery, geomatics.', 'Intervenant : Nicolas BERCHER'),
-(2, ' PokeFus', 'img\\pokefus\\icons\\lprieu.jpg', '', 'PokeFus est un RPG solo : un savoureux mélange entre l\'univers du Krosmoz et celui de Pokémon.<br>Projet personnel de Lilian Prieu.'),
-(3, ' Exaltya', 'img\\exaltya\\icons\\gsimoes.jpg', '', 'Exaltya est un bot Discord permettant de jouer dans un petit RPG, en utilisant de simples commandes. Il est donc accessible de n\'importe où tant que vous disposez d\'une connexion internet, et facile d\'utilisation. Ce projet est encore en cours de développement. Projet personnel de SIMOES Guillaume.');
+INSERT INTO `pages` (`id`, `title`, `img_link`, `description`, `subtitle`, `type`, `id_type`) VALUES
+(1, ' Introduction à la programation en C', 'img/puissance_quatre/icons/Nicolas.png', 'Python & scientific developer, bash scripting, Linux systems administrator. Software & algorithms design, data processing, visualization, automation, tests, statistics, problems solving, debugging, code optimisation. Research engineer in remote sensing: satellite altimetry & imagery, geomatics.', 'Intervenant : Nicolas BERCHER', 'Commun', 2),
+(2, ' PokeFus', 'img\\pokefus\\icons\\lprieu.jpg', '', 'PokeFus est un RPG solo, un savoureux mélange entre l\'univers du Krosmoz et celui de Pokémon.<br>Projet personnel de Lilian Prieu.', 'Lilian', 1),
+(3, ' Exaltya', 'img\\exaltya\\icons\\gsimoes.jpg', '', 'Exaltya est un bot discord permettant de se lancer dans un petit Rpg grace à de simples commandes, il est donc accessible de n\'importe où tant que vous disposez d\'une connexion et facile d\'utilisation, ce projet est encore en cours de développement. Projet personnel de SIMOES Guillaume.', 'Guillaume', 1),
+(4, 'Initiation à l\'algorithmique avec Python', '', '', '', 'Commun', 1),
+(5, 'HTML / CSS / SEO', '', '', '', 'Lilian', 2),
+(6, 'HTML / CSS / SEO', '', '', '', 'Guillaume', 2),
+(7, 'Framework CSS & JavaScript', '', '', '', 'Commun', 3),
+(8, 'PHP / MySQL', '', '', '', 'Commun', 4);
 
 -- --------------------------------------------------------
 
@@ -199,7 +276,7 @@ CREATE TABLE IF NOT EXISTS `parallax` (
   `order` int(11) NOT NULL,
   `parallax_link` varchar(255) NOT NULL,
   PRIMARY KEY (`parallax_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `parallax`
@@ -214,7 +291,22 @@ INSERT INTO `parallax` (`parallax_id`, `page_id`, `order`, `parallax_link`) VALU
 (6, 2, 3, 'img/pokefus/parallax/bot.jpg'),
 (7, 3, 1, 'img/exaltya/parallax/top.jpg'),
 (8, 3, 2, 'img/exaltya/parallax/mid.jpeg'),
-(9, 3, 3, 'img/exaltya/parallax/bot.png');
+(9, 3, 3, 'img/exaltya/parallax/bot.png'),
+(10, 4, 1, ''),
+(11, 4, 2, ''),
+(12, 4, 3, ''),
+(13, 5, 1, ''),
+(14, 5, 2, ''),
+(15, 5, 3, ''),
+(16, 6, 1, ''),
+(17, 6, 2, ''),
+(18, 6, 3, ''),
+(19, 7, 1, ''),
+(20, 7, 2, ''),
+(21, 7, 3, ''),
+(22, 8, 1, ''),
+(23, 8, 2, ''),
+(24, 8, 3, '');
 
 -- --------------------------------------------------------
 
