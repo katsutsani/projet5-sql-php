@@ -15,6 +15,8 @@
 </head>
 
 <body>
+
+
   <!--NavBar-->
 <?php require_once "navbar.php" ?>
   <!--parallax-->
