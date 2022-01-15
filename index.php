@@ -35,7 +35,7 @@
       <div class="description_gs center">
         <img class="top circle" src="img/home_page/gsimoes.jpg">
         <h2 class="white-text nom_age">Simoes Guillaume<br>18 ans</h2>
-        <p class="light white-text">Étudiant à Gaming Campus, adepte de MMO et DotA-Like tel que ligue of legends ainsi que programmeur passionné.</p>
+        <p class="light white-text">Étudiant à Gaming Campus, adepte de MMO et DotA-Like tel que league of legends ainsi que programmeur passionné.</p>
         <div class="media_gs">
           <div class="linkedin_gs"><a id="linkedin_gs" href="https://www.linkedin.com/in/guillaume-simoes-378246226"><i class="fab fa-linkedin-in small"></i></a></div>
           <div class="mail_gs"><a id="mail_gs" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=gsimoes@gaming.tech"><i class="fas fa-envelope-open-text small"></i></a></div>
@@ -45,7 +45,7 @@
     </div>
     <!--easter egg-->
     <div class="easteregg bottom left">
-      <a href="snake/index.html"><i class="material-icons white-text small">all_inclusive</i></a>
+      <a href="snake/index.html"><i class="material-icons easteregg white-text small">all_inclusive</i></a>
     </div>
   </div>
   <!-- Modal Structure -->

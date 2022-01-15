@@ -79,10 +79,16 @@ h1 {
   font-size: 30px;
 }
 
-.material-icons {
+.easteregg {
   position: absolute;
   bottom: 1%;
   left: 1%;
+}
+
+.sidenavButton{
+    position: absolute;
+    bottom: 5%;
+    margin: 20px 80px !important;
 }
 
 .btn{
