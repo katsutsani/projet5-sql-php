@@ -24,7 +24,7 @@
       <div class="description_lp center">
         <img class="top circle" src="img/home_page/lprieu.jpg">
         <h2 class="white-text nom_age">Prieu Lilian<br>19 ans</h2>
-        <p class="light white-text">Etudiant à Gaming Campus, adepte des MMO et programmeur passionné. J'ai l'Univers du Krosmoz dans mon coeur.</p>
+        <p class="light white-text">Étudiant à Gaming Campus, adepte des MMO et programmeur passionné. J'ai l'Univers du Krosmoz dans mon coeur.</p>
         <div class="media_lp">
           <div class="linkedin_lp"><a id="linkedin_lp" href="https://www.linkedin.com/in/lilian-prieu-554058221"><i class="fab fa-linkedin-in small"></i></a></div>
           <div class="mail_lp"><a id="mail_lp" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=lprieu@gaming.tech"><i class="fas fa-envelope-open-text small"></i></a></div>
@@ -35,7 +35,7 @@
       <div class="description_gs center">
         <img class="top circle" src="img/home_page/gsimoes.jpg">
         <h2 class="white-text nom_age">Simoes Guillaume<br>18 ans</h2>
-        <p class="light white-text">Étudiant à Gaming Campus, adepte de MMO et DotA-Like tel que league of legends ainsi que programmeur passionné.</p>
+        <p class="light white-text">Étudiant à Gaming Campus, adepte de MMO et DotA-Like tel que League of Legends ainsi que programmeur passionné.</p>
         <div class="media_gs">
           <div class="linkedin_gs"><a id="linkedin_gs" href="https://www.linkedin.com/in/guillaume-simoes-378246226"><i class="fab fa-linkedin-in small"></i></a></div>
           <div class="mail_gs"><a id="mail_gs" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=gsimoes@gaming.tech"><i class="fas fa-envelope-open-text small"></i></a></div>
