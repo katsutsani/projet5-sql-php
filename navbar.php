@@ -8,217 +8,89 @@
 <?php require_once 'dropdownCommun.php' ?>
 <?php require_once 'dropdownPrieu.php' ?>
 <?php require_once 'dropdownSimoes.php' ?>
-    <?php
-    if(isset($_SESSION['user'])):
-      $link = $_GET['projet'];
-      if($_SESSION['user']['admin'] == 1):
-        if ($link == 0): ?>
-          <div class="navbar-fixed">
-            <nav>
-              <div class="nav-wrapper">
-                <h1><a href="index.php?projet=0" class="center brand-logo">Portfolio</a></h1>
-                <a href="index.php?projet=0" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="left hide-on-med-and-down">
-                  <li><a class="dropdown-trigger" data-target="dropdown-commun">Projet Commun<i class="material-icons right">arrow_drop_down</i></a></li>
-                  <li><a class="dropdown-trigger" data-target="dropdown-lprieu">Projet L.Prieu<i class="material-icons right">arrow_drop_down</i></a></li>
-                  <li><a class="dropdown-trigger" data-target="dropdown-gsimoes">Projet G.Simoes<i class="material-icons right">arrow_drop_down</i></a></li>
-                </ul>
-                <div id="dropdown-commun" class="dropdown-content">
-                  <ul>
-                    <?php foreach ($pagesCommun as $key => $pageCommun) {
-                      echo "<li><a href='#projet.php?projet='".$pageCommun['id']."'>Projet ".$pageCommun['title']."</a></li>";
-                    } ?>
-                  </ul>
-                  </div>
-                  <div id="dropdown-lprieu" class="dropdown-content">
-                    <ul>
-                      <?php foreach ($pagesPrieu as $key => $pagePrieu) {
-                        echo "<li><a href='#projet.php?projet='".$pagePrieu['id']."'>Projet ".$pagePrieu['title']."</a></li>";
-                      } ?>
-                    </ul>
-                    </div>
-                    <div id="dropdown-gsimoes" class="dropdown-content">
-                      <ul>
-                        <?php foreach ($pagesSimoes as $key => $pageSimoes) {
-                          echo "<li><a href='#projet.php?projet='".$pageSimoes['id']."'>Projet ".$pageSimoes['title']."</a></li>";
-                        } ?>
-                      </ul>
-                </div>
-                <ul class="right hide-on-med-and-down">
-                  <li><a href="logout.php"><?php echo $_SESSION['user']['login']; ?></a></li>
-                  <?php if(isset($_GET['page'])) :
-                    if($_GET['page']=='users'):?>
-                    <li><a href="panel.php?projet=0&page=pages"> Pages Panel</a></li>
-                  <?php else: ?>
-                    <li><a href="panel.php?projet=0&page=users"> Users Panel</a></li>
-                  <?php endif?>
-                <?php else: ?>
-                  <li><a href="panel.php?projet=0&page=users"> Panel</a></li>
-                <?php endif ?>
-                  <li><a id="contact" href="#Contact" class="modal-trigger">Contact</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <ul class="sidenav" id="mobile-demo">
-            <?php foreach ($resultatPagesId as $key => $resultatPageId) {
-              echo '<li><a href="projet.php?projet='.$resultatPageId['id'].'">Projet '.$resultatPageId['id'].'</a></li>';
-            } ?>
-            <li><a href="logout.php"><?php echo $_SESSION['user']['login']; ?><i class="material-icons right">arrow_drop_down</i></a></li>
-            <?php if(isset($_GET['page'])) :
-              if($_GET['page']=='users'):?>
-              <li><a href="panel.php?projet=0&page=pages"> Pages Panel</a></li>
-            <?php else: ?>
-              <li><a href="panel.php?projet=0&page=users"> Users Panel</a></li>
-            <?php endif?>
-          <?php else: ?>
-            <li><a href="panel.php?projet=0&page=users"> Panel</a></li>
-          <?php endif ?>
-            <li><a id="contact" href="#Contact" class="waves-effect waves-light btn colorBtn modal-trigger pulse">Contact</a>
-            </li>
-          </ul>
-        <?php else: ?>
-          <div class="navbar-fixed">
-            <nav>
-              <div class="nav-wrapper">
-                <h1><a href="index.php?projet=0" class="center brand-logo">Portfolio</a></h1>
-                <a href="index.php?projet=0" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                  <li><a href="#Objectifs">Objectifs</a></li>
-                  <li><a href="#Result">Résultat</a></li>
-                  <li><a href="#Opinion">Avis</a></li>
-                  <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
-                  <?php if(isset($_GET['page'])) :
-                    if($_GET['page']=='users'):?>
-                    <li><a href="panel.php?projet=0&page=pages"> Pages Panel</a></li>
-                  <?php else: ?>
-                    <li><a href="panel.php?projet=0&page=users"> Users Panel</a></li>
-                  <?php endif?>
-                <?php else: ?>
-                  <li><a href="panel.php?projet=0&page=users"> Panel</a></li>
-                <?php endif ?>
-                  <li><a href="#Contact" class="waves-effect waves-light btn modal-trigger pulse">Contact</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <ul class="sidenav" id="mobile-demo">
+
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <h1><a href="index.php?projet=0" class="center brand-logo">Portfolio</a></h1>
+      <a href="index.php?projet=0" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="left hide-on-med-and-down">
+        <li><a class="dropdown-trigger" data-target="dropdown-commun">Projet Commun<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" data-target="dropdown-lprieu">Projet L.Prieu<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" data-target="dropdown-gsimoes">Projet G.Simoes<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+      <div id="dropdown-commun" class="dropdown-content">
+        <ul>
+          <?php foreach ($pagesCommun as $key => $pageCommun) {
+            echo "<li><a href='projet.php?projet=".$pageCommun['id_type']."&type=".$pageCommun['type']."'>Projet ".$pageCommun['title']."</a></li>";
+          } ?>
+        </ul>
+      </div>
+      <div id="dropdown-lprieu" class="dropdown-content">
+        <ul>
+          <?php foreach ($pagesPrieu as $key => $pagePrieu) {
+            echo "<li><a href='projet.php?projet=".$pagePrieu['id_type']."&type=".$pagePrieu['type']."'>Projet ".$pagePrieu['title']."</a></li>";
+          } ?>
+        </ul>
+      </div>
+      <div id="dropdown-gsimoes" class="dropdown-content">
+        <ul>
+          <?php foreach ($pagesSimoes as $key => $pageSimoes) {
+            echo "<li><a href='projet.php?projet=".$pageSimoes['id_type']."&type=".$pageSimoes['type']."'>Projet ".$pageSimoes['title']."</a></li>";
+          } ?>
+        </ul>
+      </div>
+      <ul class="right hide-on-med-and-down">
+        <?php if(isset($_SESSION['user'])):?>
+          <?php  if(isset($_GET['projet'])):?>
+            <?php if($_SESSION['user']['admin'] == 1):?>
+              <li><a href="#Objectifs">Objectifs</a></li>
+              <li><a href="#Result">Résultat</a></li>
+              <li><a href="#Opinion">Avis</a></li>
+              <?php echo "<li><a href='logout.php'> ".$_SESSION['user']['login']." </a></li>  "?>
+              <li><a href='panel.php?page=users'> Panels </a></li>
+              <?php#dropdown a set?>
+            <?php endif; ?>
+          <?php else :?>
             <li><a href="#Objectifs">Objectifs</a></li>
             <li><a href="#Result">Résultat</a></li>
             <li><a href="#Opinion">Avis</a></li>
-            <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
-            <?php if(isset($_GET['page'])) :
-              if($_GET['page']=='users'):?>
-              <li><a href="panel.php?projet=0&page=pages"> Pages Panel</a></li>
-            <?php else: ?>
-              <li><a href="panel.php?projet=0&page=users"> Users Panel</a></li>
-            <?php endif?>
-          <?php else: ?>
-            <li><a href="panel.php?projet=0&page=users"> Panel</a></li>
-          <?php endif ?>
-            <li><a href="#Contact" class="waves-effect waves-light btn modal-trigger pulse">Contact</a></li>
-          </ul>
-        <?php endif ?>
-      <?php else:?>
-        <?php if ($link == 0): ?>
-          <div class="navbar-fixed">
-            <nav>
-              <div class="nav-wrapper">
-                <h1><a href="index.php?projet=0" class="center brand-logo">Portfolio</a></h1>
-                <a href="index.php?projet=0" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                  <?php foreach ($resultatPagesId as $key => $resultatPageId) {
-                    echo '<li><a href="projet.php?projet='.$resultatPageId['id'].'">Projet '.$resultatPageId['id'].'</a></li>';
-                  } ?>
-                  <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
-                  <li><a id="contact" href="#Contact" class="btn modal-trigger pulse">Contact</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <ul class="sidenav" id="mobile-demo">
-            <?php foreach ($resultatPagesId as $key => $resultatPageId) {
-              echo '<li><a href="projet.php?projet='.$resultatPageId['id'].'">Projet '.$resultatPageId['id'].'</a></li>';
-            } ?>
-            <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
-            <li><a id="contact" href="#Contact" class="waves-effect waves-light btn colorBtn modal-trigger pulse">Contact</a></li>
-          </ul>
-        <?php else: ?>
-          <div class="navbar-fixed">
-            <nav>
-              <div class="nav-wrapper">
-                <h1><a href="index.php?projet=0" class="center brand-logo">Portfolio</a></h1>
-                <a href="index.php?projet=0" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                  <li><a href="#Objectifs">Objectifs</a></li>
-                  <li><a href="#Result">Résultat</a></li>
-                  <li><a href="#Opinion">Avis</a></li>
-                  <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
-                  <li><a href="#Contact" class="waves-effect waves-light btn modal-trigger pulse">Contact</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <ul class="sidenav" id="mobile-demo">
+            <?php echo "<li><a href='logout.php'> ".$_SESSION['user']['login']." </a></li>  "?>
+          <?php endif?>
+        <?php else :
+          if(isset($_GET['projet'])):?>
             <li><a href="#Objectifs">Objectifs</a></li>
             <li><a href="#Result">Résultat</a></li>
             <li><a href="#Opinion">Avis</a></li>
-            <li><a href="logout.php"> <?php echo $_SESSION['user']['login']; ?></a></li>
-            <li><a href="#Contact" class="waves-effect waves-light btn modal-trigger pulse">Contact</a></li>
-          </ul>
+            <li><a class='modal-trigger' id='connect' href='#connexion'>Connexion</a></li>
+          <?php else :?>
+            <li><a class='modal-trigger' id='connect' href='#connexion'>Connexion</a></li>
+          <?php endif?>
         <?php endif ?>
-      <?php endif ?>
-    <?php else: ?>
-      <?php $link = $_GET['projet'];
-        if ($link == 0): ?>
-          <div class="navbar-fixed">
-            <nav>
-              <div class="nav-wrapper">
-                <h1><a href="index.php?projet=0" class="center brand-logo">Portfolio</a></h1>
-                <a href="index.php?projet=0" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                  <?php foreach ($resultatPagesId as $key => $resultatPageId) {
-                    echo '<li><a href="projet.php?projet='.$resultatPageId['id'].'">Projet '.$resultatPageId['id'].'</a></li>';
-                  } ?>
-                  <li><a class="modal-trigger" id="connect" href="#connexion">Connexion</a></li>
-                  <li><a id="contact" href="#Contact" class="btn modal-trigger pulse">Contact</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <ul class="sidenav" id="mobile-demo">
-            <?php foreach ($resultatPagesId as $key => $resultatPageId) {
-              echo '<li><a href="projet.php?projet='.$resultatPageId['id'].'">Projet '.$resultatPageId['id'].'</a></li>';
-            } ?>
-            <li><a class="modal-trigger" id="connect" href="#connexion">Connexion</a></li>
-            <li><a id="contact" href="#Contact" class="waves-effect waves-light btn colorBtn modal-trigger pulse">Contact</a>
-            </li>
-          </ul>
-        <?php else: ?>
-          <div class="navbar-fixed">
-            <nav>
-              <div class="nav-wrapper">
-                <h1><a href="index.php?projet=0" class="center brand-logo">Portfolio</a></h1>
-                <a href="index.php?projet=0" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                  <li><a href="#Objectifs">Objectifs</a></li>
-                  <li><a href="#Result">Résultat</a></li>
-                  <li><a href="#Opinion">Avis</a></li>
-                  <li><a class="modal-trigger" id="connect" href="#connexion">Connexion</a></li>
-                  <li><a href="#Contact" class="waves-effect waves-light btn modal-trigger pulse">Contact</a></li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <ul class="sidenav" id="mobile-demo">
-            <li><a href="#Objectifs">Objectifs</a></li>
-            <li><a href="#Result">Résultat</a></li>
-            <li><a href="#Opinion">Avis</a></li>
-            <li><a class="modal-trigger" id="connect" href="#connexion">Connexion</a></li>
-            <li><a href="#Contact" class="waves-effect waves-light btn modal-trigger pulse">Contact</a></li>
-          </ul>
-        <?php endif ?>
-    <?php endif ?>
+        <li><a id="contact" href="#Contact" class="waves-effect waves-light btn black modal-trigger pulse">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<ul class="sidenav" id="mobile-demo">
+  <?php foreach ($resultatPagesId as $key => $resultatPageId) {
+    echo '<li><a href="projet.php?projet='.$resultatPageId['id'].'">Projet '.$resultatPageId['id'].'</a></li>';
+  } ?>
+  <li><a href="logout.php"><?php echo $_SESSION['user']['login']; ?><i class="material-icons right">arrow_drop_down</i></a></li>
+  <?php if(isset($_GET['page'])) :
+    if($_GET['page']=='users'):?>
+    <li><a href="panel.php?projet=0&page=pages"> Pages Panel</a></li>
+  <?php else: ?>
+    <li><a href="panel.php?projet=0&page=users"> Users Panel</a></li>
+  <?php endif?>
+<?php else: ?>
+  <li><a href="panel.php?projet=0&page=users"> Panel</a></li>
+<?php endif ?>
+  <li><a id="contact" href="#Contact" class="waves-effect waves-light btn colorBtn modal-trigger pulse">Contact</a>
+  </li>
+</ul>
+
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>

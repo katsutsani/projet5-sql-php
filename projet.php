@@ -15,11 +15,7 @@
 
 <body>
   <?php require_once "navbar.php" ?>
-  <?php require "avis_data.php"?>
   <?php require "pages_data.php"?>
-  <?php require "objectifs_data.php"?>
-  <?php require "parallax_data.php"?>
-  <?php require "carousel_data.php"?>
   <div class="section white">
     <div class="row container">
       <div class="icon-block">
@@ -34,22 +30,22 @@
   </div>
     <div class="parallax-container">
       <div class="parallax">
-          <img src=<?php echo $resultatParallaxTop ['parallax_link']; ?>>
+          <img src=<?php echo $resultatPagesParallaxTop ['parallax_link']; ?>>
       </div>
     </div>
   <div class="section white">
     <div class="row container">
       <h2 class="center" id="Objectifs"><i class="small material-icons">build</i> Objectifs</h2>
-      <?php foreach ($resultatObjectifss as $resultatObjectifs): ?>
-        <div class="col s12 m4 <?php echo count($resultatObjectifss)>2?'l4':'l6' ?> ">
+      <?php foreach ($resultatPagesObjectifs as $resultatPageObjectifs): ?>
+        <div class="col s12 m4 <?php echo count($resultatPageObjectifs)>2?'l4':'l6' ?> ">
           <div class="icon-block">
-            <h2 class="center brown-text"><?php if($resultatObjectifs['typeLogo_objectifs']=="image"):
-              echo '<img src="'.$resultatObjectifs['logo_objectifs'].'">';
-              elseif ($resultatObjectifs['typeLogo_objectifs']=="icon") :
-                echo '<i class="small material-icons">'.$resultatObjectifs['logo_objectifs'].'</i>';
+            <h2 class="center brown-text"><?php if($resultatPageObjectifs['typeLogo_objectifs']=="image"):
+              echo '<img src="'.$resultatPageObjectifs['logo_objectifs'].'">';
+              elseif ($resultatPageObjectifs['typeLogo_objectifs']=="icon") :
+                echo '<i class="small material-icons">'.$resultatPageObjectifs['logo_objectifs'].'</i>';
                 endif?></h2>
-            <h5 class="center"><?php echo $resultatObjectifs['title_objectifs']; ?></h5>
-            <p class="light"><?php echo $resultatObjectifs['description_objectifs']; ?></p>
+            <h5 class="center"><?php echo $resultatPageObjectifs['title_objectifs']; ?></h5>
+            <p class="light"><?php echo $resultatPageObjectifs['description_objectifs']; ?></p>
           </div>
         </div>
       <?php endforeach; ?>
@@ -57,38 +53,38 @@
   </div>
     <div class="parallax-container">
       <div class="parallax">
-        <img src=<?php echo $resultatParallaxMid ['parallax_link']; ?>>
+        <img src=<?php echo $resultatPagesParallaxMid ['parallax_link']; ?>>
       </div>
     </div>
   <div class="section white">
     <div class="row container">
       <h2 class="center" id="Result"><i class="small material-icons">flag</i> Résultat</h2>
       <div class="carousel carousel-slider col s12 m12 l8 offset-l2">
-        <?php foreach ($resultatCarouselOrder as $resultatCarousel): ?>
-          <a class="carousel-item" href="#one!"><img src=<?php echo $resultatCarousel ['carousel_link']; ?>></a>
+        <?php foreach ($resultatPagesCarousel as $resultatPageCarousel): ?>
+          <a class="carousel-item" href="#one!"><img src=<?php echo $resultatPageCarousel ['carousel_link']; ?>></a>
         <?php endforeach; ?>
       </div>
     </div>
   </div>
   <div class="parallax-container">
     <div class="parallax">
-      <img src=<?php echo $resultatParallaxBot ['parallax_link']; ?>>
+      <img src=<?php echo $resultatPagesParallaxBot ['parallax_link']; ?>>
     </div>
   </div>
   <div class="section white">
     <div class="row container">
       <h2 class="center" id="Opinion"><i class="small material-icons">thumbs_up_down</i> Avis</h2>
-      <?php foreach ($resultatAviss as $resultatAvis): ?>
-        <div class="col s12 m12 <?php echo count($resultatAviss)>2?'l4':'l6' ?> ">
+      <?php foreach ($resultatPagesAvis as $resultatPageAvis): ?>
+        <div class="col s12 m12 <?php echo count($resultatPagesAvis)>2?'l4':'l6' ?> ">
           <div class="icon-block">
-            <h2 class="center brown-text"><?php if ($resultatAvis['typeLogo_avis']=="image") :
-              echo '<img src="'.$resultatAvis['logo_avis'].'">';
-              elseif ($resultatAvis['typeLogo_avis']=="icon") :
-                echo '<i class="small material-icons">'.$resultatAvis['logo_avis'].'</i>';
+            <h2 class="center brown-text"><?php if ($resultatPageAvis['typeLogo_avis']=="image") :
+              echo '<img src="'.$resultatPageAvis['logo_avis'].'">';
+              elseif ($resultatPageAvis['typeLogo_avis']=="icon") :
+                echo '<i class="small material-icons">'.$resultatPageAvis['logo_avis'].'</i>';
                 endif
                 ?></h2>
-            <h5 class="center"><?php echo $resultatAvis['title_avis']; ?></h5>
-            <p class="light"><?php echo $resultatAvis['description_avis']; ?></p>
+            <h5 class="center"><?php echo $resultatPageAvis['title_avis']; ?></h5>
+            <p class="light"><?php echo $resultatPageAvis['description_avis']; ?></p>
           </div>
         </div>
       <?php endforeach; ?>

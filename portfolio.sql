@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 13 jan. 2022 à 16:53
+-- Généré le : sam. 15 jan. 2022 à 13:34
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `avis` (
   `description_avis` text NOT NULL,
   `logo_avis` varchar(255) NOT NULL,
   `typeLogo_avis` varchar(50) NOT NULL,
+  `idTypeAvis` int(11) NOT NULL,
   PRIMARY KEY (`avis_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
@@ -43,14 +44,14 @@ CREATE TABLE IF NOT EXISTS `avis` (
 -- Déchargement des données de la table `avis`
 --
 
-INSERT INTO `avis` (`avis_id`, `page_id`, `order`, `title_avis`, `description_avis`, `logo_avis`, `typeLogo_avis`) VALUES
-(1, 1, 1, 'Découverte d\'outils de travail', 'C\'est toujours un plaisir d\'apprendre de nouveau langage de programmation même si nous faisons facilement des erreurs, on apprend à ne plus les refaires. Mais c\'est encore plus plaisant lorsque qu\'on apprend en même temps de nouveaux outils de travail comme ça était le cas pour ce projet avec la découverte du C, de l\'éditeur emacs mais aussi de trello pour partager les taches et de github pour mettre le travail en commun.', 'thumbs_up_down', 'icon'),
-(2, 1, 2, 'Organisation du travail', 'Pour pouvoir bien avancer, il faut bien organiser le travail et ce projet nous à bien aider pour apprendre comment s\'organiser grace à trello pour partager les taches à faire mais aussi grace à github qui nous permettait de mettre à jour nos fichiers facilement quand une modification était apportée.', 'flash_on', 'icon'),
-(3, 2, 1, 'Organiser son travail', 'Des milliers d\'outils sont disponibles gratuitement. Nous avons choisi Unity comme moteur de jeux, Git et GitHub pour travailler en même temps sur le même projet et Trello pour se répartir le travail.', 'lightbulb_outline', 'icon'),
-(4, 2, 2, 'Appréhender les erreurs', 'Dès que nous avons commencé le projet nous avons fait face à une multitude de problèmes. Pour les résoudre nous avons demandé de l\'aide, cherché par nous-mêmes, discuté entre nous des décisions à prendre.', 'highlight_off', 'icon'),
-(5, 2, 3, 'Atteindre son objectif', 'Il y a-t-il meilleure récompense que la satisfaction personnelle ? Se dépasser, aller plus loin, se tromper, recommencer; comme dirait Elon Musk, il n\'y a pas meilleure réussite que l\'échec.', 'directions_run', 'icon'),
-(6, 3, 1, 'Développer ses connaissances', 'Selon moi, il est toujours bon de toujours chercher à développer ses connaissances et ses projets mon été très utile pour cela car avant de le commencer je n\'avais jamais fait de Javascript et je n\'avais jamais utilisé github ou encore héroku.', 'plus_one', 'icon'),
-(7, 3, 2, 'Développer pour aider', 'En plus de vouloir développer mes connaissances se projet aussi pourra simplifier la façon de s\'amuser de plusieurs personnes. Après tout qui ne voudrait pas d\'un petit Rpg qui demande seulement une connexion internet, même pas besoin d\'avoir un puissant appareil, il suffit juste de pouvoir installer discord.', 'accessibility', 'icon');
+INSERT INTO `avis` (`avis_id`, `page_id`, `order`, `title_avis`, `description_avis`, `logo_avis`, `typeLogo_avis`, `idTypeAvis`) VALUES
+(1, 1, 1, 'Découverte d\'outils de travail', 'C\'est toujours un plaisir d\'apprendre de nouveau langage de programmation même si nous faisons facilement des erreurs, on apprend à ne plus les refaires. Mais c\'est encore plus plaisant lorsque qu\'on apprend en même temps de nouveaux outils de travail comme ça était le cas pour ce projet avec la découverte du C, de l\'éditeur emacs mais aussi de trello pour partager les taches et de github pour mettre le travail en commun.', 'thumbs_up_down', 'icon', 2),
+(2, 1, 2, 'Organisation du travail', 'Pour pouvoir bien avancer, il faut bien organiser le travail et ce projet nous à bien aider pour apprendre comment s\'organiser grace à trello pour partager les taches à faire mais aussi grace à github qui nous permettait de mettre à jour nos fichiers facilement quand une modification était apportée.', 'flash_on', 'icon', 2),
+(3, 2, 1, 'Organiser son travail', 'Des milliers d\'outils sont disponibles gratuitement. Nous avons choisi Unity comme moteur de jeux, Git et GitHub pour travailler en même temps sur le même projet et Trello pour se répartir le travail.', 'lightbulb_outline', 'icon', 1),
+(4, 2, 2, 'Appréhender les erreurs', 'Dès que nous avons commencé le projet nous avons fait face à une multitude de problèmes. Pour les résoudre nous avons demandé de l\'aide, cherché par nous-mêmes, discuté entre nous des décisions à prendre.', 'highlight_off', 'icon', 1),
+(5, 2, 3, 'Atteindre son objectif', 'Il y a-t-il meilleure récompense que la satisfaction personnelle ? Se dépasser, aller plus loin, se tromper, recommencer; comme dirait Elon Musk, il n\'y a pas meilleure réussite que l\'échec.', 'directions_run', 'icon', 1),
+(6, 3, 1, 'Développer ses connaissances', 'Selon moi, il est toujours bon de toujours chercher à développer ses connaissances et ses projets mon été très utile pour cela car avant de le commencer je n\'avais jamais fait de Javascript et je n\'avais jamais utilisé github ou encore héroku.', 'plus_one', 'icon', 1),
+(7, 3, 2, 'Développer pour aider', 'En plus de vouloir développer mes connaissances se projet aussi pourra simplifier la façon de s\'amuser de plusieurs personnes. Après tout qui ne voudrait pas d\'un petit Rpg qui demande seulement une connexion internet, même pas besoin d\'avoir un puissant appareil, il suffit juste de pouvoir installer discord.', 'accessibility', 'icon', 1);
 
 -- --------------------------------------------------------
 
@@ -64,6 +65,7 @@ CREATE TABLE IF NOT EXISTS `carousel` (
   `page_id` int(11) NOT NULL,
   `order` int(11) NOT NULL,
   `carousel_link` varchar(255) NOT NULL,
+  `idTypeCarousel` int(11) NOT NULL,
   PRIMARY KEY (`carousel_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
@@ -71,39 +73,39 @@ CREATE TABLE IF NOT EXISTS `carousel` (
 -- Déchargement des données de la table `carousel`
 --
 
-INSERT INTO `carousel` (`carousel_id`, `page_id`, `order`, `carousel_link`) VALUES
-(1, 1, 1, 'img/puissance_quatre/carousel/1.png'),
-(2, 1, 2, 'img/puissance_quatre/carousel/2.png'),
-(3, 1, 3, 'img/puissance_quatre/carousel/3.png'),
-(4, 1, 4, 'img/puissance_quatre/carousel/4.png'),
-(5, 2, 1, 'img/pokefus/carousel/pokeball.png'),
-(6, 2, 2, 'img/pokefus/carousel/personnages.png'),
-(7, 2, 3, 'img/pokefus/carousel/dofus.png'),
-(8, 2, 4, 'img/pokefus/carousel/epee.png'),
-(9, 3, 1, 'img/exaltya/carousel/carousel1.png'),
-(10, 3, 2, 'img/exaltya/carousel/carousel2.png'),
-(11, 3, 3, 'img/exaltya/carousel/carousel3.png'),
-(12, 3, 4, 'img/exaltya/carousel/carousel4.png'),
-(13, 4, 1, ''),
-(14, 4, 2, ''),
-(15, 4, 3, ''),
-(16, 4, 4, ''),
-(17, 5, 1, ''),
-(18, 5, 2, ''),
-(19, 5, 3, ''),
-(20, 5, 4, ''),
-(21, 6, 1, ''),
-(22, 6, 2, ''),
-(23, 6, 3, ''),
-(24, 6, 4, ''),
-(25, 7, 1, ''),
-(26, 7, 2, ''),
-(27, 7, 3, ''),
-(28, 7, 4, ''),
-(29, 8, 1, ''),
-(30, 8, 2, ''),
-(31, 8, 3, ''),
-(32, 8, 4, '');
+INSERT INTO `carousel` (`carousel_id`, `page_id`, `order`, `carousel_link`, `idTypeCarousel`) VALUES
+(1, 1, 1, 'img/puissance_quatre/carousel/1.png', 2),
+(2, 1, 2, 'img/puissance_quatre/carousel/2.png', 2),
+(3, 1, 3, 'img/puissance_quatre/carousel/3.png', 2),
+(4, 1, 4, 'img/puissance_quatre/carousel/4.png', 2),
+(5, 2, 1, 'img/pokefus/carousel/pokeball.png', 1),
+(6, 2, 2, 'img/pokefus/carousel/personnages.png', 1),
+(7, 2, 3, 'img/pokefus/carousel/dofus.png', 1),
+(8, 2, 4, 'img/pokefus/carousel/epee.png', 1),
+(9, 3, 1, 'img/exaltya/carousel/carousel1.png', 1),
+(10, 3, 2, 'img/exaltya/carousel/carousel2.png', 1),
+(11, 3, 3, 'img/exaltya/carousel/carousel3.png', 1),
+(12, 3, 4, 'img/exaltya/carousel/carousel4.png', 1),
+(13, 4, 1, '', 0),
+(14, 4, 2, '', 0),
+(15, 4, 3, '', 0),
+(16, 4, 4, '', 0),
+(17, 5, 1, '', 0),
+(18, 5, 2, '', 0),
+(19, 5, 3, '', 0),
+(20, 5, 4, '', 0),
+(21, 6, 1, '', 0),
+(22, 6, 2, '', 0),
+(23, 6, 3, '', 0),
+(24, 6, 4, '', 0),
+(25, 7, 1, '', 0),
+(26, 7, 2, '', 0),
+(27, 7, 3, '', 0),
+(28, 7, 4, '', 0),
+(29, 8, 1, '', 0),
+(30, 8, 2, '', 0),
+(31, 8, 3, '', 0),
+(32, 8, 4, '', 0);
 
 -- --------------------------------------------------------
 
@@ -198,6 +200,7 @@ CREATE TABLE IF NOT EXISTS `objectifs` (
   `description_objectifs` text NOT NULL,
   `logo_objectifs` varchar(255) NOT NULL,
   `typeLogo_objectifs` varchar(50) NOT NULL,
+  `idTypeObjectifs` int(11) NOT NULL,
   PRIMARY KEY (`objectifs_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
@@ -205,31 +208,31 @@ CREATE TABLE IF NOT EXISTS `objectifs` (
 -- Déchargement des données de la table `objectifs`
 --
 
-INSERT INTO `objectifs` (`objectifs_id`, `page_id`, `order`, `title_objectifs`, `description_objectifs`, `logo_objectifs`, `typeLogo_objectifs`) VALUES
-(1, 1, 1, 'Environnement linux', 'Lors de ce projet, l\'un des objectifs était de développer sur un environnement Linux. Pour se faire nous avons utilisé Debian. Au début le plus difficile était de se déplacer dans les fichiers car Debian n\'a pas d\'interface graphique et toute action se fait à partir de ligne de commande.', 'img/puissance_quatre/icons/linux.png', 'image'),
-(2, 1, 2, 'Github', 'Afin de travailler en groupe, ont nous à demander d\'utiliser git et github et de nous créer un environnement professionnel afin de stocker notre travail et de pouvoir se mettre à jour lorsque l\'un de nous faisait une modification.', 'img/puissance_quatre/icons/github.png', 'image'),
-(3, 1, 3, 'Puissance 4', 'Pour la partie programmation, le projet consistait à faire une puissance 4 pour ce faire, il nous à falloir un éditeur de texte type Emacs puis il nous a fallu utiliser Gcc afin de compiler notre code pour pouvoir le lancer.', 'img/puissance_quatre/icons/manette.png', 'image'),
-(4, 2, 1, 'Savoir se ré-inventer', 'En tant que fanatique de l\'Univers du Krosmoz, j\'ai créé un projet hybride, mêlant gameplay / style graphique à la Pokémon et plongent dans l\'histoire des Dofus. Le gameplay s\'articule autour de défis, combats au tour par tour, et quêtes épiques.', 'import_contacts', 'icon'),
-(5, 2, 2, 'Cibler un public large', 'Ce jeu a pour objectif d\'être adapté à tous les types de joueurs, du casual au hardore gamer en passant par l\'intermédiaire. Le jeu est divisé en 3 phases non explicites à la vue des joueurs, correspondant à un niveau de difficulté croissant.', 'groupe', 'icon'),
-(6, 2, 3, 'Un modèle économique solide', 'Le marché du jeu vidéo est en constante évolution, le modèle économique d\'un jeu est très important, il peut aussi définir sa durée de vie mais surtout ça rentabilité. L\'aire des jeux matériels, par abonnement etc. est révolue, c\'est pourquoi nous avons fait le choix du gacha.', 'show_chart', 'icon'),
-(7, 3, 1, 'Créer un bot discord', 'Dans un premier temps l\'objectif de ce projet était de se familiariser avec le Javascript passant beaucoup de temps sur discord, quoi de mieux que de se faire un bot discord personnalisé. J\'ai relevé le défi et je me suis lancé.', 'img/exaltya/icons/djs.png', 'image'),
-(8, 3, 2, 'Disponibility 24h/24 et 7j/7', 'Pour avoir un vrai bot, il est mieux qu\'il soit connecté 24h/24 et 7j/7 alors j\'ai fait beaucoup de recherches pour trouver des hébergeurs gratuits et j\'ai fini par trouver Heroku. J\'ai alors commencé à utiliser git pour pouvoir mettre mon bot sur l\'hébergeur.', 'img/exaltya/icons/heroku.png', 'image'),
-(9, 3, 3, 'Créer un rpg sur discord', 'Ayant des amis fanatiques du roleplay, le bot qui était essentiellement prévu pour me familiariser avec le Javascript c\'est transfort en un projet de Rpg sur discord. Pour enregister les informations de chaque joueur, forcement il m\'a fallu une base de donné. J\'ai donc utilisé MongoBD pour cela. Mais le projet n\'est pas encore fini et il y a pu une nouvelle mise à jour de discord js a appliqué beaucoup de changements, je suis donc entrain de revoir tout mon code avant de la continuer, il détient une fonction musicale pour ceux qui aimeraient écouter de la musique pendant qu\'ils jouent.', 'img/exaltya/icons/jss.png', 'image'),
-(10, 4, 1, '', '', '', ''),
-(11, 4, 2, '', '', '', ''),
-(12, 4, 3, '', '', '', ''),
-(13, 5, 1, '', '', '', ''),
-(14, 5, 2, '', '', '', ''),
-(15, 5, 3, '', '', '', ''),
-(16, 6, 1, '', '', '', ''),
-(17, 6, 2, '', '', '', ''),
-(18, 6, 3, '', '', '', ''),
-(19, 7, 1, '', '', '', ''),
-(20, 7, 2, '', '', '', ''),
-(21, 7, 3, '', '', '', ''),
-(22, 8, 1, '', '', '', ''),
-(23, 8, 2, '', '', '', ''),
-(24, 8, 3, '', '', '', '');
+INSERT INTO `objectifs` (`objectifs_id`, `page_id`, `order`, `title_objectifs`, `description_objectifs`, `logo_objectifs`, `typeLogo_objectifs`, `idTypeObjectifs`) VALUES
+(1, 1, 1, 'Environnement linux', 'Lors de ce projet, l\'un des objectifs était de développer sur un environnement Linux. Pour se faire nous avons utilisé Debian. Au début le plus difficile était de se déplacer dans les fichiers car Debian n\'a pas d\'interface graphique et toute action se fait à partir de ligne de commande.', 'img/puissance_quatre/icons/linux.png', 'image', 2),
+(2, 1, 2, 'Github', 'Afin de travailler en groupe, ont nous à demander d\'utiliser git et github et de nous créer un environnement professionnel afin de stocker notre travail et de pouvoir se mettre à jour lorsque l\'un de nous faisait une modification.', 'img/puissance_quatre/icons/github.png', 'image', 2),
+(3, 1, 3, 'Puissance 4', 'Pour la partie programmation, le projet consistait à faire une puissance 4 pour ce faire, il nous à falloir un éditeur de texte type Emacs puis il nous a fallu utiliser Gcc afin de compiler notre code pour pouvoir le lancer.', 'img/puissance_quatre/icons/manette.png', 'image', 2),
+(4, 2, 1, 'Savoir se ré-inventer', 'En tant que fanatique de l\'Univers du Krosmoz, j\'ai créé un projet hybride, mêlant gameplay / style graphique à la Pokémon et plongent dans l\'histoire des Dofus. Le gameplay s\'articule autour de défis, combats au tour par tour, et quêtes épiques.', 'import_contacts', 'icon', 1),
+(5, 2, 2, 'Cibler un public large', 'Ce jeu a pour objectif d\'être adapté à tous les types de joueurs, du casual au hardore gamer en passant par l\'intermédiaire. Le jeu est divisé en 3 phases non explicites à la vue des joueurs, correspondant à un niveau de difficulté croissant.', 'groupe', 'icon', 1),
+(6, 2, 3, 'Un modèle économique solide', 'Le marché du jeu vidéo est en constante évolution, le modèle économique d\'un jeu est très important, il peut aussi définir sa durée de vie mais surtout ça rentabilité. L\'aire des jeux matériels, par abonnement etc. est révolue, c\'est pourquoi nous avons fait le choix du gacha.', 'show_chart', 'icon', 1),
+(7, 3, 1, 'Créer un bot discord', 'Dans un premier temps l\'objectif de ce projet était de se familiariser avec le Javascript passant beaucoup de temps sur discord, quoi de mieux que de se faire un bot discord personnalisé. J\'ai relevé le défi et je me suis lancé.', 'img/exaltya/icons/djs.png', 'image', 1),
+(8, 3, 2, 'Disponibility 24h/24 et 7j/7', 'Pour avoir un vrai bot, il est mieux qu\'il soit connecté 24h/24 et 7j/7 alors j\'ai fait beaucoup de recherches pour trouver des hébergeurs gratuits et j\'ai fini par trouver Heroku. J\'ai alors commencé à utiliser git pour pouvoir mettre mon bot sur l\'hébergeur.', 'img/exaltya/icons/heroku.png', 'image', 1),
+(9, 3, 3, 'Créer un rpg sur discord', 'Ayant des amis fanatiques du roleplay, le bot qui était essentiellement prévu pour me familiariser avec le Javascript c\'est transfort en un projet de Rpg sur discord. Pour enregister les informations de chaque joueur, forcement il m\'a fallu une base de donné. J\'ai donc utilisé MongoBD pour cela. Mais le projet n\'est pas encore fini et il y a pu une nouvelle mise à jour de discord js a appliqué beaucoup de changements, je suis donc entrain de revoir tout mon code avant de la continuer, il détient une fonction musicale pour ceux qui aimeraient écouter de la musique pendant qu\'ils jouent.', 'img/exaltya/icons/jss.png', 'image', 1),
+(10, 4, 1, '', '', '', '', 0),
+(11, 4, 2, '', '', '', '', 0),
+(12, 4, 3, '', '', '', '', 0),
+(13, 5, 1, '', '', '', '', 0),
+(14, 5, 2, '', '', '', '', 0),
+(15, 5, 3, '', '', '', '', 0),
+(16, 6, 1, '', '', '', '', 0),
+(17, 6, 2, '', '', '', '', 0),
+(18, 6, 3, '', '', '', '', 0),
+(19, 7, 1, '', '', '', '', 0),
+(20, 7, 2, '', '', '', '', 0),
+(21, 7, 3, '', '', '', '', 0),
+(22, 8, 1, '', '', '', '', 0),
+(23, 8, 2, '', '', '', '', 0),
+(24, 8, 3, '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -275,6 +278,7 @@ CREATE TABLE IF NOT EXISTS `parallax` (
   `page_id` int(11) NOT NULL,
   `order` int(11) NOT NULL,
   `parallax_link` varchar(255) NOT NULL,
+  `idTypeParallax` int(11) NOT NULL,
   PRIMARY KEY (`parallax_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
@@ -282,31 +286,31 @@ CREATE TABLE IF NOT EXISTS `parallax` (
 -- Déchargement des données de la table `parallax`
 --
 
-INSERT INTO `parallax` (`parallax_id`, `page_id`, `order`, `parallax_link`) VALUES
-(1, 1, 1, 'img/puissance_quatre/parallax/top.jpg'),
-(2, 1, 2, 'img/puissance_quatre/parallax/mid.jpg'),
-(3, 1, 3, 'img/puissance_quatre/parallax/bot.png'),
-(4, 2, 1, 'img/pokefus/parallax/top.jpg'),
-(5, 2, 2, 'img/pokefus/parallax/mid.jpg'),
-(6, 2, 3, 'img/pokefus/parallax/bot.jpg'),
-(7, 3, 1, 'img/exaltya/parallax/top.jpg'),
-(8, 3, 2, 'img/exaltya/parallax/mid.jpeg'),
-(9, 3, 3, 'img/exaltya/parallax/bot.png'),
-(10, 4, 1, ''),
-(11, 4, 2, ''),
-(12, 4, 3, ''),
-(13, 5, 1, ''),
-(14, 5, 2, ''),
-(15, 5, 3, ''),
-(16, 6, 1, ''),
-(17, 6, 2, ''),
-(18, 6, 3, ''),
-(19, 7, 1, ''),
-(20, 7, 2, ''),
-(21, 7, 3, ''),
-(22, 8, 1, ''),
-(23, 8, 2, ''),
-(24, 8, 3, '');
+INSERT INTO `parallax` (`parallax_id`, `page_id`, `order`, `parallax_link`, `idTypeParallax`) VALUES
+(1, 1, 1, 'img/puissance_quatre/parallax/top.jpg', 2),
+(2, 1, 2, 'img/puissance_quatre/parallax/mid.jpg', 2),
+(3, 1, 3, 'img/puissance_quatre/parallax/bot.png', 2),
+(4, 2, 1, 'img/pokefus/parallax/top.jpg', 1),
+(5, 2, 2, 'img/pokefus/parallax/mid.jpg', 1),
+(6, 2, 3, 'img/pokefus/parallax/bot.jpg', 1),
+(7, 3, 1, 'img/exaltya/parallax/top.jpg', 1),
+(8, 3, 2, 'img/exaltya/parallax/mid.jpeg', 1),
+(9, 3, 3, 'img/exaltya/parallax/bot.png', 1),
+(10, 4, 1, '', 0),
+(11, 4, 2, '', 0),
+(12, 4, 3, '', 0),
+(13, 5, 1, '', 0),
+(14, 5, 2, '', 0),
+(15, 5, 3, '', 0),
+(16, 6, 1, '', 0),
+(17, 6, 2, '', 0),
+(18, 6, 3, '', 0),
+(19, 7, 1, '', 0),
+(20, 7, 2, '', 0),
+(21, 7, 3, '', 0),
+(22, 8, 1, '', 0),
+(23, 8, 2, '', 0),
+(24, 8, 3, '', 0);
 
 -- --------------------------------------------------------
 
