@@ -1,14 +1,12 @@
 $(document).ready(function(){
    $('.sidenav').sidenav();
+   $('.modal').modal();
+   $('.parallax').parallax();
+   $('.dropdown-trigger').dropdown({coverTrigger:false});
+   $('.carousel').carousel();
+   $('select').formSelect();
  });
 
- $(document).ready(function(){
-    $('.parallax').parallax();
-  });
-
-$(document).ready(function(){
-  $('.modal').modal();
-});
 
 function copyToClipboard(text) {
    const elem = document.createElement('textarea');
@@ -32,19 +30,6 @@ $(function() {
     });
 });
 
-$(document).ready(function(){
-    $('.carousel').carousel();
-  });
-
 $('#contact').click(function(){
   $('#btns').addClass('hide');
 })
-
-$(document).ready(function(){
-  $('select').formSelect();
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.dropdown-trigger');
-  var instances = M.Dropdown.init(elems, options);
-});
