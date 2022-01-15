@@ -1,5 +1,88 @@
+body {
+  background-image: url('../img/portfolio.jpg');
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    background-image: url(images/background-photo-mobile-devices.jpg);
+    }
+	}
+
 h1 {
   margin: 0;
+}
+
+.content {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20%;
+  height: 100%;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+}
+
+.description_lp {
+  padding: 5%;
+  margin-top: 5em;
+}
+
+.description_gs {
+  padding: 5%;
+}
+
+.media_lp {
+  display: flex;
+}
+
+.media_gs {
+  display: flex;
+}
+
+.media_lp div {
+  flex : auto;
+}
+
+.media_gs div {
+  flex : auto;
+}
+
+#school, #mail_lp, #linkedin_lp, #mail_gs, #linkedin_gs {
+  color: white;
+}
+
+.linkedin_lp {
+  text-align: left;
+}
+
+.mail_lp {
+  text-align: center;
+}
+
+.linkedin_gs {
+  text-align: left;
+}
+
+.mail_gs {
+  text-align: center;
+}
+
+.school {
+  text-align: right;
+}
+
+.nom_age {
+  font-size: 30px;
+}
+
+.material-icons {
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
 }
 
 .btn{
@@ -10,76 +93,12 @@ h1 {
    display: none;
 }
 
-@media (max-width: 3000px) {
-  .easterEgg a {
-    position:absolute;
-    margin:-26% -13.99%;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    }
-  }
-
-@media (max-width: 1250px) {
-   .easterEgg a {
-     position:absolute;
-     margin-top: -513px;
-     margin-left: -267px;
-     cursor: pointer;
-     background: transparent;
-     border: none;
-   }
-  }
-
-@media (max-width: 600px) {
-    .easterEgg a {
-      position:absolute;
-      margin-top: -509px;
-      margin-left: -267px;
-      cursor: pointer;
-      background: transparent;
-      border: none;
-    }
-  }
-
-  /** Mozilla Firefox */
-  @-moz-document url-prefix() {
-    .easterEgg a {
-      position:absolute;
-      margin-top: -499px;
-      margin-left: -267px;
-      cursor: pointer;
-      background: transparent;
-      border: none;
-    }
-  }
-
-  @media not all and (min-resolution: 0.001dpcm) {
-    .easterEgg a {
-      position:absolute;
-      margin-top: -510px;
-      margin-left: -270.5px;
-      cursor: pointer;
-      background: transparent;
-      border: none;
-    }
-}
-
 .panel {
   background: black;
   color: white;
   border-radius: 16px;
   padding: 2em;
   margin-bottom: 20px;
-}
-
-.nom {
-  font-size: 2.5em;
-  margin-top: -5px;
-}
-
-.age {
-  font-size: 30px;
 }
 
 p span img {

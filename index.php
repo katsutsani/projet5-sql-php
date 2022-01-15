@@ -17,56 +17,43 @@
 <body>
   <!--NavBar-->
 <?php require_once "navbar.php" ?>
-  <!--parallax-->
-  <div class="parallax-container">
-    <div class="parallax"> <img src="img/portfolio.jpg" alt="Parallax du Portfolio"></div>
-  </div>
-  <div class="easterEgg center hide" id="btns">
-    <a href="snake/index.html"><img src="img/easteregg.png" alt="easterEgg du Portfolio"></a>
-  </div>
-  <div class="section white">
-    <div class="row container">
-      <div class="col s12 m12 l5">
-        <div class="panel">
-          <h2 class="brown-text nom">Prieu Lilian<img class="top right circle" src="img/home_page/lprieu.jpg"
-              alt="photo Lilian Portfolio"></h2>
-          <h2 class="brown-text nom age">19 ans</h2>
-          <p class="light">Etudiant à Gaming Campus, adepte des MMO et programmeur passionné. J'ai l'Univers du Krosmoz
-            dans mon coeur et j'aime manger les petites parts de gâteaux.<br><a
-              href="https://www.linkedin.com/in/lilian-prieu-554058221" target="blank" rel="nofollow"><br><span><img
-                  src="img/linkedin.png" alt="logo linkedin pour Portfolio"></span></a> pour aller sur la page
-            Linkedin<br><br><button onclick="copyToClipboard('Firzus#6969')"><img src="img/discord.png"
-                alt="Logo discord pour Portfolio"></button>pour copier l'identifiant Discord</p>
-          <p class="light"><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=lprieu@gaming.tech"
-              target="_blank" rel="nofollow"><img class="text" src="img/Gmail.png" alt="Logo gmail pour Portfolio"></a>
-            pour envoyer un mail </p>
+  <div class="home_page">
+    <!--content-->
+    <div class="content">
+      <!--Lilian Prieu-->
+      <div class="description_lp center">
+        <img class="top circle" src="img/home_page/lprieu.jpg">
+        <h2 class="white-text nom_age">Prieu Lilian<br>19 ans</h2>
+        <p class="light white-text">Etudiant à Gaming Campus, adepte des MMO et programmeur passionné. J'ai l'Univers du Krosmoz dans mon coeur.</p>
+        <div class="media_lp">
+          <div class="linkedin_lp"><a id="linkedin_lp" href="https://www.linkedin.com/in/lilian-prieu-554058221"><i class="fab fa-linkedin-in small"></i></a></div>
+          <div class="mail_lp"><a id="mail_lp" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=lprieu@gaming.tech"><i class="fas fa-envelope-open-text small"></i></a></div>
+          <div class="school"><a id="school" href="https://gamingcampus.fr"><i class="fas fa-user-graduate small"></i></a></div>
         </div>
       </div>
-      <div class="col s12 m12 l5 offset-l1">
-        <div class="panel">
-          <h2 class="brown-text nom">Simoes Guillaume<img class="top right circle" src="img/home_page/gsimoes.jpg"
-              alt="photo Guillaume Portfolio"></h2>
-          <h2 class="brown-text nom age">18 ans</h2>
-          <p class="light">Étudiant à Gaming Campus, adepte de MMO et DotA-Like tel que ligue of legends ainsi que
-            programmeur passionné. J'aime manger les petites parts de gâteau.<br><a
-              href="https://www.linkedin.com/in/guillaume-simoes-378246226" target="blank" rel="nofollow"><br><span><img
-                  src="img/linkedin.png" alt="logo linkedin pour Portfolio"></span></a> pour aller sur la page
-            Linkedin<br><br><button onclick="copyToClipboard('Katsutsani#2104')"><img src="img/discord.png"
-                alt="Logo discord pour Portfolio"></button>pour copier l'identifiant Discord</p>
-          <p class="light"><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=gsimoes@gaming.tech"
-              target="_blank" rel="nofollow"><img class="text" src="img/Gmail.png" alt="Logo gmail pour Portfolio"></a>
-            pour envoyer un mail</p>
+      <!--Guillaume Simoes-->
+      <div class="description_gs center">
+        <img class="top circle" src="img/home_page/gsimoes.jpg">
+        <h2 class="white-text nom_age">Simoes Guillaume<br>18 ans</h2>
+        <p class="light white-text">Étudiant à Gaming Campus, adepte de MMO et DotA-Like tel que ligue of legends ainsi que programmeur passionné.</p>
+        <div class="media_gs">
+          <div class="linkedin_gs"><a id="linkedin_gs" href="https://www.linkedin.com/in/guillaume-simoes-378246226"><i class="fab fa-linkedin-in small"></i></a></div>
+          <div class="mail_gs"><a id="mail_gs" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=gsimoes@gaming.tech"><i class="fas fa-envelope-open-text small"></i></a></div>
+          <div class="school"><a id="school" href="https://gamingcampus.fr"><i class="fas fa-user-graduate small"></i></a></div>
         </div>
       </div>
+    </div>
+    <!--easter egg-->
+    <div class="easteregg bottom left">
+      <a href="snake/index.html"><i class="material-icons white-text small">all_inclusive</i></a>
     </div>
   </div>
   <!-- Modal Structure -->
     <?php require_once "modals.php" ?>
-
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
+  <script src="https://kit.fontawesome.com/27933c4485.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
