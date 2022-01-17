@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 15 jan. 2022 à 15:46
--- Version du serveur :  5.7.31
--- Version de PHP : 7.3.21
+-- Généré le : sam. 15 jan. 2022 à 19:16
+-- Version du serveur : 5.7.36
+-- Version de PHP : 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -94,10 +94,10 @@ INSERT INTO `carousel` (`carousel_id`, `page_id`, `order`, `carousel_link`, `idT
 (18, 5, 2, '', 0),
 (19, 5, 3, '', 0),
 (20, 5, 4, '', 0),
-(21, 6, 1, '', 0),
-(22, 6, 2, '', 0),
-(23, 6, 3, '', 0),
-(24, 6, 4, '', 0),
+(21, 6, 1, 'img\\framework_css_js\\carousel\\1.gif', 2),
+(22, 6, 2, 'img\\framework_css_js\\carousel\\2.gif', 2),
+(23, 6, 3, 'img\\framework_css_js\\carousel\\3.gif', 2),
+(24, 6, 4, 'img\\framework_css_js\\carousel\\4.gif', 2),
 (25, 7, 1, '', 0),
 (26, 7, 2, '', 0),
 (27, 7, 3, '', 0),
@@ -110,6 +110,84 @@ INSERT INTO `carousel` (`carousel_id`, `page_id`, `order`, `carousel_link`, `idT
 (34, 9, 2, '', 0),
 (35, 9, 3, '', 0),
 (36, 9, 4, '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `images`
+--
+
+DROP TABLE IF EXISTS `images`;
+CREATE TABLE IF NOT EXISTS `images` (
+  `img_id` int(11) NOT NULL AUTO_INCREMENT,
+  `page_id` int(11) NOT NULL,
+  `img_name` varchar(255) NOT NULL,
+  `img_link` varchar(255) NOT NULL,
+  `img_desc` varchar(255) NOT NULL,
+  PRIMARY KEY (`img_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `images`
+--
+
+INSERT INTO `images` (`img_id`, `page_id`, `img_name`, `img_link`, `img_desc`) VALUES
+(1, 1, 'parallax_top', '<img src=\"img/puissance_quatre/parallax/top.jpg\" alt=\"parallax projet 1 Portfolio\">', 'parallax projet 1 Portfolio'),
+(2, 1, 'parallax_mid', '<img src=\"img/puissance_quatre/parallax/mid.jpg\" alt=\"parallax projet 1 Portfolio\">', 'parallax projet 1 Portfolio'),
+(3, 1, 'carousel_1', '<img src=\"img/puissance_quatre/carousel/1.png\" alt=\"carousel projet 1 Portfolio\">', 'carousel projet 1 Portfolio'),
+(4, 1, 'carousel_2', '<img src=\"img/puissance_quatre/carousel/2.png\" alt=\"carousel projet 1 Portfolio\">', 'carousel projet 1 Portfolio'),
+(5, 1, 'carousel_3', '<img src=\"img/puissance_quatre/carousel/3.png\" alt=\"carousel projet 1 Portfolio\">', 'carousel projet 1 Portfolio'),
+(6, 1, 'carousel_4', '<img src=\"img/puissance_quatre/carousel/4.png\" alt=\"carousel projet 1 Portfolio\">', 'carousel projet 1 Portfolio'),
+(7, 1, 'parallax_bot', '<img src=\"img/puissance_quatre/parallax/bot.png\" alt=\"parallax projet 1 Portfolio\">', 'parallax projet 1 Portfolio'),
+(8, 2, 'parallax_top', '<img src=\"img/pokefus/parallax/top.jpg\" alt=\"parallax projet 2 Portfolio\">', 'parallax projet 2 Portfolio'),
+(9, 2, 'parallax_mid', '<img src=\"img/pokefus/parallax/mid.jpg\" alt=\"parallax projet 2 Portfolio\">', 'parallax projet 2 Portfolio'),
+(10, 2, 'carousel_1', '<img src=\"img/pokefus/carousel/pokeball.png\" alt=\"carousel projet 2 Portfolio\">', 'carousel projet 2 Portfolio'),
+(11, 2, 'carousel_2', '<img src=\"img/pokefus/carousel/personnages.png\" alt=\"carousel projet 2 Portfolio\">', 'carousel projet 2 Portfolio'),
+(12, 2, 'carousel_3', '<img src=\"img/pokefus/carousel/dofus.png\" alt=\"carousel projet 2 Portfolio\">', 'carousel projet 2 Portfolio'),
+(13, 2, 'carousel_4', '<img src=\"img/pokefus/carousel/epee.png\" alt=\"carousel projet 2 Portfolio\">', 'carousel projet 2 Portfolio'),
+(14, 2, 'parallax_bot', '<img src=\"img/pokefus/parallax/bot.jpg\" alt=\"parallax projet 2 Portfolio\">', 'parallax projet 2 Portfolio'),
+(15, 3, 'parallax_top', '<img src=\"img/exaltya/parallax/top.jpg\" alt=\"parallax projet 3 Portfolio\">', 'parallax projet 3 Portfolio'),
+(16, 3, 'parallax_mid', '<img src=\"img/exaltya/parallax/mid.jpg\" alt=\"parallax projet 3 Portfolio\">', 'parallax projet 3 Portfolio'),
+(17, 3, 'carousel_1', '<img src=\"img/exaltya/carousel/carousel1.PNG\" alt=\"carousel projet 3 Portfolio\">', 'carousel projet 3 Portfolio'),
+(18, 3, 'carousel_2', '<img src=\"img/exaltya/carousel/carousel2.PNG\" alt=\"carousel projet 3 Portfolio\">', 'carousel projet 3 Portfolio'),
+(19, 3, 'carousel_3', '<img src=\"img/exaltya/carousel/carousel3.PNG\" alt=\"carousel projet 3 Portfolio\">', 'carousel projet 3 Portfolio'),
+(20, 3, 'carousel_4', '<img src=\"img/exaltya/carousel/carousel4.PNG\" alt=\"carousel projet 3 Portfolio\">', 'carousel projet 3 Portfolio'),
+(21, 3, 'parallax_bot', '<img src=\"img/exaltya/parallax/bot.jpg\" alt=\"parallax projet 3 Portfolio\">', 'parallax projet 3 Portfolio'),
+(22, 4, '', '', ''),
+(23, 4, '', '', ''),
+(24, 4, '', '', ''),
+(25, 4, '', '', ''),
+(26, 4, '', '', ''),
+(27, 4, '', '', ''),
+(28, 4, '', '', ''),
+(29, 5, '', '', ''),
+(30, 5, '', '', ''),
+(31, 5, '', '', ''),
+(32, 5, '', '', ''),
+(33, 5, '', '', ''),
+(34, 5, '', '', ''),
+(35, 5, '', '', ''),
+(36, 6, '', '', ''),
+(37, 6, '', '', ''),
+(38, 6, '', '', ''),
+(39, 6, '', '', ''),
+(40, 6, '', '', ''),
+(41, 6, '', '', ''),
+(42, 6, '', '', ''),
+(43, 7, '', '', ''),
+(44, 7, '', '', ''),
+(45, 7, '', '', ''),
+(46, 7, '', '', ''),
+(47, 7, '', '', ''),
+(48, 7, '', '', ''),
+(49, 7, '', '', ''),
+(50, 8, '', '', ''),
+(51, 8, '', '', ''),
+(52, 8, '', '', ''),
+(53, 8, '', '', ''),
+(54, 8, '', '', ''),
+(55, 8, '', '', ''),
+(56, 8, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -150,8 +228,8 @@ INSERT INTO `objectifs` (`objectifs_id`, `page_id`, `order`, `title_objectifs`, 
 (13, 5, 1, '', '', '', '', 0),
 (14, 5, 2, '', '', '', '', 0),
 (15, 5, 3, '', '', '', '', 0),
-(16, 6, 1, '', '', '', '', 0),
-(17, 6, 2, '', '', '', '', 0),
+(16, 6, 1, 'Découverte de JavaScript', '', 'img\\framework_css_js\\logo\\js.png', 'image', 2),
+(17, 6, 2, 'Utilisation de Materialize', '', 'img\\framework_css_js\\logo\\materialize.png', 'image', 2),
 (18, 6, 3, '', '', '', '', 0),
 (19, 7, 1, '', '', '', '', 0),
 (20, 7, 2, '', '', '', '', 0),
@@ -232,9 +310,9 @@ INSERT INTO `parallax` (`parallax_id`, `page_id`, `order`, `parallax_link`, `idT
 (13, 5, 1, '', 0),
 (14, 5, 2, '', 0),
 (15, 5, 3, '', 0),
-(16, 6, 1, '', 0),
-(17, 6, 2, '', 0),
-(18, 6, 3, '', 0),
+(16, 6, 1, 'img\\framework_css_js\\parallax\\top.jpg', 2),
+(17, 6, 2, 'img\\framework_css_js\\parallax\\mid.jpg', 2),
+(18, 6, 3, 'img\\framework_css_js\\parallax\\bot.jpg', 2),
 (19, 7, 1, '', 0),
 (20, 7, 2, '', 0),
 (21, 7, 3, '', 0),
