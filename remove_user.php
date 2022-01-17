@@ -6,5 +6,5 @@ $dataBinded=array(
 );
 $pre = $pdo->prepare($sql);
 $pre->execute($dataBinded);
-header('Location:panel.php?projet=0&page=users');
+header('Location:panel.php?page=users');
 ?>
