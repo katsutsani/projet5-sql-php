@@ -20,6 +20,40 @@
             <div class="panel row"style="margin-top:40px;">
               <?php if($_GET['page'] == "users"): ?>
                 <h2 class="brown-text center nom">Users</h2>
+                <a class="modal-trigger" id="add-users" data-target="add-user" href="#"><i class="large material-icons">create_new_folder</i></a>
+                <div id='add-user' class="modal">
+                  <div class="modal-content">
+                    <h4>Enregister un nouveau compte</h4>
+                      <div class="row">
+                        <form method="post" action="add_user.php">
+                          <div class="row">
+                            <div class="input-field col s6">
+                              <input id="email" type="email" name="email" class="validate">
+                              <label for="email">Adresse email</label>
+                            </div>
+                            <div class="input-field col s6">
+                              <input id="login" type="text" class="validate" name="login">
+                              <label for="login">Login</label>
+                            </div>
+                          </div>
+                            <div class="input-field col s6">
+                              <input id="mdp" type="password" class="validate" name="password">
+                              <label for="mdp">Mot de passe</label>
+                            </div>
+                            <div class="input-field col s6">
+                              <select id='choose_admin' name="admin">
+                                <option id="admin" value="1">Oui</option>
+                                <option id="admin" value="0" selected>Non</option>
+                              </select>
+                              <label for='choose_admin'>Admin</label>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <input type='submit' class="btn connect" value="Créer le nouveau compte"/>
+                      </div>
+                    </form>
+                </div>
                 <?php
                 $fin = ' ...'; //chaîne de fin
                 $lg_max = 20; //nombre de caractère autorisé
@@ -78,41 +112,8 @@
                   <p>Commandes</p>
                   <?php foreach ($resultatUsers as $key => $resultatUser) { ?>
                     <p>
-                      <a class="modal-trigger" id="add-users" href="#"><i class="material-icons">create_new_folder</i></a>
-                      <div id='add-user' class="modal">
-                        <div class="modal-content">
-                          <h4>Enregister un nouveau compte</h4>
-                            <div class="row">
-                              <form method="post" action="add_user.php">
-                                <div class="row">
-                                  <div class="input-field col s6">
-                                    <input id="email" type="email" name="email" class="validate">
-                                    <label for="email">Adresse email</label>
-                                  </div>
-                                  <div class="input-field col s6">
-                                    <input id="login" type="text" class="validate" name="login">
-                                    <label for="login">Login</label>
-                                  </div>
-                                </div>
-                                  <div class="input-field col s6">
-                                    <input id="mdp" type="password" class="validate" name="password">
-                                    <label for="mdp">Mot de passe</label>
-                                  </div>
-                                  <div class="input-field col s6">
-                                    <select id='choose_admin' name="admin">
-                                      <option id="admin" value="1">Oui</option>
-                                      <option id="admin" value="0" selected>Non</option>
-                                    </select>
-                                    <label for='choose_admin'>Admin</label>
-                                  </div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <input type='submit' class="btn connect" value="Créer le nouveau compte"/>
-                            </div>
-                          </form>
-                      </div>
-                      <a class="modal-trigger" id="change-users" data-target="<?php echo 'change-user'.$resultatUser["id"].'' ?>" href="#"><i class="material-icons">edit</i></a>
+                      <?php echo '<a class="modal-trigger" id="change-users" data-target="change-user'.$resultatUser["id"].'" href="#"><i class="material-icons">edit</i></a>
+                      <a class="modal-trigger" id="remove-users" data-target="delete-user'.$resultatUser["id"].'" href="#"><i class="material-icons">close</i></a>' ?>
                       <div id="<?php echo 'change-user'.$resultatUser["id"].'' ?>" class="modal">
                         <div class="modal-content">
                           <h4>Modifier un compte</h4>
@@ -158,7 +159,6 @@
                             </div>
                           </form>
                       </div>
-                      <a class="modal-trigger" id="remove-users" data-target="<?php echo 'delete-user'.$resultatUser["id"].'' ?>" href="#"><i class="material-icons">close</i></a>
                       <div id="<?php echo 'delete-user'.$resultatUser["id"].'' ?>" class="modal">
                         <div class="modal-content">
                           <h4>Supprimer un compte</h4>
@@ -208,6 +208,96 @@
                 </div>
               <?php elseif ($_GET["page"] == "pages") :?>
                 <h2 class="brown-text center nom">Pages</h2>
+                <a class="modal-trigger" id="add-pages" data-target="add-page" href="#"><i class="large material-icons">create_new_folder</i></a>
+                <div id="add-page" class="modal">
+                  <div class="modal-content">
+                    <h2 class="center">Modifier une page</h2>
+                      <div class="row">
+                        <form method="post" action="change_page.php">
+                          <h3 class="black-text center">Modification partie supperieur de la page</h3>
+                          <div class="row">
+                            <div class="input-field col s6">
+                              <input id="title" type="text" name="title" class="validate" value="">
+                              <label for="title">titre de la page</label>
+                            </div>
+                            <div class="input-field col s6">
+                              <input id="img_link" type="text" class="validate" name="img_link" value="">
+                              <label for="img_link">lien menant à l'image</label>
+                            </div>
+                            <div class="input-field col s6">
+                              <input id="description" type="text" name="description" class="validate" value="">
+                              <label for="description">Présentation de la personne sur l'image</label>
+                            </div>
+                            <div class="input-field col s6">
+                              <input id="subtitle" type="text" class="validate" name="subtitle" value="">
+                              <label for="subtitle">courte description du id_type nom et prénom de la personne sur l'image</label>
+                            </div>
+                            <h3 class="black-text center">Modification partie central de la page</h3>
+                            <div class="input-field col s12 ">
+                              <input id="parallax1" type="text" name="parallax1" class="parallax1" value="">
+                              <label for="parallax1">Lien menant a l'image du parallax numéro 1</label>
+                            </div>
+                              <div class="input-field col s4">
+                                <select id="typeLogoObj" name="typeLogoObj">
+                                  <option id="typeLogoObj"  value="image">image</option>
+                                  <option id="typeLogoObj" value="icon">icon</option>
+                                </select>
+                                <label for="typeLogoObj">Type de logo numéro </label>
+                              </div>
+                              <div class="input-field col s4">
+                                <input id="lienObj" type="text" class="validate" name="lienObj" value="">
+                                <label for="lienObj">lien du logo de l'objectif numéro </label>
+                              </div>
+                              <div class="input-field col s4">
+                                <input id="titleObj" type="text" class="validate" name="titleObj" value="">
+                                <label for="titleObj">Titre de l'objectif numéro </label>
+                              </div>
+                              <div class="input-field col s4">
+                                <input id="contentObj" type="text" class="validate" name="contentObj" value="">
+                                <label for="contentObj">Contenu de l'objectif numéro </label>
+                              </div>
+                            <div class="input-field col s12">
+                              <input id="parallax2" type="text" name="parallax2" class="validate" value="">
+                              <label for="parallax2">Lien menant a l'image du parallax numéro 2</label>
+                            </div>
+                            <h3 class="black-text center">Modification du carousel de la page</h3>
+                              <div class="input-field col s6">
+                                <input id="carousel" type="text" class="validate" name="carousel" value="">
+                                <label for="carousel">Contenu de l'objectif numéro</label>
+                              </div>
+                            <?php }; ?>
+                            <div class="input-field col s12">
+                              <input id="parallax3" type="text" name="parallax3" class="validate" value="">
+                              <label for="parallax3">Lien menant a l'image du parallax numéro 3</label>
+                            </div>
+                            <h3 class="black-text center">Modification de la partie inférieur de la page</h3>
+                              <div class="input-field col s4">
+                                <select id="typeLogoAvis" name="typeLogoAvis" ?>>
+                                  <option id="typeLogoAvis"  value="image">image</option>
+                                  <option id="typeLogoAvis" value="icon">icon</option>
+                                </select>
+                                <label for="typeLogoAvis">Type de logo numéro </label>
+                              </div>
+                              <div class="input-field col s4">
+                                <input id="lienAvis" type="text" class="validate" name="lienAvis" value="">
+                                <label for="lienAvis">lien du logo de l'objectif numéro </label>
+                              </div>
+                              <div class="input-field col s6">
+                                <input id="titleAvis" type="text" class="validate" name="titleAvis" value="">
+                                <label for="titleAvis">Titre de l'avis numéro </label>
+                              </div>
+                              <div class="input-field col s6">
+                                <input id="descAvis" type="text" class="validate" name="descAvis" value="">
+                                <label for="descAvis">description de l'avis numéro </label>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <input type='submit' class="btn connect" value="Valider le changement"/>
+                      </div>
+                    </form>
+                  </div>
                 <?php
                 $fin = ' ...'; //chaîne de fin
                 $lg_max = 20; //nombre de caractère autorisé
@@ -259,7 +349,6 @@
                   <p>commandes</p>
                   <?php foreach ($resultatPages as $key => $resultatPage) {
                     echo '<p>
-                      <a class="modal-trigger" id="add-pages" data-target="add-page'.$resultatPage["id"].'" href="#"><i class="material-icons">create_new_folder</i></a>
                       <a class="modal-trigger" id="change-pages" data-target="change-page'.$resultatPage["id"].'" href="#"><i class="material-icons">edit</i></a>
                       <a class="modal-trigger" id="delete-pages" data-target="delete-page'.$resultatPage["id"].'" href="#"><i class="material-icons">close</i></a>
                     </p>' ?>
