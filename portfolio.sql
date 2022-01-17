@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 15 jan. 2022 à 19:16
+-- Généré le : lun. 17 jan. 2022 à 18:42
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `avis` (
   `typeLogo_avis` varchar(50) NOT NULL,
   `idTypeAvis` int(11) NOT NULL,
   PRIMARY KEY (`avis_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `avis`
@@ -51,7 +51,9 @@ INSERT INTO `avis` (`avis_id`, `page_id`, `order`, `title_avis`, `description_av
 (4, 2, 2, 'Appréhender les erreurs', 'Dès que nous avons commencé le projet, nous avons rencontré une multitude de problèmes. Pour les résoudre, nous avons demandé de l\'aide, cherché par nous-mêmes et discuté entre nous des décisions à prendre.', 'highlight_off', 'icon', 1),
 (5, 2, 3, 'Atteindre son objectif', 'Il y a-t-il meilleure récompense que la satisfaction personnelle ? Se dépasser, aller plus loin, se tromper, recommencer.  Il n\'y a pas meilleure réussite que l\'échec.', 'directions_run', 'icon', 1),
 (6, 3, 1, 'Développer ses connaissances', 'Selon moi, il est toujours bon de toujours chercher à développer ses connaissances. Ces projets m\'ont été très utiles : avant eux je n\'avais jamais fait de JavaScript, GitHub ou encore Héroku.', 'plus_one', 'icon', 1),
-(7, 3, 2, 'Développer pour aider', 'En plus de vouloir développer mes connaissances, ce projet pourra simplifier la façon de s\'amuser de plusieurs personnes. Après tout, qui ne voudrait pas d\'un petit RPG qui demande seulement une connexion internet ? Il n\'y a pas besoin d\'avoir un puissant appareil, il suffit juste de pouvoir installer Discord.', 'accessibility', 'icon', 1);
+(7, 3, 2, 'Développer pour aider', 'En plus de vouloir développer mes connaissances, ce projet pourra simplifier la façon de s\'amuser de plusieurs personnes. Après tout, qui ne voudrait pas d\'un petit RPG qui demande seulement une connexion internet ? Il n\'y a pas besoin d\'avoir un puissant appareil, il suffit juste de pouvoir installer Discord.', 'accessibility', 'icon', 1),
+(8, 6, 1, 'L\'oeuf ou la poule', 'Pour tous nos projets, nous avons des bonus qui nous permettent de récolter des points bonus pour la note finale. Nous avons fait le parie de faire un Easter Egg sous forme de jeu. En peu de temps et avec beaucoup d’organisation nous avons réussi à faire un petit jeu en plus du site internet. Pour savoir par quoi nous avons commencé il faudrait déjà savoir où se situe le début.', 'alarm', 'icon', 2),
+(9, 6, 2, 'Le choix du portfolio', 'Notre portfolio est un dossier personnel dans lequel nous mettons les acquis de formation et les acquis de nos expériences personnelles et professionnelles. Il est très important à nos yeux, il témoigne de notre engagement personnel, de notre passion et de notre imagination.\r\n', 'assignment_ind', 'icon', 2);
 
 -- --------------------------------------------------------
 
@@ -228,12 +230,12 @@ INSERT INTO `objectifs` (`objectifs_id`, `page_id`, `order`, `title_objectifs`, 
 (13, 5, 1, '', '', '', '', 0),
 (14, 5, 2, '', '', '', '', 0),
 (15, 5, 3, '', '', '', '', 0),
-(16, 6, 1, 'Découverte de JavaScript', '', 'img\\framework_css_js\\logo\\js.png', 'image', 2),
-(17, 6, 2, 'Utilisation de Materialize', '', 'img\\framework_css_js\\logo\\materialize.png', 'image', 2),
-(18, 6, 3, '', '', '', '', 0),
-(19, 7, 1, '', '', '', '', 0),
-(20, 7, 2, '', '', '', '', 0),
-(21, 7, 3, '', '', '', '', 0),
+(16, 6, 1, 'Découverte de JavaScript', 'Création d\'un jeu \"snake\" en JavaScript.\r\nUtilisation de JavaScript avec Materialize & jQuery.', 'img\\framework_css_js\\logo\\js.png', 'image', 2),
+(17, 6, 2, 'Utilisation de Materialize', 'Created and designed by Google, Material Design is a design language that combines the classic principles of successful design along with innovation and technology.', 'img\\framework_css_js\\logo\\materialize.png', 'image', 2),
+(18, 6, 3, 'Faire un portfolio.', 'L\'objectif du projet est de développer un site internet présentant vos projets réalisés en cours et vos projets personnels.', 'book', 'icon', 2),
+(19, 7, 1, 'Introduction à MySQL', 'Initiation aux bases de données avec MySQL. C\'est un système de gestion de bases de données relationnelles (SGBDR).', 'img\\php_my-sql\\logo\\my-sql.png', 'image', 2),
+(20, 7, 2, 'Introduction à PHP', 'Initiation au développement web avec PHP. C\'est un langage de programmation principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP28, mais pouvant également fonctionner comme n\'importe quel langage interprété de façon locale. PHP est un langage impératif orienté objet.', 'img\\php_my-sql\\logo\\php.png', 'image', 2),
+(21, 7, 3, 'Dynamiser une page web', 'En partant du site créé lors du projet \"Framework CSS & JavaScript\" et grâce à du PHP et une base de données, nous avons  rendu ce site maintenable avec un panel admin permettant de modifier le contenu.', 'autorenew', 'icon', 2),
 (22, 8, 1, '', '', '', '', 0),
 (23, 8, 2, '', '', '', '', 0),
 (24, 8, 3, '', '', '', '', 0),
@@ -265,14 +267,14 @@ CREATE TABLE IF NOT EXISTS `pages` (
 
 INSERT INTO `pages` (`id`, `title`, `img_link`, `description`, `subtitle`, `type`, `id_type`) VALUES
 (1, ' Introduction à la programation en C', 'img/puissance_quatre/icons/Nicolas.png', 'Python & scientific developer, bash scripting, Linux systems administrator. Software & algorithms design, data processing, visualization, automation, tests, statistics, problems solving, debugging, code optimisation. Research engineer in remote sensing: satellite altimetry & imagery, geomatics.', 'Intervenant : Nicolas BERCHER', 'Commun', 1),
-(2, ' PokeFus', 'img\\pokefus\\icons\\lprieu.jpg', '', 'PokeFus est un RPG solo : un savoureux mélange entre l\'univers du Krosmoz et celui de Pokémon.<br>Projet personnel de Lilian Prieu.', 'Lilian', 2),
-(3, ' Exaltya', 'img\\exaltya\\icons\\gsimoes.jpg', '', 'Exaltya est un bot Discord permettant de jouer dans un petit RPG, en utilisant de simples commandes. Il est donc accessible de n\'importe où tant que vous disposez d\'une connexion internet, et facile d\'utilisation. Ce projet est encore en cours de développement. <br> Projet personnel de SIMOES Guillaume.', 'Guillaume', 2),
-(4, 'HTML / CSS / SEO', '', '', '', 'Lilian', 3),
-(5, 'HTML / CSS / SEO', '', '', '', 'Guillaume', 3),
-(6, 'Framework CSS & JavaScript', '', '', '', 'Commun', 2),
-(7, 'PHP / MySQL', '', '', '', 'Commun', 3),
-(8, 'Initiation à l\'algorithmique avec Python', '', '', '', 'Lilian', 1),
-(9, 'Initiation à l\'algorithmique avec Python', '', '', '', 'Guillaume', 1);
+(2, ' PokeFus', 'img\\pokefus\\icons\\lprieu.jpg', 'PokeFus est un RPG solo : un savoureux mélange entre l\'univers du Krosmoz et celui de Pokémon.', 'Lilian Prieu : Game Developer / Study at Gaming Campus', 'Lilian', 2),
+(3, ' Exaltya', 'img\\exaltya\\icons\\gsimoes.jpg', 'Exaltya est un bot Discord permettant de jouer dans un petit RPG, en utilisant de simples commandes. Il est donc accessible de n\'importe où tant que vous disposez d\'une connexion internet, et facile d\'utilisation. Ce projet est encore en cours de développement.', 'Guillaume Simoes : Game Developer / Study at Gaming Campus', 'Guillaume', 2),
+(4, ' HTML / CSS / SEO', 'img\\html_css_seo\\icon\\avatar.jpg', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Lilian', 3),
+(5, ' HTML / CSS / SEO', 'img\\html_css_seo\\icon\\avatar.jpg', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Guillaume', 3),
+(6, ' Framework CSS & JavaScript', 'img\\framework_css_js\\icon\\avatar.jpg', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Commun', 2),
+(7, ' PHP / MySQL', 'img\\php_my-sql\\icon\\avatar.jpg', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Commun', 3),
+(8, ' Initiation à l\'algorithmique avec Python', '', '', '', 'Lilian', 1),
+(9, ' Initiation à l\'algorithmique avec Python', '', '', '', 'Guillaume', 1);
 
 -- --------------------------------------------------------
 
@@ -313,9 +315,9 @@ INSERT INTO `parallax` (`parallax_id`, `page_id`, `order`, `parallax_link`, `idT
 (16, 6, 1, 'img\\framework_css_js\\parallax\\top.jpg', 2),
 (17, 6, 2, 'img\\framework_css_js\\parallax\\mid.jpg', 2),
 (18, 6, 3, 'img\\framework_css_js\\parallax\\bot.jpg', 2),
-(19, 7, 1, '', 0),
-(20, 7, 2, '', 0),
-(21, 7, 3, '', 0),
+(19, 7, 1, 'img\\php_my-sql\\parallax\\top.jpg', 2),
+(20, 7, 2, 'img\\php_my-sql\\parallax\\mid.jpg', 2),
+(21, 7, 3, 'img\\php_my-sql\\parallax\\bot.jpg', 2),
 (22, 8, 1, '', 0),
 (23, 8, 2, '', 0),
 (24, 8, 3, '', 0),
