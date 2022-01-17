@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 17 jan. 2022 à 18:42
+-- Généré le : lun. 17 jan. 2022 à 22:46
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -52,8 +52,8 @@ INSERT INTO `avis` (`avis_id`, `page_id`, `order`, `title_avis`, `description_av
 (5, 2, 3, 'Atteindre son objectif', 'Il y a-t-il meilleure récompense que la satisfaction personnelle ? Se dépasser, aller plus loin, se tromper, recommencer.  Il n\'y a pas meilleure réussite que l\'échec.', 'directions_run', 'icon', 1),
 (6, 3, 1, 'Développer ses connaissances', 'Selon moi, il est toujours bon de toujours chercher à développer ses connaissances. Ces projets m\'ont été très utiles : avant eux je n\'avais jamais fait de JavaScript, GitHub ou encore Héroku.', 'plus_one', 'icon', 1),
 (7, 3, 2, 'Développer pour aider', 'En plus de vouloir développer mes connaissances, ce projet pourra simplifier la façon de s\'amuser de plusieurs personnes. Après tout, qui ne voudrait pas d\'un petit RPG qui demande seulement une connexion internet ? Il n\'y a pas besoin d\'avoir un puissant appareil, il suffit juste de pouvoir installer Discord.', 'accessibility', 'icon', 1),
-(8, 6, 1, 'L\'oeuf ou la poule', 'Pour tous nos projets, nous avons des bonus qui nous permettent de récolter des points bonus pour la note finale. Nous avons fait le parie de faire un Easter Egg sous forme de jeu. En peu de temps et avec beaucoup d’organisation nous avons réussi à faire un petit jeu en plus du site internet. Pour savoir par quoi nous avons commencé il faudrait déjà savoir où se situe le début.', 'alarm', 'icon', 2),
-(9, 6, 2, 'Le choix du portfolio', 'Notre portfolio est un dossier personnel dans lequel nous mettons les acquis de formation et les acquis de nos expériences personnelles et professionnelles. Il est très important à nos yeux, il témoigne de notre engagement personnel, de notre passion et de notre imagination.\r\n', 'assignment_ind', 'icon', 2);
+(8, 6, 1, 'L\'oeuf ou la poule', 'Pour les projets réalisés à l\'école, les étudiants peuvent obtenir un bonus qui leur permet de récolter des points supplémentaires contant pour la note finale. Nous avons réussi le parie de coder un Easter Egg sous la forme d\'un jeu de type \"Snake\", en peu de temps et avec beaucoup d’organisation. Pour savoir par quoi nous avons commencé, il faudrait déjà savoir où se situent le début et la fin.', 'alarm', 'icon', 2),
+(9, 6, 2, 'Le choix du portfolio', 'Notre portfolio est un dossier personnel dans lequel nous regroupons les acquis de notre formation ainsi que ceux de nos expériences personnelles et professionnelles. Il est très important à nos yeux.\r\nIl témoigne de notre engagement personnel, de notre passion et de notre imagination.', 'assignment_ind', 'icon', 2);
 
 -- --------------------------------------------------------
 
@@ -232,10 +232,10 @@ INSERT INTO `objectifs` (`objectifs_id`, `page_id`, `order`, `title_objectifs`, 
 (15, 5, 3, '', '', '', '', 0),
 (16, 6, 1, 'Découverte de JavaScript', 'Création d\'un jeu \"snake\" en JavaScript.\r\nUtilisation de JavaScript avec Materialize & jQuery.', 'img\\framework_css_js\\logo\\js.png', 'image', 2),
 (17, 6, 2, 'Utilisation de Materialize', 'Created and designed by Google, Material Design is a design language that combines the classic principles of successful design along with innovation and technology.', 'img\\framework_css_js\\logo\\materialize.png', 'image', 2),
-(18, 6, 3, 'Faire un portfolio.', 'L\'objectif du projet est de développer un site internet présentant vos projets réalisés en cours et vos projets personnels.', 'book', 'icon', 2),
+(18, 6, 3, 'Faire un portfolio.', 'L\'objectif du projet est de développer un site internet qui présente nos projets réalisés à l\'école et nos projets personnels.', 'book', 'icon', 2),
 (19, 7, 1, 'Introduction à MySQL', 'Initiation aux bases de données avec MySQL. C\'est un système de gestion de bases de données relationnelles (SGBDR).', 'img\\php_my-sql\\logo\\my-sql.png', 'image', 2),
 (20, 7, 2, 'Introduction à PHP', 'Initiation au développement web avec PHP. C\'est un langage de programmation principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP28, mais pouvant également fonctionner comme n\'importe quel langage interprété de façon locale. PHP est un langage impératif orienté objet.', 'img\\php_my-sql\\logo\\php.png', 'image', 2),
-(21, 7, 3, 'Dynamiser une page web', 'En partant du site créé lors du projet \"Framework CSS & JavaScript\" et grâce à du PHP et une base de données, nous avons  rendu ce site maintenable avec un panel admin permettant de modifier le contenu.', 'autorenew', 'icon', 2),
+(21, 7, 3, 'Dynamiser une page web', 'En partant du site créé lors du projet \"Framework CSS & JavaScript\", grâce à du PHP et une base de données, nous avons  rendu ce site maintenable avec un panel admin permettant de modifier le contenu.', 'autorenew', 'icon', 2),
 (22, 8, 1, '', '', '', '', 0),
 (23, 8, 2, '', '', '', '', 0),
 (24, 8, 3, '', '', '', '', 0),
