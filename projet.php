@@ -22,9 +22,7 @@
         <h2 class="center"><i class="small material-icons">folder</i><?php echo $resultatPages ['title']; ?></h2>
         <h2 class="center"><img class="circle" src=<?php echo $resultatPages ['img_link']; ?>></h2>
         <h5 class="center"><?php echo $resultatPages ['subtitle']; ?></h5>
-        <?php if ($_GET['projet'] == 1): ?>
-          <p class="light"><?php echo $resultatPages ['description']; ?></p>
-        <?php endif ?>
+        <p class="light"><?php echo $resultatPages ['description']; ?></p>
       </div>
     </div>
   </div>

@@ -27,26 +27,26 @@
                       <div class="row">
                         <form method="post" action="add_user.php">
                           <div class="row">
-                            <div class="input-field col s6">
+                            <div class="input-field col s3">
                               <input id="email" type="email" name="email" class="validate">
                               <label for="email">Adresse email</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s3">
                               <input id="login" type="text" class="validate" name="login">
                               <label for="login">Login</label>
                             </div>
-                          </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s3">
                               <input id="mdp" type="password" class="validate" name="password">
                               <label for="mdp">Mot de passe</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s3">
                               <select id='choose_admin' name="admin">
                                 <option id="admin" value="1">Oui</option>
                                 <option id="admin" value="0" selected>Non</option>
                               </select>
                               <label for='choose_admin'>Admin</label>
                             </div>
+                          </div>
                         </div>
                       </div>
                       <div class="modal-footer">
@@ -213,7 +213,7 @@
                   <div class="modal-content">
                     <h2 class="center">Modifier une page</h2>
                       <div class="row">
-                        <form method="post" action="change_page.php">
+                        <form method="post" action="add_page.php">
                           <h3 class="black-text center">Modification partie supperieur de la page</h3>
                           <div class="row">
                             <div class="input-field col s6">
@@ -230,66 +230,87 @@
                             </div>
                             <div class="input-field col s6">
                               <input id="subtitle" type="text" class="validate" name="subtitle" value="">
-                              <label for="subtitle">courte description du id_type nom et prénom de la personne sur l'image</label>
+                              <label for="subtitle">courte description du projet, nom et prénom de la personne sur l'image</label>
                             </div>
-                            <h3 class="black-text center">Modification partie central de la page</h3>
                             <div class="input-field col s12 ">
                               <input id="parallax1" type="text" name="parallax1" class="parallax1" value="">
                               <label for="parallax1">Lien menant a l'image du parallax numéro 1</label>
                             </div>
-                              <div class="input-field col s4">
-                                <select id="typeLogoObj" name="typeLogoObj">
-                                  <option id="typeLogoObj"  value="image">image</option>
-                                  <option id="typeLogoObj" value="icon">icon</option>
+                            <h3 class="black-text center">Modification partie central de la page</h3>
+                            <?php for ($i = 1;  $i<4; $i++){
+                              echo "<div class='input-field col s4'>
+                                <select id='typeLogoObj".$i."' name='typeLogoObj'>
+                                  <option id='typeLogoObj".$i."'  value='image'>image</option>
+                                  <option id='typeLogoObj".$i."' value='icon'>icon</option>
                                 </select>
-                                <label for="typeLogoObj">Type de logo numéro </label>
-                              </div>
-                              <div class="input-field col s4">
-                                <input id="lienObj" type="text" class="validate" name="lienObj" value="">
-                                <label for="lienObj">lien du logo de l'objectif numéro </label>
-                              </div>
-                              <div class="input-field col s4">
-                                <input id="titleObj" type="text" class="validate" name="titleObj" value="">
-                                <label for="titleObj">Titre de l'objectif numéro </label>
-                              </div>
-                              <div class="input-field col s4">
-                                <input id="contentObj" type="text" class="validate" name="contentObj" value="">
-                                <label for="contentObj">Contenu de l'objectif numéro </label>
-                              </div>
+                                <label for='typeLogoObj'>Type de logo numéro ".$i."</label>
+                              </div>";
+                            }?>
+                            <?php for ($i = 1;  $i<4; $i++){
+                              echo "<div class='input-field col s4'>
+                                <input id='lienObj".$i."' type='text' class='validate' name='lienObj".$i."' value=''>
+                                <label for='lienObj".$i."'>lien du logo de l'objectif numéro ".$i."</label>
+                              </div>";
+                            } ?>
+                            <?php for ($i = 1;  $i<4; $i++){
+                              echo "<div class='input-field col s4'>
+                                <input id='titleObj".$i."' type='text' class='validate' name='titleObj".$i."' value=''>
+                                <label for='titleObj".$i."'>Titre de l'objectif numéro ".$i."</label>
+                              </div>";
+                            } ?>
+
+                            <?php for ($i = 1;  $i<4; $i++){
+                              echo "<div class='input-field col s4'>
+                                <input id='contentObj".$i."' type='text' class='validate' name='contentObj".$i."' value=''>
+                                <label for='contentObj".$i."'>Contenu de l'objectif numéro ".$i."</label>
+                              </div>";
+                            } ?>
                             <div class="input-field col s12">
                               <input id="parallax2" type="text" name="parallax2" class="validate" value="">
                               <label for="parallax2">Lien menant a l'image du parallax numéro 2</label>
                             </div>
                             <h3 class="black-text center">Modification du carousel de la page</h3>
-                              <div class="input-field col s6">
-                                <input id="carousel" type="text" class="validate" name="carousel" value="">
-                                <label for="carousel">Contenu de l'objectif numéro</label>
-                              </div>
-                            <?php }; ?>
+                            <?php for ($i = 1; $i<5;$i++) {
+                              echo '<div class="input-field col s6">
+                                <input id="carousel'.$i.'" type="text" class="validate" name="carousel'.$i.'" value="">
+                                <label for="carousel'.$i.'">Contenu de l\'objectif numéro '.$i.'</label>
+                              </div>';
+                            }?>
+                            <h3 class="black-text center">Modification de la partie inférieur de la page</h3>
                             <div class="input-field col s12">
                               <input id="parallax3" type="text" name="parallax3" class="validate" value="">
                               <label for="parallax3">Lien menant a l'image du parallax numéro 3</label>
                             </div>
-                            <h3 class="black-text center">Modification de la partie inférieur de la page</h3>
-                              <div class="input-field col s4">
-                                <select id="typeLogoAvis" name="typeLogoAvis" ?>>
-                                  <option id="typeLogoAvis"  value="image">image</option>
-                                  <option id="typeLogoAvis" value="icon">icon</option>
+                            <?php for ($i = 1;  $i<4; $i++){
+                              echo "<div class='input-field col s4'>
+                                <select id='typeLogoAvis".$i."' name='typeLogoAvis".$i."'>
+                                  <option id='typeLogoAvis".$i."'  value='image'>image</option>
+                                  <option id='typeLogoAvis".$i."' value='icon'>icon</option>
                                 </select>
-                                <label for="typeLogoAvis">Type de logo numéro </label>
-                              </div>
-                              <div class="input-field col s4">
-                                <input id="lienAvis" type="text" class="validate" name="lienAvis" value="">
-                                <label for="lienAvis">lien du logo de l'objectif numéro </label>
-                              </div>
-                              <div class="input-field col s6">
-                                <input id="titleAvis" type="text" class="validate" name="titleAvis" value="">
-                                <label for="titleAvis">Titre de l'avis numéro </label>
-                              </div>
-                              <div class="input-field col s6">
-                                <input id="descAvis" type="text" class="validate" name="descAvis" value="">
-                                <label for="descAvis">description de l'avis numéro </label>
-                              </div>
+                                <label for='typeLogoAvis".$i."'>Type de logo numéro ".$i."</label>
+                              </div>";
+                            }?>
+
+                            <?php for ($i = 1;  $i<4; $i++){
+                              echo "<div class='input-field col s4 l4'>
+                                <input id='lienAvis".$i."' type='text' class='validate' name='lienAvis".$i."".$i."' value=''>
+                                <label for='lienAvis".$i."'>lien du logo de l'avis numéro ".$i."</label>
+                              </div>";
+                            }?>
+
+                            <?php for ($i = 1;  $i<4; $i++){
+                              echo "<div class='input-field col s6 l4'>
+                                <input id='titleAvis".$i."' type='text' class='validate' name='titleAvis".$i."' value=''>
+                                <label for='titleAvis".$i."'>Titre de l'avis numéro ".$i."</label>
+                              </div>";
+                            }?>
+
+                            <?php for ($i = 1;  $i<4; $i++){
+                              echo "<div class='input-field col s6 l4'>
+                                <input id='descAvis".$i."' type='text' class='validate' name='descAvis".$i."' value=''>
+                                <label for='descAvis".$i."'>description de l'avis numéro ".$i."</label>
+                              </div>";
+                            }?>
                           </div>
                         </div>
                       </div>
@@ -373,9 +394,8 @@
                                 </div>
                                 <div class="input-field col s6">
                                   <input id="subtitle" type="text" class="validate" name="subtitle" value="<?php echo $resultatPage['subtitle'] ?>">
-                                  <label for="subtitle">courte description du id_type nom et prénom de la personne sur l'image</label>
+                                  <label for="subtitle">courte description du projet, nom et prénom de la personne sur l'image</label>
                                 </div>
-                                <h3 class="black-text center">Modification partie central de la page</h3>
                                 <?php
                                 $requete1 = 'SELECT p.*,pa.* FROM pages p LEFT JOIN parallax pa ON p.id= pa.page_id WHERE p.type ="'.$resultatPage["type"].'" AND p.id_type='.$resultatPage["id_type"].' AND `order` = 1';
                                 $resultat = $pdo->prepare($requete1);
@@ -386,6 +406,7 @@
                                   <input id="parallax1" type="text" name="parallax1" class="parallax1" value="<?php echo $resultatPagesParallaxTop['parallax_link'] ?>">
                                   <label for="parallax1">Lien menant a l'image du parallax numéro 1</label>
                                 </div>
+                                <h3 class="black-text center">Modification partie central de la page</h3>
                                 <?php
                                 $requete1 = 'SELECT p.*,o.* FROM pages p LEFT JOIN objectifs o ON p.id= o.page_id WHERE p.type ="'.$resultatPage["type"].'" AND p.id_type='.$resultatPage["id_type"].' ORDER BY `order`';
                                 $resultat = $pdo->prepare($requete1);
@@ -448,6 +469,7 @@
                                     <label for="carousel<?php echo$resultatPageCarousel['order'] ?>">Contenu de l'objectif numéro <?php echo$resultatPageCarousel['order'] ?></label>
                                   </div>
                                 <?php }; ?>
+                                <h3 class="black-text center">Modification de la partie inférieur de la page</h3>
                                 <div class="input-field col s12">
                                   <?php
                                   $requete1 = 'SELECT p.*,pa.* FROM pages p LEFT JOIN parallax pa ON p.id= pa.page_id WHERE p.type ="'.$resultatPage["type"].'" AND p.id_type='.$resultatPage["id_type"].' AND `order` = 3';
@@ -458,7 +480,6 @@
                                   <input id="parallax3" type="text" name="parallax3" class="validate" value="<?php echo $resultatPagesParallaxBot['parallax_link'] ?>">
                                   <label for="parallax3">Lien menant a l'image du parallax numéro 3</label>
                                 </div>
-                                <h3 class="black-text center">Modification de la partie inférieur de la page</h3>
                                 <?php
                                 $requete1 = 'SELECT p.*,a.* FROM pages p LEFT JOIN avis a ON p.id= a.page_id WHERE p.type ="'.$resultatPage["type"].'" AND p.id_type='.$resultatPage["id_type"].' ORDER BY `order`';
                                 $resultat = $pdo->prepare($requete1);
@@ -532,9 +553,8 @@
                                   </div>
                                   <div class="input-field col s6">
                                     <input readonly="readonly" id="subtitle" type="text" class="validate" name="subtitle" value="<?php echo $resultatPage['subtitle'] ?>">
-                                    <label for="subtitle">courte description du id_type nom et prénom de la personne sur l'image</label>
+                                    <label for="subtitle">courte description du projet, nom et prénom de la personne sur l'image</label>
                                   </div>
-                                  <h3 class="black-text center">Modification partie central de la page</h3>
                                   <?php
                                   $requete1 = 'SELECT p.*,pa.* FROM pages p LEFT JOIN parallax pa ON p.id= pa.page_id WHERE p.type ="'.$resultatPage["type"].'" AND p.id_type='.$resultatPage["id_type"].' AND `order` = 1';
                                   $resultat = $pdo->prepare($requete1);
@@ -545,6 +565,7 @@
                                     <input readonly="readonly" id="parallax1" type="text" name="parallax1" class="parallax1" value="<?php echo $resultatPagesParallaxTop['parallax_link'] ?>">
                                     <label for="parallax1">Lien menant a l'image du parallax numéro 1</label>
                                   </div>
+                                  <h3 class="black-text center">Modification partie central de la page</h3>
                                   <?php
                                   $requete1 = 'SELECT p.*,o.* FROM pages p LEFT JOIN objectifs o ON p.id= o.page_id WHERE p.type ="'.$resultatPage["type"].'" AND p.id_type='.$resultatPage["id_type"].' ORDER BY `order`';
                                   $resultat = $pdo->prepare($requete1);
@@ -607,6 +628,7 @@
                                       <label for="carousel<?php echo$resultatPageCarousel['order'] ?>">Contenu de l'objectif numéro <?php echo$resultatPageCarousel['order'] ?></label>
                                     </div>
                                   <?php }; ?>
+                                  <h3 class="black-text center">Modification de la partie inférieur de la page</h3>
                                   <div class="input-field col s12">
                                     <?php
                                     $requete1 = 'SELECT p.*,pa.* FROM pages p LEFT JOIN parallax pa ON p.id= pa.page_id WHERE p.type ="'.$resultatPage["type"].'" AND p.id_type='.$resultatPage["id_type"].' AND `order` = 3';
@@ -617,7 +639,6 @@
                                     <input readonly="readonly" id="parallax3" type="text" name="parallax3" class="validate" value="<?php echo $resultatPagesParallaxBot['parallax_link'] ?>">
                                     <label for="parallax3">Lien menant a l'image du parallax numéro 3</label>
                                   </div>
-                                  <h3 class="black-text center">Modification de la partie inférieur de la page</h3>
                                   <?php
                                   $requete1 = 'SELECT p.*,a.* FROM pages p LEFT JOIN avis a ON p.id= a.page_id WHERE p.type ="'.$resultatPage["type"].'" AND p.id_type='.$resultatPage["id_type"].' ORDER BY `order`';
                                   $resultat = $pdo->prepare($requete1);
