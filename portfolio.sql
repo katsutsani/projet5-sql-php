@@ -279,13 +279,8 @@ INSERT INTO `pages` (`id`, `title`, `img_link`, `description`, `subtitle`, `type
 (5, ' HTML / CSS / SEO', 'img\\html_css_seo\\icon\\avatar.jpg', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Guillaume', 3),
 (6, ' Framework CSS & JavaScript', 'img\\framework_css_js\\icon\\avatar.jpg', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Commun', 2),
 (7, ' PHP / MySQL', 'img\\php_my-sql\\icon\\avatar.jpg', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Commun', 3),
-<<<<<<< HEAD
 (8, ' Initiation à l\'algorithmique avec Python', 'img\\python\\icon\\avatar.jpg', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Lilian', 1),
 (9, ' Initiation à l\'algorithmique avec Python', 'img\\python\\icon\\avatar.jpg', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Guillaume', 1);
-=======
-(8, ' Initiation à l\'algorithmique avec Python', '', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Lilian', 1),
-(9, ' Initiation à l\'algorithmique avec Python', '', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Guillaume', 1);
->>>>>>> d5ed97cf60fb9e81c799e4888e276cf464d76c10
 
 -- --------------------------------------------------------
 
