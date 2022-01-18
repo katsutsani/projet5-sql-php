@@ -1,17 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
-<<<<<<< HEAD
--- Généré le : mar. 18 jan. 2022 à 17:48
--- Version du serveur :  5.7.31
--- Version de PHP : 7.3.21
-=======
--- Généré le : mar. 18 jan. 2022 à 17:47
+-- Généré le : mar. 18 jan. 2022 à 18:53
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
->>>>>>> d5ed97cf60fb9e81c799e4888e276cf464d76c10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -315,7 +309,7 @@ INSERT INTO `parallax` (`parallax_id`, `page_id`, `order`, `parallax_link`, `idT
 (10, 4, 1, '', 0),
 (11, 4, 2, '', 0),
 (12, 4, 3, '', 0),
-(13, 5, 1, 'img\\html_css_seo\\gsimoes\\parallax\\top.jpg', 3),
+(13, 5, 1, '', 0),
 (14, 5, 2, '', 0),
 (15, 5, 3, '', 0),
 (16, 6, 1, 'img\\framework_css_js\\parallax\\top.jpg', 2),
@@ -324,12 +318,12 @@ INSERT INTO `parallax` (`parallax_id`, `page_id`, `order`, `parallax_link`, `idT
 (19, 7, 1, 'img\\php_my-sql\\parallax\\top.jpg', 2),
 (20, 7, 2, 'img\\php_my-sql\\parallax\\mid.jpg', 2),
 (21, 7, 3, 'img\\php_my-sql\\parallax\\bot.jpg', 2),
-(22, 8, 1, '', 0),
-(23, 8, 2, '', 0),
-(24, 8, 3, '', 0),
-(25, 9, 1, 'img\\python\\gsimoes\\parallax\\top.webp', 1),
-(26, 9, 2, 'img\\python\\gsimoes\\parallax\\mid.jpg', 1),
-(27, 9, 3, 'img\\python\\gsimoes\\parallax\\bot.jpg', 1);
+(22, 8, 1, 'img\\python\\lprieu\\parallax\\top.jpeg', 1),
+(23, 8, 2, 'img\\python\\lprieu\\parallax\\mid.jpeg', 1),
+(24, 8, 3, 'img\\python\\lprieu\\parallax\\bot.jpeg', 1),
+(25, 9, 1, '', 0),
+(26, 9, 2, '', 0),
+(27, 9, 3, '', 0);
 
 -- --------------------------------------------------------
 
