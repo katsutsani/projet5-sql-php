@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 17 jan. 2022 à 22:46
+-- Généré le : mar. 18 jan. 2022 à 17:47
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -273,8 +273,8 @@ INSERT INTO `pages` (`id`, `title`, `img_link`, `description`, `subtitle`, `type
 (5, ' HTML / CSS / SEO', 'img\\html_css_seo\\icon\\avatar.jpg', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Guillaume', 3),
 (6, ' Framework CSS & JavaScript', 'img\\framework_css_js\\icon\\avatar.jpg', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Commun', 2),
 (7, ' PHP / MySQL', 'img\\php_my-sql\\icon\\avatar.jpg', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Commun', 3),
-(8, ' Initiation à l\'algorithmique avec Python', '', '', '', 'Lilian', 1),
-(9, ' Initiation à l\'algorithmique avec Python', '', '', '', 'Guillaume', 1);
+(8, ' Initiation à l\'algorithmique avec Python', '', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Lilian', 1),
+(9, ' Initiation à l\'algorithmique avec Python', '', 'CTO Snowball Esports - IT Developer coach for Gaming Campus', 'Intervenant : Antoine Di Roberto', 'Guillaume', 1);
 
 -- --------------------------------------------------------
 
