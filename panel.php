@@ -19,8 +19,8 @@
           <div class="col s12 m12 l12">
             <div class="panel row"style="margin-top:40px;">
               <?php if($_GET['page'] == "users"): ?>
-                <h2 class="brown-text center nom">Users</h2>
-                <a class="modal-trigger" id="add-users" data-target="add-user" href="#"><i class="large material-icons">create_new_folder</i></a>
+                <h2 class="panel-text brown-text center nom">Users</h2>
+                <a class="add-btn modal-trigger" id="add-users" data-target="add-user" href="#"><i class="large material-icons">create_new_folder</i></a>
                 <div id='add-user' class="modal">
                   <div class="modal-content">
                     <h4>Enregister un nouveau compte</h4>
@@ -62,7 +62,7 @@
                   <p>ID</p>
                   <?php
                   foreach($resultatUsers as $key => $resultatUser){
-                    echo "<p>".$resultatUser['id']."</p>";
+                    echo "<p class='affichage'>".$resultatUser['id']."</p>";
                   }?>
                 </div>
                 <div class="col s12 m6 l2">
@@ -73,7 +73,7 @@
                     {
                       $resultatUser['login']=substr($resultatUser['login'], 0, $lg_max-strlen($fin)).$fin;
                     }
-                    echo "<p>".$resultatUser['login']."</p>";
+                    echo "<p class='affichage'>".$resultatUser['login']."</p>";
                   }
                   ?>
                 </div>
@@ -85,7 +85,7 @@
                     {
                       $resultatUser['email']=substr($resultatUser['email'], 0, $lg_max-strlen($fin)).$fin;
                     }
-                    echo "<p>".$resultatUser['email']."</p>";
+                    echo "<p class='affichage'>".$resultatUser['email']."</p>";
                   }
                   ?>
                 </div>
@@ -97,7 +97,7 @@
                     {
                       $resultatUser['password']=substr($resultatUser['password'], 0, $lg_max-strlen($fin)).$fin;
                     }
-                    echo "<p>".$resultatUser['password']."</p>";
+                    echo "<p class='affichage'>".$resultatUser['password']."</p>";
                   }
                   ?>
                 </div>
@@ -105,7 +105,7 @@
                   <p>Admin</p>
                   <?php
                   foreach($resultatUsers as $key => $resultatUser){
-                    echo "<p>".$resultatUser['admin']."</p>";
+                    echo "<p class='affichage'>".$resultatUser['admin']."</p>";
                   }?>
                 </div>
                 <div class="col s12 m6 l2">
@@ -207,8 +207,8 @@
                   <?php } ?>
                 </div>
               <?php elseif ($_GET["page"] == "pages") :?>
-                <h2 class="brown-text center nom">Pages</h2>
-                <a class="modal-trigger" id="add-pages" data-target="add-page" href="#"><i class="large material-icons">create_new_folder</i></a>
+                <h2 class="panel-text brown-text center nom">Pages</h2>
+                <a class="add-btn modal-trigger" id="add-pages" data-target="add-page" href="#"><i class="large material-icons">create_new_folder</i></a>
                 <div id="add-page" class="modal">
                   <div class="modal-content">
                     <h2 class="center">Modifier une page</h2>
@@ -324,50 +324,62 @@
                 $lg_max = 20; //nombre de caractère autorisé
                  ?>
                 <div class="col center s12 m6 l2">
-                  <p>id</p>
+                  <p>ID</p>
                   <?php
                   foreach($resultatPages as $key => $resultatPage){
-                    echo "<p>".$resultatPage['id']."</p>";
+                    echo "<p class='affichage'>".$resultatPage['id']."</p>";
                   }?>
                 </div>
                 <div class="col s12 m6 l2">
-                  <p>title</p>
+                  <p>Title</p>
                   <?php
                   foreach($resultatPages as $key => $resultatPage){
                     if (strlen($resultatPage['title'])>$lg_max)
                     {
                       $resultatPage['title']=substr($resultatPage['title'], 0, $lg_max-strlen($fin)).$fin;
                     }
-                    echo "<p>".$resultatPage['title']."<br></p>";
+                    echo "<p class='affichage'>".$resultatPage['title']."<br></p>";
                   }
                   ?>
                 </div>
                 <div class="col s12 m6 l2">
-                  <p>img_title</p>
+                  <p>Img_Title</p>
                   <?php
                   foreach($resultatPages as $key => $resultatPage){
                     if (strlen($resultatPage['img_link'])>$lg_max)
                     {
                       $resultatPage['img_link']=substr($resultatPage['img_link'], 0, $lg_max-strlen($fin)).$fin;
                     }
-                    echo "<p>".$resultatPage['img_link']."</p>";
+                    echo "<p class='affichage'>".$resultatPage['img_link']."</p>";
                   }
                   ?>
                 </div>
                 <div class="col s12 m6 l2">
-                  <p>description</p>
+                  <p>Description</p>
                   <?php
                   foreach($resultatPages as $key => $resultatPage){
                     if (strlen($resultatPage['description'])>$lg_max)
                     {
                       $resultatPage['description']=substr($resultatPage['description'], 0, $lg_max-strlen($fin)).$fin;
                     }
-                    echo "<p>".$resultatPage['description']."</p>";
+                    echo "<p class='affichage'>".$resultatPage['description']."</p>";
                   }
                   ?>
                 </div>
                 <div class="col s12 m6 l2">
-                  <p>commandes</p>
+                  <p>Type</p>
+                  <?php
+                  foreach($resultatPages as $key => $resultatPage){
+                    if (strlen($resultatPage['type'])>$lg_max)
+                    {
+                      $resultatPage['type']=substr($resultatPage['type'], 0, $lg_max-strlen($fin)).$fin;
+                    }
+                    echo "<p class='affichage'>".$resultatPage['type']."<br></p>";
+                  }
+                  ?>
+                </div>
+                <div class="col s12 m6 l2">
+                  <p>Commandes</p>
                   <?php foreach ($resultatPages as $key => $resultatPage) {
                     echo '<p>
                       <a class="modal-trigger" id="change-pages" data-target="change-page'.$resultatPage["id"].'" href="#"><i class="material-icons">edit</i></a>

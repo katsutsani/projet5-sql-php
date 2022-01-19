@@ -31,6 +31,20 @@ h1 {
   margin-top: 5em;
 }
 
+p.affichage {
+    padding-top: 6.5px;
+}
+
+.add-btn{
+  position: absolute;
+  margin-left: 55%;
+  margin-top: -6%;
+}
+
+.panel-text{
+  margin-bottom: 50px;
+}
+
 .description_gs {
   padding: 5%;
 }
