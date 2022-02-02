@@ -9,6 +9,48 @@
 <?php require_once 'dropdownPrieu.php' ?>
 <?php require_once 'dropdownSimoes.php' ?>
 
+<div id="add-page" class="modal">
+  <div class="modal-content">
+    <h4>Créer une nouvelle page</h4>
+    <div class="row">
+    <form method="post" action="add_page.php">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="title" type="text" name="title" class="validate">
+          <label for="title">titre de la page</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="img_link" type="text" class="validate" name="img_link">
+          <label for="img_link">lien menant à l'image</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="description" type="text" name="description" class="validate">
+          <label for="description">Présentation de la personne sur l'image</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="subtitle" type="text" class="validate" name="subtitle">
+          <label for="subtitle">courte description du projet nom et prénom de la personne sur l'image</label>
+        </div>
+        <h3>ajout de la partie central de la page</h3>
+        <div class="input-field col s12 ">
+          <input id="parallax1" type="text" name="title" class="parallax1">
+          <label for="parallax1">Lien menant a l'image du parallax numéro 1</label>
+        </div>
+        <div class="input-filed col s4">
+          <select id='typelogo'>
+            <option value="image">image</option>
+            <option value="icon">icon</option>
+          </select>
+          <label for="typelogo">Type de logo</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <input type='submit' class="btn connect" value="Créer le nouveau compte"/>
+  </div>
+</form>
+</div>
 <div id="Contact" class="modal bottom-sheet">
 <div class="modal-content">
     <h4>Contactez-nous</h4>
@@ -128,35 +170,53 @@
               <li><a href="#Objectifs">Objectifs</a></li>
               <li><a href="#Result">Résultat</a></li>
               <li><a href="#Opinion">Avis</a></li>
-              <li><a class='dropdown-trigger' data-target='dropdownuser'> <?php echo $_SESSION['user']['login']  ?><i class='material-icons right'>arrow_drop_down</i></a></li>
-              <div id="dropdownuser" class="dropdown-content">
+              <?php echo "<li><a class='dropdown-trigger' data-target='dropdownUser'> ".$_SESSION['user']['login']." <i class='material-icons right'>arrow_drop_down</i></a></li>  "?>
+              <div id="dropdownUser" class="dropdown-content">
                 <ul>
                   <li> <a href="logout.php">Logout</a></li>
                 </ul>
               </div>
-              <li><a class='dropdown-trigger' data-target='dropdownpanel'> Panels <i class="material-icons right">arrow_drop_down</i></a></li>
-              <div id="dropdownpanel" class="dropdown-content">
+              <li><a class='dropdown-trigger' data-target='dropdownPanel'> Panels <i class="material-icons right">arrow_drop_down</i></a></li>
+              <div id="dropdownPanel" class="dropdown-content">
                 <ul>
-                  <li> <a href="panel.php?page=users">Panel Users</a> </li>
-                  <li> <a href="panel.php?page=pages">Panel Pages</a> </li>
+                  <li> <a href="panel.php?page=users">Panel User</a> </li>
+                  <li> <a href="panel.php?page=pages">Panel Page</a> </li>
+                </ul>
+              </div>
+            <?php else: ?>
+              <li><a href="#Objectifs">Objectifs</a></li>
+              <li><a href="#Result">Résultat</a></li>
+              <li><a href="#Opinion">Avis</a></li>
+              <?php echo "<li><a class='dropdown-trigger' data-target='dropdownUser'> ".$_SESSION['user']['login']." <i class='material-icons right'>arrow_drop_down</i></a></li>  "?>
+              <div id="dropdownUser" class="dropdown-content">
+                <ul>
+                  <li> <a href="logout.php">Logout</a></li>
                 </ul>
               </div>
             <?php endif; ?>
           <?php else :?>
-            <li><a class="dropdown-trigger" data-target="dropdown-user"> <?php echo $_SESSION['user']['login'] ?>  <i class='material-icons right'>arrow_drop_down</i></a></li>
-            <div id="dropdown-user" class="dropdown-content">
-              <ul>
-                <li> <a href="logout.php">Logout</a> </li>
-              </ul>
-            </div>
-            <li><a class='dropdown-trigger' data-target='dropdownPanel'> Panels <i class="material-icons right">arrow_drop_down</i></a></li>
-            <div id="dropdownPanel" class="dropdown-content">
-              <ul>
-                <li> <a href="panel.php?page=users">Panel Users</a> </li>
-                <li> <a href="panel.php?page=pages">Panel Pages</a> </li>
-              </ul>
-            </div>
-          <?php endif?>
+            <?php if($_SESSION['user']['admin'] == 1):?>
+              <?php echo "<li><a class='dropdown-trigger' data-target='dropdownUser'> ".$_SESSION['user']['login']." <i class='material-icons right'>arrow_drop_down</i></a></li>  "?>
+              <div id="dropdownUser" class="dropdown-content">
+                <ul>
+                  <li> <a href="logout.php">Logout</a></li>
+                </ul>
+              </div>
+              <li><a class='dropdown-trigger' data-target='dropdownPanel'> Panels <i class="material-icons right">arrow_drop_down</i></a></li>
+              <div id="dropdownPanel" class="dropdown-content">
+                <ul>
+                  <li> <a href="panel.php?page=users">Panel User</a> </li>
+                  <li> <a href="panel.php?page=pages">Panel Page</a> </li>
+                </ul>
+              </div>
+            <?php else: ?>
+              <?php echo "<li><a class='dropdown-trigger' data-target='dropdownUser'> ".$_SESSION['user']['login']." <i class='material-icons right'>arrow_drop_down</i></a></li>  "?>
+              <div id="dropdownUser" class="dropdown-content">
+                <ul>
+                  <li> <a href="logout.php">Logout</a></li>
+                </ul>
+              </div>
+            <?php endif; ?>
         <?php else :
           if(isset($_GET['projet'])):?>
             <li><a href="#Objectifs">Objectifs</a></li>
@@ -204,31 +264,53 @@
         <li><a href="#Objectifs">Objectifs</a></li>
         <li><a href="#Result">Résultat</a></li>
         <li><a href="#Opinion">Avis</a></li>
-        <?php echo "<li><a class='dropdown-trigger' data-target='dropdownUser'> ".$_SESSION['user']['login']." <i class='white-text material-icons right'>arrow_drop_down</i></a></li>  "?>
+        <?php echo "<li><a class='dropdown-trigger' data-target='dropdownUser'> ".$_SESSION['user']['login']." <i class='material-icons right'>arrow_drop_down</i></a></li>  "?>
         <div id="dropdownUser" class="dropdown-content">
           <ul>
-            <li> <a class ="black-text" href="logout.php">Logout</a></li>
+            <li> <a href="logout.php">Logout</a></li>
           </ul>
         </div>
-        <li><a class='dropdown-trigger' data-target='dropdownPanel'> Panels <i class=" white-text material-icons right">arrow_drop_down</i></a></li>
+        <li><a class='dropdown-trigger' data-target='dropdownPanel'> Panels <i class="material-icons right">arrow_drop_down</i></a></li>
         <div id="dropdownPanel" class="dropdown-content">
           <ul>
-            <li> <a class ="black-text" href="panel.php?page=users">Panel Users</a> </li>
-            <li> <a class ="black-text"href="panel.php?page=pages">Panel Pages</a> </li>
+            <li> <a href="panel.php?page=users">Panel User</a> </li>
+            <li> <a href="panel.php?page=pages">Panel Page</a> </li>
+          </ul>
+        </div>
+      <?php else: ?>
+        <li><a href="#Objectifs">Objectifs</a></li>
+        <li><a href="#Result">Résultat</a></li>
+        <li><a href="#Opinion">Avis</a></li>
+        <?php echo "<li><a class='dropdown-trigger' data-target='dropdownUser'> ".$_SESSION['user']['login']." <i class='material-icons right'>arrow_drop_down</i></a></li>  "?>
+        <div id="dropdownUser" class="dropdown-content">
+          <ul>
+            <li> <a href="logout.php">Logout</a></li>
           </ul>
         </div>
       <?php endif; ?>
     <?php else :?>
-      <li><a href="#Objectifs">Objectifs</a></li>
-      <li><a href="#Result">Résultat</a></li>
-      <li><a href="#Opinion">Avis</a></li>
-      <?php echo "<li><a class='dropdown-trigger' data-target='dropdownUser'> ".$_SESSION['user']['login']." <i class='white-text material-icons right'>arrow_drop_down</i></a></li>  "?>
-      <div id="dropdownUser" class="dropdown-content">
-        <ul>
-          <li> <a href="logout.php">Logout</a></li>
-        </ul>
-      </div>
-    <?php endif?>
+      <?php if($_SESSION['user']['admin'] == 1):?>
+        <?php echo "<li><a class='dropdown-trigger' data-target='dropdownUser'> ".$_SESSION['user']['login']." <i class='material-icons right'>arrow_drop_down</i></a></li>  "?>
+        <div id="dropdownUser" class="dropdown-content">
+          <ul>
+            <li> <a href="logout.php">Logout</a></li>
+          </ul>
+        </div>
+        <li><a class='dropdown-trigger' data-target='dropdownPanel'> Panels <i class="material-icons right">arrow_drop_down</i></a></li>
+        <div id="dropdownPanel" class="dropdown-content">
+          <ul>
+            <li> <a href="panel.php?page=users">Panel User</a> </li>
+            <li> <a href="panel.php?page=pages">Panel Page</a> </li>
+          </ul>
+        </div>
+      <?php else: ?>
+        <?php echo "<li><a class='dropdown-trigger' data-target='dropdownUser'> ".$_SESSION['user']['login']." <i class='material-icons right'>arrow_drop_down</i></a></li>  "?>
+        <div id="dropdownUser" class="dropdown-content">
+          <ul>
+            <li> <a href="logout.php">Logout</a></li>
+          </ul>
+        </div>
+      <?php endif; ?>
   <?php else :
     if(isset($_GET['projet'])):?>
       <li><a href="#Objectifs">Objectifs</a></li>
