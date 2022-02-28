@@ -1,96 +1,10 @@
 body {
-  background-image: url('../img/home_page/portfolio.jpg');
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+ background-color: black;
+ background-size: cover;
 }
-
-@media only screen and (max-width: 767px) {
-  body {
-    background-image: url(images/background-photo-mobile-devices.jpg);
-    }
-	}
 
 h1 {
   margin: 0;
-}
-
-.content {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 20%;
-  height: 100%;
-  background: rgb(0, 0, 0); /* Fallback color */
-  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-}
-
-.description_lp {
-  padding: 5%;
-  margin-top: 5em;
-}
-
-p.affichage {
-    padding-top: 6.5px;
-}
-
-.add-btn{
-  position: absolute;
-  margin-left: 55%;
-  margin-top: -6%;
-}
-
-.panel-text{
-  margin-bottom: 50px;
-}
-
-.description_gs {
-  padding: 5%;
-}
-
-.media_lp {
-  display: flex;
-}
-
-.media_gs {
-  display: flex;
-}
-
-.media_lp div {
-  flex : auto;
-}
-
-.media_gs div {
-  flex : auto;
-}
-
-#school, #mail_lp, #linkedin_lp, #mail_gs, #linkedin_gs {
-  color: white;
-}
-
-.linkedin_lp {
-  text-align: left;
-}
-
-.mail_lp {
-  text-align: center;
-}
-
-.linkedin_gs {
-  text-align: left;
-}
-
-.mail_gs {
-  text-align: center;
-}
-
-.school {
-  text-align: right;
-}
-
-.nom_age {
-  font-size: 30px;
 }
 
 .easteregg {
@@ -156,3 +70,11 @@ textarea {
   background-color: grey;
   color:white;
 }
+
+@media only screen and (max-width: 767px) {
+  .content {
+    background-image: url(images/background-photo-mobile-devices.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+	}
